@@ -1,0 +1,16 @@
+# Development sequencing data
+dev/
+
+# Reference genome and indexes
+data/
+
+# Pipeline-generated results
+results/
+out/
+run/
+
+# macOS metadata
+.DS_Store
+
+# Temporary files
+*.tmp

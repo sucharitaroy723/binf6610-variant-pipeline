@@ -593,6 +593,7 @@ stage_qc_report() {
     multiqc \
         --force \
         --outdir "$RES" \
+        --filename "multiqc_report.html" \
         "$QC" "$LOG" "$POST" \
         > "${LOG}/multiqc.log" 2>&1
 

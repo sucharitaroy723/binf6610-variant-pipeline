@@ -55,6 +55,8 @@ elif tool == "samtools":
     if args[0] == "view" and "-c" in args:
         print(1)
     elif args[0] in {"view", "sort"}:
+        if args[-1] == "-":
+            sys.stdin.read()
         write(option("-o"))
     elif args[0] == "index":
         write(args[-1] + ".bai")

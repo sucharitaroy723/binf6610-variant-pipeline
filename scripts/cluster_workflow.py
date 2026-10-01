@@ -325,13 +325,13 @@ class Workflow:
         self.log("All ten acceptance checks passed. Review the reports, then commit and push the four deliverables.")
 
 
-def preflight(cfg, resume=False):
+def preflight(cfg, resume=False, coordinator=False):
     import csv
     for tool in ["sbatch", "squeue", "sacct", "scancel", "git"]:
         if not shutil.which(tool):
             raise RuntimeError(f"{tool} is unavailable; run this driver on Explorer's login node")
-    if os.environ.get("SLURM_JOB_ID"):
-        raise RuntimeError("Run the orchestration driver on the login node, outside a compute allocation")
+    if os.environ.get("SLURM_JOB_ID") and not coordinator:
+        raise RuntimeError("Use scripts/submit_workflow.sh to run the driver in its dedicated coordinator allocation")
     dirty = command(["git", "status", "--porcelain", "--untracked-files=no"]).stdout.splitlines()
     allowed = {"RESOURCES.md", "TROUBLESHOOTING.md", "cluster-run/cohort.filtered.vcf.gz", "cluster-run/manifest.json"} if resume else set()
     if any(line[3:] not in allowed for line in dirty):
@@ -357,19 +357,25 @@ def preflight(cfg, resume=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--resume", type=Path, help="resume using the evidence directory printed by an earlier run")
+    parser.add_argument("--coordinator", action="store_true", help="allow the dedicated Slurm coordinator to run the monitoring driver")
     parser.add_argument("--max-wait-hours", type=float, default=12, help="maximum wait per job, including queue time")
     args = parser.parse_args()
     cfg = config()
-    preflight(cfg, resume=bool(args.resume))
+    preflight(cfg, resume=bool(args.resume), coordinator=args.coordinator)
     commit = command(["git", "rev-parse", "HEAD"]).stdout.strip()
     evidence = args.resume.resolve() if args.resume else Path(cfg["RUN_ROOT"]) / (time.strftime("%Y%m%d-%H%M%S") + f"-{os.getpid()}") / "evidence"
     flow = Workflow(cfg, evidence, args.max_wait_hours * 3600)
-    if flow.state.get("git_sha", commit) != commit:
-        raise RuntimeError("Code commit differs from the saved run; start a new run so benchmark provenance stays valid")
-    flow.state["git_sha"] = commit
+    previous = flow.state.get("git_sha", commit)
+    if previous != commit:
+        changed = command(["git", "diff", "--name-only", previous, commit, "--", "run_pipeline.sh", "run_sample.sh", "lib/", "stages/"]).stdout.strip()
+        if changed:
+            raise RuntimeError("Analysis code differs from the saved run; start a new run so benchmark provenance stays valid")
+        flow.log("Resuming across an orchestration-only update; analysis code is unchanged")
+    flow.state.setdefault("git_sha", commit)
+    flow.state["controller_git_sha"] = commit
     flow.save()
     flow.log(f"Evidence directory: {evidence}")
-    flow.log(f"To resume: bash scripts/run_assignment2.sh --resume {evidence}")
+    flow.log(f"To resume: bash scripts/submit_workflow.sh --resume {evidence}")
     if flow.state.get("complete"):
         flow.log("This workflow already completed; no jobs resubmitted")
         return

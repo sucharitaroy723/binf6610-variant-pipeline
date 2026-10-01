@@ -13,7 +13,7 @@ cd ~/binf6610-variant-pipeline
 git fetch origin
 git switch assignment2-slurm
 git pull --ff-only
-nohup bash scripts/run_assignment2.sh > assignment2-workflow.log 2>&1 &
+bash scripts/submit_workflow.sh
 ```
 
 For a new clone, first use the repository's SSH URL:
@@ -23,7 +23,7 @@ cd ~
 git clone git@github.com:sucharitaroy723/binf6610-variant-pipeline.git
 cd binf6610-variant-pipeline
 git switch assignment2-slurm
-nohup bash scripts/run_assignment2.sh > assignment2-workflow.log 2>&1 &
+bash scripts/submit_workflow.sh
 ```
 
 GitHub SSH authentication must already be configured. All commands above run on
@@ -31,10 +31,12 @@ Explorer after you log in, not on your Mac. The driver checks course access,
 reference paths, the official eight-row samplesheet, and Slurm submission access.
 It refuses tracked code changes so the manifest records committed code.
 
-Watch progress with `tail -f assignment2-workflow.log` (Ctrl-C stops watching,
-not the background workflow). `squeue -u "$USER"` shows queued/running jobs.
-The background driver uses only lightweight scheduling and metadata operations
-on the login node. All analysis runs in compute jobs. It does not submit to Canvas,
+The launcher prints the coordinator job ID and its log path. Watch progress with
+`tail -f slurm/logs/workflow_<jobid>.out`; Ctrl-C stops watching, not the job.
+`squeue -u "$USER"` shows queued/running jobs. The coordinator has a dedicated
+allocation of one CPU, 1G memory, and twelve hours, so a login-node process
+cleanup cannot kill the monitor. It performs only scheduling and metadata
+operations; analysis runs in separate compute jobs. It does not submit to Canvas,
 commit results, merge branches, or push automatically.
 
 The driver performs:
@@ -50,8 +52,11 @@ The driver performs:
 
 If a job fails unexpectedly, it stops and saves the job IDs/evidence. The resume
 command printed in the log reuses those submissions, rather than duplicating them.
-A genuinely failed job needs its cause corrected and a new run started; a queue
-wait or an interrupted monitoring process can be resumed as printed. Default
+A genuinely failed job needs its cause corrected and a new run started. For a
+queue wait or interrupted monitor, submit another coordinator with
+`bash scripts/submit_workflow.sh --resume <evidence-directory>`. The saved job
+IDs are reused. Orchestration-only code updates are allowed on resume; analysis
+changes require a new run. Default
 maximum wait is twelve hours per job; it never cancels production jobs on a wait
 timeout. Queues can extend the total duration substantially.
 

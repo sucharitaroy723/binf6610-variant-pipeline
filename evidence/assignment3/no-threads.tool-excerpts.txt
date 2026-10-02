@@ -1,0 +1,3 @@
+[main] CMD: bwa mem -t 3 -R @RG\tID:NA12878\tSM:NA12878\tPL:ILLUMINA /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa /scratch/roy.suc/w3-probe-no-threads/trim/NA12878_R1.fastq.gz /scratch/roy.suc/w3-probe-no-threads/trim/NA12878_R2.fastq.gz
+18:01:03.014 INFO  IntelPairHmm - Available threads: 16
+18:01:03.014 INFO  IntelPairHmm - Requested threads: 4

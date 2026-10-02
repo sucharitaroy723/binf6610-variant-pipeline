@@ -19,3 +19,11 @@ run/
 slurm/logs/
 assignment2-workflow.log
 __pycache__/
+
+*.sif
+
+assignment3-workflow.log
+
+evidence/assignment3/workflow.json
+
+assignment3-monitor-*.log

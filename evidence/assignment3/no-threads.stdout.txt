@@ -1,0 +1,16 @@
+FILE: a3-no-threads_10763557_1.out
+task=1 sample=NA12878 host=c0638 cpus=16 run=/scratch/roy.suc/w3-probe-no-threads
+[13:55:35] ===== NA12878: validate =====
+[13:55:50] validation passed
+[13:55:50] ===== NA12878: qc_raw =====
+[13:56:17] NA12878: raw-read QC completed
+[13:56:18] ===== NA12878: trim =====
+[13:56:34] NA12878: trimming completed with 1222355 reads
+[13:56:34] ===== NA12878: align =====
+[14:00:24] NA12878: alignment produced 2447955 records
+[14:00:24] ===== NA12878: postprocess =====
+[14:01:00] NA12878: postprocessing completed with 2447955 records
+[14:01:00] ===== NA12878: quantify =====
+[14:05:45] NA12878: HaplotypeCaller produced 1575869 GVCF records
+[14:05:45] NA12878: done
+MEMORY_PEAK_BYTES=13649547264

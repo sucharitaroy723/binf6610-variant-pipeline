@@ -1,0 +1,52 @@
+Assignment 3 monitor host=c0584 job=10763219
+[13:31:29] image: submitted 10763220
+[13:31:30] image: 10763220 PENDING (Priority)
+[13:32:01] image: 10763220 RUNNING c0584
+[13:34:36] image: COMPLETED
+[13:34:37] versions: submitted 10763251
+[13:34:38] versions: 10763251 PENDING (Priority)
+[13:35:09] versions: 10763251 RUNNING c3014
+[13:35:40] versions: COMPLETED
+[13:35:40] array: submitted 10763271
+[13:35:40] cohort: submitted 10763272
+[13:35:41] array: 10763271_[1-8] PENDING (None)
+[13:36:11] array: 10763271_8 RUNNING d0125; 10763271_7 RUNNING d0125; 10763271_6 RUNNING c0666; 10763271_5 RUNNING c0662; 10763271_4 RUNNING c0655; 10763271_3 RUNNING c0648; 10763271_2 RUNNING c0642; 10763271_1 RUNNING c0638
+[13:41:17] array: 10763271_8 RUNNING d0125; 10763271_7 RUNNING d0125; 10763271_6 RUNNING c0666; 10763271_4 RUNNING c0655; 10763271_2 RUNNING c0642; 10763271_1 RUNNING c0638
+[13:42:19] array: 10763271_8 RUNNING d0125; 10763271_7 RUNNING d0125; 10763271_6 RUNNING c0666; 10763271_2 RUNNING c0642; 10763271_1 RUNNING c0638
+[13:42:50] array: 10763271_8 RUNNING d0125; 10763271_7 RUNNING d0125; 10763271_2 RUNNING c0642
+[13:43:20] array: 10763271_8 RUNNING d0125; 10763271_7 RUNNING d0125
+[13:43:51] array: 10763271_7 RUNNING d0125
+[13:45:24] array: COMPLETED, COMPLETED, COMPLETED, COMPLETED, COMPLETED, COMPLETED, COMPLETED, COMPLETED
+[13:45:24] cohort: 10763272 RUNNING c3014
+[13:54:41] cohort: COMPLETED
+[13:54:41] records: submitted 10763554
+[13:54:42] records: 10763554 RUNNING c0584
+[13:55:13] records: COMPLETED
+[13:55:32] no-bind: submitted 10763556
+[13:55:32] no-threads: submitted 10763557
+[13:55:32] architecture: submitted 10763558
+[13:55:33] no-bind: 10763556_1 RUNNING c0617
+[13:56:04] no-bind: FAILED
+[13:56:04] no-threads: 10763557_1 RUNNING c0638
+[14:06:24] no-threads: COMPLETED
+[14:06:24] architecture: COMPLETED
+
+BINF6610 Assignment 3 — acceptance tests
+repo: /home/roy.suc/binf6610-variant-pipeline
+
+  PASS  15/15  every version is pinned
+  PASS  20/20  the versions inside your image match the course environment
+  PASS   5/5   the image is fetched by a job
+  PASS  15/15  both job scripts run the pipeline through the image
+  PASS  10/10  the job's variables reach the container
+  PASS  15/15  the cohort ran through the image
+        container: /scratch/roy.suc/containers/variant-call.sif
+        the records match last week's
+  PASS  10/10  IMAGE.md
+  PART   5/10  TROUBLESHOOTING.md
+        3 of the four failures are described
+
+  8 passed, 0 failed — 95/100 points
+
+
+[14:06:25] Reports saved. Day-apart requirement remains incomplete; inspect acceptance.txt for other issues.

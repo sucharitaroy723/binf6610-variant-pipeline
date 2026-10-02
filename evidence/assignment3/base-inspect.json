@@ -1,0 +1,31 @@
+[
+    {
+        "Id": "sha256:1c62a28916ad7a4533555a542a5410e55ea2ed2c1e29f00c8fc3f1c8add111d5",
+        "RepoTags": [
+            "mambaorg/micromamba:2.0.5-ubuntu24.04"
+        ],
+        "RepoDigests": [
+            "mambaorg/micromamba@sha256:1c62a28916ad7a4533555a542a5410e55ea2ed2c1e29f00c8fc3f1c8add111d5"
+        ],
+        "Config": {},
+        "Architecture": "",
+        "Os": "",
+        "Size": 0,
+        "RootFS": {},
+        "Metadata": {
+            "LastTagTime": "2026-10-02T15:23:23.241096131Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:1c62a28916ad7a4533555a542a5410e55ea2ed2c1e29f00c8fc3f1c8add111d5",
+            "size": 2364
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/mambaorg/micromamba"
+                }
+            ]
+        }
+    }
+]

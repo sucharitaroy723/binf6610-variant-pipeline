@@ -1,0 +1,19 @@
+# The instructor permits this route when Docker is unavailable.
+Bootstrap: docker
+From: mambaorg/micromamba:2.0.5-ubuntu24.04
+
+%files
+    containers/env.yml /tmp/variant-env.yml
+
+%post
+    export MAMBA_ROOT_PREFIX=/opt/conda
+    micromamba install -y -n base --override-channels \
+        -c conda-forge -c bioconda -f /tmp/variant-env.yml
+    micromamba clean --all --yes
+
+%environment
+    export PATH=/opt/conda/bin:$PATH
+
+%labels
+    course BINF6610
+    pipeline variant-call

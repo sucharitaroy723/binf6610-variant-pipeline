@@ -1,0 +1,9 @@
+{
+  "tag": "docker.io/sucha257/variant-call:1.0",
+  "pushed_image": "docker.io/sucha257/variant-call@sha256:bddff36b853d5254ab751deea50c9a8c944c0a44b7bb0503d27e486fc6e836fe",
+  "architecture": "amd64",
+  "base_tag": "mambaorg/micromamba:2.0.5-ubuntu24.04",
+  "base_digest": "mambaorg/micromamba@sha256:1c62a28916ad7a4533555a542a5410e55ea2ed2c1e29f00c8fc3f1c8add111d5",
+  "env_sha256": "fb319782e689de1f067bfbca1301f748c57447c60ddcf8cd7b670e21803cb08f",
+  "dockerfile_sha256": "3675c758e87628efc294ad10a917d9c72d7e73413485604e0bab4c1df14df862"
+}

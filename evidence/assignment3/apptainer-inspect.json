@@ -1,0 +1,25 @@
+{
+	"data": {
+		"attributes": {
+			"labels": {
+				"distro_id": "debian",
+				"org.label-schema.build-arch": "amd64",
+				"org.label-schema.build-date": "Friday_2_October_2026_13:32:43_EDT",
+				"org.label-schema.schema-version": "1.0",
+				"org.label-schema.usage.apptainer.version": "1.2.5-1.el9",
+				"org.label-schema.usage.singularity.deffile.bootstrap": "docker",
+				"org.label-schema.usage.singularity.deffile.from": "docker.io/sucha257/variant-call@sha256:bddff36b853d5254ab751deea50c9a8c944c0a44b7bb0503d27e486fc6e836fe",
+				"org.opencontainers.image.created": "2025-02-11T03:27:36.284Z",
+				"org.opencontainers.image.description": "Rapid builds of small Conda-based containers using micromamba.",
+				"org.opencontainers.image.licenses": "Apache-2.0",
+				"org.opencontainers.image.ref.name": "ubuntu",
+				"org.opencontainers.image.revision": "a19699f9bb7fd9ec9759b58f9a89eb1747b89471",
+				"org.opencontainers.image.source": "https://github.com/mamba-org/micromamba-docker",
+				"org.opencontainers.image.title": "micromamba-docker",
+				"org.opencontainers.image.url": "https://github.com/mamba-org/micromamba-docker",
+				"org.opencontainers.image.version": "ubuntu24.04"
+			}
+		}
+	},
+	"type": "container"
+}

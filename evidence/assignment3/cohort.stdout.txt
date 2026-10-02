@@ -1,0 +1,18 @@
+FILE: a3-cohort_10763272.out
+cohort host=c3014 cpus=2 run=/scratch/roy.suc/w3-variant
+[13:45:31] validate: every sample already completed
+[13:45:31] qc_raw: every sample already completed
+[13:45:31] trim: every sample already completed
+[13:45:31] align: every sample already completed
+[13:45:31] postprocess: every sample already completed
+[13:45:32] quantify: every sample already completed
+[13:45:32] ===== cohort: merge =====
+[13:51:23] individual GVCFs combined successfully
+[13:53:59] joint genotyping completed with 8 samples and 36853 variant records
+[13:53:59] ===== cohort: analyze =====
+[13:54:06] hard filtering completed: 36853 total, 36077 PASS, 776 flagged
+[13:54:06] ===== cohort: qc_report =====
+[13:54:16] MultiQC report created at /scratch/roy.suc/w3-variant/results/multiqc_report.html
+[13:54:17] ===== cohort: publish =====
+[13:54:21] done
+MEMORY_PEAK_BYTES=1573146624

@@ -1,0 +1,142 @@
+FILE: a3-array_10763271_1.out
+task=1 sample=NA12878 host=c0638 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:35:44] ===== NA12878: validate =====
+[13:35:59] validation passed
+[13:35:59] ===== NA12878: qc_raw =====
+[13:36:26] NA12878: raw-read QC completed
+[13:36:26] ===== NA12878: trim =====
+[13:36:39] NA12878: trimming completed with 1222355 reads
+[13:36:39] ===== NA12878: align =====
+[13:37:32] NA12878: alignment produced 2447955 records
+[13:37:32] ===== NA12878: postprocess =====
+[13:37:58] NA12878: postprocessing completed with 2447955 records
+[13:37:58] ===== NA12878: quantify =====
+[13:42:32] NA12878: HaplotypeCaller produced 1575865 GVCF records
+[13:42:32] NA12878: done
+MEMORY_PEAK_BYTES=14794104832
+
+
+FILE: a3-array_10763271_2.out
+task=2 sample=NA12891 host=c0642 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:35:44] ===== NA12891: validate =====
+[13:35:59] validation passed
+[13:35:59] ===== NA12891: qc_raw =====
+[13:36:25] NA12891: raw-read QC completed
+[13:36:25] ===== NA12891: trim =====
+[13:36:38] NA12891: trimming completed with 1247760 reads
+[13:36:38] ===== NA12891: align =====
+[13:37:33] NA12891: alignment produced 2499007 records
+[13:37:33] ===== NA12891: postprocess =====
+[13:38:00] NA12891: postprocessing completed with 2499007 records
+[13:38:00] ===== NA12891: quantify =====
+[13:42:59] NA12891: HaplotypeCaller produced 1635411 GVCF records
+[13:42:59] NA12891: done
+MEMORY_PEAK_BYTES=14975434752
+
+
+FILE: a3-array_10763271_3.out
+task=3 sample=NA12892 host=c0648 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:35:49] ===== NA12892: validate =====
+[13:35:54] validation passed
+[13:35:54] ===== NA12892: qc_raw =====
+[13:36:08] NA12892: raw-read QC completed
+[13:36:08] ===== NA12892: trim =====
+[13:36:39] NA12892: trimming completed with 1257860 reads
+[13:36:39] ===== NA12892: align =====
+[13:37:07] NA12892: alignment produced 1259481 records
+[13:37:07] ===== NA12892: postprocess =====
+[13:37:23] NA12892: postprocessing completed with 1259481 records
+[13:37:23] ===== NA12892: quantify =====
+[13:40:50] NA12892: HaplotypeCaller produced 1919601 GVCF records
+[13:40:50] NA12892: done
+MEMORY_PEAK_BYTES=12097048576
+
+
+FILE: a3-array_10763271_4.out
+task=4 sample=NA07357 host=c0655 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:35:49] ===== NA07357: validate =====
+[13:36:02] validation passed
+[13:36:02] ===== NA07357: qc_raw =====
+[13:36:26] NA07357: raw-read QC completed
+[13:36:27] ===== NA07357: trim =====
+[13:36:38] NA07357: trimming completed with 1120318 reads
+[13:36:38] ===== NA07357: align =====
+[13:37:30] NA07357: alignment produced 2243602 records
+[13:37:30] ===== NA07357: postprocess =====
+[13:37:54] NA07357: postprocessing completed with 2243602 records
+[13:37:54] ===== NA07357: quantify =====
+[13:42:14] NA07357: HaplotypeCaller produced 1746762 GVCF records
+[13:42:14] NA07357: done
+MEMORY_PEAK_BYTES=14688526336
+
+
+FILE: a3-array_10763271_5.out
+task=5 sample=NA12003 host=c0662 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:35:46] ===== NA12003: validate =====
+[13:35:51] validation passed
+[13:35:51] ===== NA12003: qc_raw =====
+[13:36:07] NA12003: raw-read QC completed
+[13:36:07] ===== NA12003: trim =====
+[13:36:35] NA12003: trimming completed with 1355375 reads
+[13:36:36] ===== NA12003: align =====
+[13:37:06] NA12003: alignment produced 1357438 records
+[13:37:06] ===== NA12003: postprocess =====
+[13:37:25] NA12003: postprocessing completed with 1357438 records
+[13:37:25] ===== NA12003: quantify =====
+[13:40:56] NA12003: HaplotypeCaller produced 2035587 GVCF records
+[13:40:56] NA12003: done
+MEMORY_PEAK_BYTES=12694646784
+
+
+FILE: a3-array_10763271_6.out
+task=6 sample=NA10851 host=c0666 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:35:44] ===== NA10851: validate =====
+[13:35:59] validation passed
+[13:35:59] ===== NA10851: qc_raw =====
+[13:36:25] NA10851: raw-read QC completed
+[13:36:25] ===== NA10851: trim =====
+[13:36:38] NA10851: trimming completed with 1239530 reads
+[13:36:38] ===== NA10851: align =====
+[13:37:31] NA10851: alignment produced 2482843 records
+[13:37:31] ===== NA10851: postprocess =====
+[13:37:57] NA10851: postprocessing completed with 2482843 records
+[13:37:57] ===== NA10851: quantify =====
+[13:42:23] NA10851: HaplotypeCaller produced 1526602 GVCF records
+[13:42:23] NA10851: done
+MEMORY_PEAK_BYTES=15136423936
+
+
+FILE: a3-array_10763271_7.out
+task=7 sample=NA12813 host=d0125 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:36:04] ===== NA12813: validate =====
+[13:36:24] validation passed
+[13:36:24] ===== NA12813: qc_raw =====
+[13:36:57] NA12813: raw-read QC completed
+[13:36:57] ===== NA12813: trim =====
+[13:37:19] NA12813: trimming completed with 2065252 reads
+[13:37:19] ===== NA12813: align =====
+[13:39:00] NA12813: alignment produced 4135722 records
+[13:39:01] ===== NA12813: postprocess =====
+[13:39:39] NA12813: postprocessing completed with 4135722 records
+[13:39:39] ===== NA12813: quantify =====
+[13:45:21] NA12813: HaplotypeCaller produced 223676 GVCF records
+[13:45:21] NA12813: done
+MEMORY_PEAK_BYTES=15840792576
+
+
+FILE: a3-array_10763271_8.out
+task=8 sample=NA12873 host=d0125 cpus=16 run=/scratch/roy.suc/w3-variant
+[13:36:04] ===== NA12873: validate =====
+[13:36:19] validation passed
+[13:36:19] ===== NA12873: qc_raw =====
+[13:36:48] NA12873: raw-read QC completed
+[13:36:48] ===== NA12873: trim =====
+[13:37:04] NA12873: trimming completed with 1490067 reads
+[13:37:04] ===== NA12873: align =====
+[13:38:26] NA12873: alignment produced 2983854 records
+[13:38:27] ===== NA12873: postprocess =====
+[13:39:01] NA12873: postprocessing completed with 2983854 records
+[13:39:01] ===== NA12873: quantify =====
+[13:43:40] NA12873: HaplotypeCaller produced 1203636 GVCF records
+[13:43:40] NA12873: done
+MEMORY_PEAK_BYTES=16285274112

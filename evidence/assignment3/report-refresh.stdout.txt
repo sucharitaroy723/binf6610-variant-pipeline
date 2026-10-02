@@ -1,0 +1,21 @@
+Assignment 3 monitor host=c3014 job=10764373
+[14:51:37] The saved cluster workflow is complete; collecting final reports.
+
+BINF6610 Assignment 3 — acceptance tests
+repo: /home/roy.suc/binf6610-variant-pipeline
+
+  PASS  15/15  every version is pinned
+  PASS  20/20  the versions inside your image match the course environment
+  PASS   5/5   the image is fetched by a job
+  PASS  15/15  both job scripts run the pipeline through the image
+  PASS  10/10  the job's variables reach the container
+  PASS  15/15  the cohort ran through the image
+        container: /scratch/roy.suc/containers/variant-call.sif
+        the records match last week's
+  PASS  10/10  IMAGE.md
+  PASS  10/10  TROUBLESHOOTING.md
+
+  8 passed, 0 failed — 100/100 points
+
+
+[14:51:37] Reports saved. Day-apart requirement remains incomplete; inspect acceptance.txt for other issues.

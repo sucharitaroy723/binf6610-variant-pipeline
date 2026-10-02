@@ -6,6 +6,8 @@ set -euo pipefail
 source "${SLURM_SUBMIT_DIR}/conf/slurm.env"
 RUN_ROOT=${1:-$RUN_ROOT}
 module purge
+module load "$MINICONDA_MODULE"
+source activate "$CONDA_ENV"
 export THREADS="${SLURM_CPUS_PER_TASK}"
 export REF REGION
 export TMPDIR="/tmp/${SLURM_JOB_ID}"
@@ -22,15 +24,4 @@ trap cleanup EXIT
 trap 'exit 143' TERM
 export JAVA_TOOL_OPTIONS="-Djava.io.tmpdir=${TMPDIR} -XX:ActiveProcessorCount=${THREADS}"
 echo "cohort host=$(hostname) cpus=$THREADS run=$RUN_ROOT"
-[[ -s "${SIF}" ]] || { echo "Container image missing: ${SIF}" >&2; exit 66; }
-apptainer exec --cleanenv \
-    --env THREADS="${THREADS}" \
-    --env TMPDIR="${TMPDIR}" \
-    --env REF="${REF}" \
-    --env REGION="${REGION}" \
-    --env JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS}" \
-    --env SLURM_JOB_ID="${SLURM_JOB_ID}" \
-    --env SLURM_CPUS_PER_TASK="${SLURM_CPUS_PER_TASK}" \
-    --bind "${PIPELINE_DIR},/courses/BINF6610.202710,/scratch/${USER}" \
-    "${SIF}" \
-    bash "${PIPELINE_DIR}/run_pipeline.sh" "$SAMPLESHEET" "$RUN_ROOT" publish
+bash "${PIPELINE_DIR}/run_pipeline.sh" "$SAMPLESHEET" "$RUN_ROOT" publish

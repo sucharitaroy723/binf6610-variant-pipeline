@@ -282,7 +282,17 @@ trim/NA12878_R2.fastq.gz	91236895 bytes
 
 ## 1. Timing requirement incomplete
 
-The assignment requires its two package-comparison builds a day apart. The second build and comparison are still pending. No day-apart comparison is claimed.
+The assignment requires its two package-comparison builds a day apart. The actual observed interval was 3.44 hours. This shorter diagnostic run does not satisfy that timing requirement.
+
+Observed completion timestamps: 1790954539.259072, 1790966919.496215.
+
+Commands: docker build for the first image, then docker build --pull --no-cache for the second; docker run --rm IMAGE dpkg -l for both inventories.
+
+Complete inventories and build logs are in evidence/assignment3/docker-drift/. Every differing line:
+
+~~~diff
+No package-list lines differed.
+~~~
 
 Completion requires a second build at least a day after the first, with both inventories and their diff retained.
 

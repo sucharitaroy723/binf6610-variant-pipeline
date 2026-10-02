@@ -1,3 +1,5 @@
+Assignment 3 monitor host=c3014 job=10764373
+[14:51:37] The saved cluster workflow is complete; collecting final reports.
 
 BINF6610 Assignment 3 — acceptance tests
 repo: /home/roy.suc/binf6610-variant-pipeline
@@ -15,3 +17,5 @@ repo: /home/roy.suc/binf6610-variant-pipeline
 
   8 passed, 0 failed — 100/100 points
 
+
+[14:51:37] Reports saved. Day-apart requirement remains incomplete; inspect acceptance.txt for other issues.

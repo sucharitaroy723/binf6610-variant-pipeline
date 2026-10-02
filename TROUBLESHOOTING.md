@@ -276,3 +276,84 @@ trim/NA12878_R1.fastq.gz	87230844 bytes
 trim/NA12878_R2.fastq.gz	91236895 bytes
 ```
 
+
+
+# Assignment 3: deliberate container experiments
+
+## 1. Timing requirement incomplete
+
+The assignment requires its two package-comparison builds a day apart. The second build and comparison are still pending. No day-apart comparison is claimed.
+
+Completion requires a second build at least a day after the first, with both inventories and their diff retained.
+
+## 2. Remove --bind
+
+Command: submit slurm/a3-no-bind.sbatch for one sample into /scratch/roy.suc/w3-probe-no-bind. All explicit --bind options were removed from the pipeline call.
+
+~~~text
+10763556_1|FAILED|65:0|16|00:00:03|None
+FILE: a3-no-bind_10763556_1.out
+task=1 sample=NA12878 host=c0617 cpus=16 run=/scratch/roy.suc/w3-probe-no-bind
+error: samplesheet missing or empty: /courses/BINF6610.202710/data/samplesheet-variant8.csv
+MEMORY_PEAK_BYTES=35504128
+~~~
+The requested samplesheet is /courses/BINF6610.202710/data/samplesheet-variant8.csv and the output root is /scratch/roy.suc/w3-probe-no-bind. The excerpt records the actual missing path and stopping point, or a successful run if the site supplied those mounts. Fix: restore explicit bindings for the repository, /courses/BINF6610.202710, and /scratch/$USER.
+
+## 3. Remove --env THREADS
+
+Command: submit slurm/a3-no-threads.sbatch for one sample, omitting only --env THREADS. Requested cores: 16.
+
+~~~text
+[main] CMD: bwa mem -t 3 -R @RG\tID:NA12878\tSM:NA12878\tPL:ILLUMINA /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa /scratch/roy.suc/w3-probe-no-threads/trim/NA12878_R1.fastq.gz /scratch/roy.suc/w3-probe-no-threads/trim/NA12878_R2.fastq.gz
+18:01:03.014 INFO  IntelPairHmm - Available threads: 16
+18:01:03.014 INFO  IntelPairHmm - Requested threads: 4
+~~~
+
+The observed -t value above is the alignment thread count. lib/common.sh has a default THREADS=4. This pipeline reserves one CPU for samtools conversion, so bwa uses one fewer alignment thread. The GATK lines, when present, record its actual requested threads. With --cleanenv, the omitted --env THREADS prevents the host's allocation from reaching this setting. Fix: restore --env THREADS and pass every job variable the pipeline reads.
+
+~~~text
+10763557_1|COMPLETED|0:0|16|00:10:21|None
+FILE: a3-no-threads_10763557_1.out
+task=1 sample=NA12878 host=c0638 cpus=16 run=/scratch/roy.suc/w3-probe-no-threads
+[13:55:35] ===== NA12878: validate =====
+[13:55:50] validation passed
+[13:55:50] ===== NA12878: qc_raw =====
+[13:56:17] NA12878: raw-read QC completed
+[13:56:18] ===== NA12878: trim =====
+[13:56:34] NA12878: trimming completed with 1222355 reads
+[13:56:34] ===== NA12878: align =====
+[14:00:24] NA12878: alignment produced 2447955 records
+[14:00:24] ===== NA12878: postprocess =====
+[14:01:00] NA12878: postprocessing completed with 2447955 records
+[14:01:00] ===== NA12878: quantify =====
+[14:05:45] NA12878: HaplotypeCaller produced 1575869 GVCF records
+[14:05:45] NA12878: done
+MEMORY_PEAK_BYTES=13649547264
+~~~
+
+## 4. Run an arm64 image on Explorer
+
+Commands: apptainer pull --arch arm64 arm.sif docker://ubuntu:24.04; then apptainer exec --cleanenv arm.sif /bin/uname -m.
+
+~~~text
+10763558|COMPLETED|0:0|2|00:03:32|None
+FILE: a3-architecture_10763558.out
+COMMAND: apptainer pull --arch arm64 arm.sif docker://ubuntu:24.04
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Getting image source signatures
+Copying blob sha256:90812e242c93750dbd37ce847c7d3db62c2c53035367d1d89c61184f168f5d37
+Copying config sha256:95d16dfcd4ab8b61154e2280ab9fe4afa2ef03e5eefa8a689e86571e8a1b32cf
+Writing manifest to image destination
+Storing signatures
+2026/10/02 13:55:37  info unpack layer: sha256:90812e242c93750dbd37ce847c7d3db62c2c53035367d1d89c61184f168f5d37
+2026/10/02 13:55:39  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+2026/10/02 13:55:39  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-4110216852/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+INFO:    Creating SIF file...
+ARM64_PULL_EXIT=0
+COMMAND: apptainer exec --cleanenv arm.sif /bin/uname -m
+FATAL:   While checking container encryption: could not open image /scratch/roy.suc/containers/arm-10763558.sif: the image's architecture (arm64) could not run on the host's (amd64)
+ARM64_EXEC_EXIT=255
+~~~
+
+ARM64_PULL_EXIT and ARM64_EXEC_EXIT above record the actual outcomes. If the pull failed, the run was skipped and the pull error is the observed result. If it ran successfully, the host supported execution of this arm64 image; no execution error is invented. Fix for an incompatible image: build/pull linux/amd64.

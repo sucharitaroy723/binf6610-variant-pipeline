@@ -1,0 +1,91 @@
+[
+    {
+        "Id": "sha256:bddff36b853d5254ab751deea50c9a8c944c0a44b7bb0503d27e486fc6e836fe",
+        "RepoTags": [
+            "sucha257/variant-call:1.0"
+        ],
+        "RepoDigests": [
+            "sucha257/variant-call@sha256:bddff36b853d5254ab751deea50c9a8c944c0a44b7bb0503d27e486fc6e836fe"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-02T15:24:51.909635463Z",
+        "Config": {
+            "User": "mambauser",
+            "Env": [
+                "PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "MAMBA_USER=mambauser",
+                "MAMBA_USER_ID=57439",
+                "MAMBA_USER_GID=57439",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "ENV_NAME=base",
+                "MAMBA_ROOT_PREFIX=/opt/conda",
+                "MAMBA_EXE=/bin/micromamba"
+            ],
+            "Entrypoint": [
+                "/usr/local/bin/_entrypoint.sh"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "WorkingDir": "/tmp",
+            "Labels": {
+                "distro_id": "debian",
+                "org.opencontainers.image.created": "2025-02-11T03:27:36.284Z",
+                "org.opencontainers.image.description": "Rapid builds of small Conda-based containers using micromamba.",
+                "org.opencontainers.image.licenses": "Apache-2.0",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.revision": "a19699f9bb7fd9ec9759b58f9a89eb1747b89471",
+                "org.opencontainers.image.source": "https://github.com/mamba-org/micromamba-docker",
+                "org.opencontainers.image.title": "micromamba-docker",
+                "org.opencontainers.image.url": "https://github.com/mamba-org/micromamba-docker",
+                "org.opencontainers.image.version": "ubuntu24.04"
+            },
+            "ArgsEscaped": true,
+            "Shell": [
+                "/usr/local/bin/_dockerfile_shell.sh"
+            ]
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 4144007567,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:4b7c01ed0534d4f9be9cf97d068da1598c6c20b26cb6134fad066defdb6d541d",
+                "sha256:80afffebcad9b03270f2b5e1fbfab81f2d6449eb012ad3224ec201d22b4aa927",
+                "sha256:87a6d9ce532328cc96631a1a87543fe8b91ec2b5900a5a1014bc83f66ff459c9",
+                "sha256:860f00ba29788ecd7afb29aafde08506c7621268577a3b907b0e9d939dd1a7b7",
+                "sha256:43415d1ccb63cd15df2b1fbc75c9b118c17bf2b0bc995f28d464da922f9c14f0",
+                "sha256:865bc7cb09364432de3f25157bbdf03e304ac6ab023d9994abfbb2989554accf",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:8cab6952af9d3f8d13591e2648b90ae5d92d976467bbba90eee9b4604fb1bab1",
+                "sha256:8355defdf1271013d87959df6a39a917c37bafaf5387e2824bb79aee05add9f4",
+                "sha256:75bf769db857e0006116f9bc7473be4625a6ee8487e881e24ba03c133c8ddc4f",
+                "sha256:e4aac53d24b514824803b95c481d853c9287e06e0e83158054c0d35f4398b7ff",
+                "sha256:6b25fb8350fac34c21a243f6d78e719529b9052d47221d191c38cd763a3c2bf4"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-02T15:25:35.001399803Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:bddff36b853d5254ab751deea50c9a8c944c0a44b7bb0503d27e486fc6e836fe",
+            "size": 856
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/sucha257/variant-call"
+                }
+            ],
+            "Build": [
+                {
+                    "Ref": "ery7hf5g2r2k4zzkipheynv7z",
+                    "CreatedAt": "2026-10-02T15:25:35.006675678Z"
+                }
+            ]
+        }
+    }
+]

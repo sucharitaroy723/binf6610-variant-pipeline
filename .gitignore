@@ -25,3 +25,5 @@ __pycache__/
 assignment3-workflow.log
 
 evidence/assignment3/workflow.json
+
+assignment3-monitor-*.log

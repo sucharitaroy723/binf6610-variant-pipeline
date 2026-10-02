@@ -1,0 +1,32 @@
+{
+  "jobs": {
+    "image": {
+      "id": "10760568",
+      "script": "pull.sbatch",
+      "cpus": 4,
+      "mem": "16G",
+      "time": "01:00:00",
+      "run": "",
+      "array": null,
+      "recovered_from": "scontrol show job 10760568"
+    }
+  },
+  "route": "docker",
+  "source_hashes": {
+    "slurm/01_persample.sbatch": "a215cdfab38c8a1c5ce6dc1c05ed8b3b148f57e1065ba04444f391f8ab66a4aa",
+    "slurm/02_cohort.sbatch": "867d54e66468764a83d473b5c7ef66d1eee167abec274ca025035ac53725bc40",
+    "slurm/a3-no-bind.sbatch": "be1c73c4e4d34ec807dcb2070a960f61f58b12b7a8177007889ede01943977b5",
+    "slurm/a3-no-threads.sbatch": "6b1788b937efc127275cb838e5bca646a70fcf412eaf8234eb8b31f7de767a0a",
+    "slurm/architecture-probe.sbatch": "b8448991550c9c4a420aff73a8b35b73e0adc7d5697d9cacb470732ed17c609e",
+    "slurm/build-container.sbatch": "839aa74fee80112a37e48735601a6da4b0940eea25c9cbdb8f99c445e5566fbd",
+    "slurm/compare-container.sbatch": "1b425e1b93326424abdf452dd45a4ec94691bdd39adc4719fbb2dd52dd4d5ee6",
+    "slurm/pull.sbatch": "3b90e53a01835a11d3a54c00f4881ea7cd6f920fccfbc2e99ebeb4b2f3bbaffb",
+    "slurm/verify-container.sbatch": "93ac5c3808992c9e02d5b4042e7de8b43e6c71b088c64f1883c3cbe6b12801a7",
+    "slurm/workflow.sbatch": "fc2c72df8fa5c720b2e20ea8ba928adacee46d59d0e4e301305ed04204d8aef4",
+    "slurm/conf/slurm.env": "eeba3ea7267844cd3f637a8922771c397be1a36816399fcfd943da5ede27718a",
+    "containers/env.yml": "fb319782e689de1f067bfbca1301f748c57447c60ddcf8cd7b670e21803cb08f",
+    "containers/Dockerfile": "3675c758e87628efc294ad10a917d9c72d7e73413485604e0bab4c1df14df862",
+    "containers/variant-call.def": "78aa663f1f4e51cba14be7eb9d926878f1c07614ff7649c9b4e11d269476548f"
+  },
+  "git_sha": "168014420822f47511fbad76ae250ec8954a82c5"
+}

@@ -1,0 +1,17 @@
+FILE: a3-architecture_10763558.out
+COMMAND: apptainer pull --arch arm64 arm.sif docker://ubuntu:24.04
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Getting image source signatures
+Copying blob sha256:90812e242c93750dbd37ce847c7d3db62c2c53035367d1d89c61184f168f5d37
+Copying config sha256:95d16dfcd4ab8b61154e2280ab9fe4afa2ef03e5eefa8a689e86571e8a1b32cf
+Writing manifest to image destination
+Storing signatures
+2026/10/02 13:55:37  info unpack layer: sha256:90812e242c93750dbd37ce847c7d3db62c2c53035367d1d89c61184f168f5d37
+2026/10/02 13:55:39  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+2026/10/02 13:55:39  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-4110216852/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+INFO:    Creating SIF file...
+ARM64_PULL_EXIT=0
+COMMAND: apptainer exec --cleanenv arm.sif /bin/uname -m
+FATAL:   While checking container encryption: could not open image /scratch/roy.suc/containers/arm-10763558.sif: the image's architecture (arm64) could not run on the host's (amd64)
+ARM64_EXEC_EXIT=255

@@ -1,0 +1,4 @@
+FILE: a3-no-bind_10763556_1.out
+task=1 sample=NA12878 host=c0617 cpus=16 run=/scratch/roy.suc/w3-probe-no-bind
+error: samplesheet missing or empty: /courses/BINF6610.202710/data/samplesheet-variant8.csv
+MEMORY_PEAK_BYTES=35504128

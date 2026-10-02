@@ -1,0 +1,35 @@
+2.0.5-ubuntu24.04: Pulling from mambaorg/micromamba
+55f0d7b82b5d: Pulling fs layer
+dd6f9fb1ad63: Pulling fs layer
+5a7813e071bf: Pulling fs layer
+8efb0594d039: Pulling fs layer
+004430d33e64: Pulling fs layer
+6dcb5e2d365b: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+7bf5cd8e9a0e: Pulling fs layer
+0871bf9e9b8c: Pulling fs layer
+3c5b9dbb8f63: Pulling fs layer
+dd6f9fb1ad63: Download complete
+55f0d7b82b5d: Download complete
+6dcb5e2d365b: Download complete
+004430d33e64: Download complete
+8efb0594d039: Download complete
+4f4fb700ef54: Download complete
+0871bf9e9b8c: Download complete
+7bf5cd8e9a0e: Download complete
+3c5b9dbb8f63: Download complete
+5a7813e071bf: Download complete
+5a9cf6a0ac14: Download complete
+dd6f9fb1ad63: Pull complete
+55f0d7b82b5d: Pull complete
+6dcb5e2d365b: Pull complete
+004430d33e64: Pull complete
+8efb0594d039: Pull complete
+4f4fb700ef54: Pull complete
+0871bf9e9b8c: Pull complete
+7bf5cd8e9a0e: Pull complete
+3c5b9dbb8f63: Pull complete
+5a7813e071bf: Pull complete
+Digest: sha256:1c62a28916ad7a4533555a542a5410e55ea2ed2c1e29f00c8fc3f1c8add111d5
+Status: Downloaded newer image for mambaorg/micromamba:2.0.5-ubuntu24.04
+docker.io/mambaorg/micromamba:2.0.5-ubuntu24.04

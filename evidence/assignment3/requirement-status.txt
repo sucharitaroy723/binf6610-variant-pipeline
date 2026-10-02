@@ -1,0 +1,3 @@
+INCOMPLETE: the required day-apart experiment is not satisfied.
+Automated acceptance checks do not validate elapsed build time.
+The three cluster experiments and their actual evidence are reported.

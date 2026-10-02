@@ -1,0 +1,51 @@
+The push refers to repository [docker.io/sucha257/variant-call]
+0410e80830ea: Waiting
+44136fa355b3: Waiting
+8efb0594d039: Waiting
+5a7813e071bf: Waiting
+0410e80830ea: Waiting
+44136fa355b3: Waiting
+8efb0594d039: Waiting
+5a7813e071bf: Waiting
+0410e80830ea: Waiting
+44136fa355b3: Waiting
+8efb0594d039: Waiting
+5a7813e071bf: Waiting
+0410e80830ea: Waiting
+44136fa355b3: Waiting
+8efb0594d039: Waiting
+5a7813e071bf: Waiting
+8efb0594d039: Waiting
+5a7813e071bf: Waiting
+0410e80830ea: Waiting
+44136fa355b3: Waiting
+004430d33e64: Waiting
+6dcb5e2d365b: Waiting
+8efb0594d039: Mounted from mambaorg/micromamba
+5a7813e071bf: Mounted from mambaorg/micromamba
+dd6f9fb1ad63: Waiting
+004430d33e64: Mounted from mambaorg/micromamba
+6dcb5e2d365b: Waiting
+dd6f9fb1ad63: Waiting
+7bf5cd8e9a0e: Waiting
+6dcb5e2d365b: Mounted from mambaorg/micromamba
+dd6f9fb1ad63: Mounted from mambaorg/micromamba
+7bf5cd8e9a0e: Mounted from mambaorg/micromamba
+4f4fb700ef54: Waiting
+3c5b9dbb8f63: Waiting
+0871bf9e9b8c: Waiting
+4f4fb700ef54: Mounted from mambaorg/micromamba
+3c5b9dbb8f63: Waiting
+03e859ade5ec: Waiting
+3c5b9dbb8f63: Mounted from mambaorg/micromamba
+44136fa355b3: Pushed
+0871bf9e9b8c: Waiting
+55f0d7b82b5d: Waiting
+0410e80830ea: Pushed
+c5721cfc1b05: Waiting
+0871bf9e9b8c: Mounted from mambaorg/micromamba
+55f0d7b82b5d: Mounted from mambaorg/micromamba
+03e859ade5ec: Waiting
+03e859ade5ec: Pushed
+c5721cfc1b05: Pushed
+1.0: digest: sha256:bddff36b853d5254ab751deea50c9a8c944c0a44b7bb0503d27e486fc6e836fe size: 856

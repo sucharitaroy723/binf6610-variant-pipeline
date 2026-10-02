@@ -14,3 +14,8 @@ run/
 
 # Temporary files
 *.tmp
+
+# Cluster logs and local workflow evidence
+slurm/logs/
+assignment2-workflow.log
+__pycache__/

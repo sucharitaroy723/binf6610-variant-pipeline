@@ -23,9 +23,13 @@ def recover(job):
         raise RuntimeError("The requested job is not the saved image job.")
     if set(state["jobs"]) != {"image"} or state.get("cluster_complete"):
         raise RuntimeError("Later jobs exist; inspect the workflow before recovery.")
-    queue = output(["squeue", "-h", "-j", job, "-o", "%i %T"]).strip()
-    if queue:
-        raise RuntimeError("Image job is still active or completing: " + queue)
+    username = subprocess.check_output(["id", "-un"], text=True).strip()
+    # Finished jobs can be purged from squeue while remaining in sacct.
+    queue = output(["squeue", "-h", "-u", username, "-o", "%i|%j|%T"])
+    live_rows = [line.split("|") for line in queue.splitlines() if "|" in line]
+    active = [row for row in live_rows if row[0] == job]
+    if active:
+        raise RuntimeError("Image job is still active or completing: " + "|".join(active[0]))
     accounting = output(["sacct", "-X", "-j", job, "--noheader", "--parsable2",
                          "--format=JobID,State,ExitCode,Elapsed"])
     rows = [line.split("|") for line in accounting.splitlines() if "|" in line]
@@ -34,9 +38,7 @@ def recover(job):
     if not rows or any(row[1].split()[0].rstrip("+") not in terminal_failures for row in rows):
         raise RuntimeError("No confirmed terminal failure; refusing to retry.\n" + accounting)
     # The caller must stop the old monitor before modifying its saved state.
-    monitors = output(["squeue", "-h", "-u", subprocess.check_output(["id", "-un"], text=True).strip(),
-                       "-o", "%i|%j|%T"])
-    if any(line.split("|")[1] == "a3-monitor" for line in monitors.splitlines() if "|" in line):
+    if any(row[1] == "a3-monitor" for row in live_rows):
         raise RuntimeError("Stop the old a3-monitor job before retrying.")
     archive = evidence / ("image-recovery-" + job)
     if archive.exists():

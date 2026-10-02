@@ -174,7 +174,7 @@ class Workflow:
             raise RuntimeError("An existing SIF has no provenance in this workflow. Use a new SIF path in slurm/conf/slurm.env.")
         image_script = "pull.sbatch" if self.route == "docker" else "build-container.sbatch"
         self.submit("image", image_script, 4 if self.route == "docker" else 8,
-                    "16G" if self.route == "docker" else "24G", "01:00:00")
+                    "16G" if self.route == "docker" else "24G", "03:00:00")
         self.wait("image")
         self.submit("versions", "verify-container.sbatch", 2, "4G", "00:30:00")
         self.wait("versions")

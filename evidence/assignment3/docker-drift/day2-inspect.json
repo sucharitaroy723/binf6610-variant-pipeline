@@ -1,0 +1,54 @@
+[
+    {
+        "Id": "sha256:d13ac922f27b0888ef5f51416449463526cea04c381b060f4bf71279938a6566",
+        "RepoTags": [
+            "binf6610-drift:day2"
+        ],
+        "RepoDigests": [
+            "binf6610-drift@sha256:d13ac922f27b0888ef5f51416449463526cea04c381b060f4bf71279938a6566"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-02T18:48:37.847719628Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-27T10:29:55.694692+00:00",
+                "org.opencontainers.image.description": "The Ubuntu container image maintained by Canonical\n\nUbuntu is a Debian-based Linux operating system that runs from the desktop to the cloud, to all your internet connected things.\nIt is the world's most popular operating system across public clouds and OpenStack clouds.\nIt is the number one platform for containers; from Docker to Kubernetes to LXD, Ubuntu can run your containers at scale.\nFast, secure and simple, Ubuntu powers millions of PCs worldwide.\n",
+                "org.opencontainers.image.title": "ubuntu",
+                "org.opencontainers.image.version": "26.04"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 280604310,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:27df0d1341823cd47a776b3b6dd109273560e03b7e97d771621bfa43623fa39b",
+                "sha256:777d3c203fe3b8bf18121a65c1387256ab12ce9dc54c714e379c3feec611f034",
+                "sha256:7cc9898d033c6a8722f02953515016667e97ec7cca71eb8b35a68cb50ca6ec97"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-02T18:48:38.912501837Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:d13ac922f27b0888ef5f51416449463526cea04c381b060f4bf71279938a6566",
+            "size": 855
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "mbj9aw2yuasaqiwperscil2n7",
+                    "CreatedAt": "2026-10-02T18:48:39.214801837Z"
+                }
+            ]
+        }
+    }
+]

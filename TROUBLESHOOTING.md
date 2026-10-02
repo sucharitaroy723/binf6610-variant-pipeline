@@ -280,21 +280,41 @@ trim/NA12878_R2.fastq.gz	91236895 bytes
 
 # Assignment 3: deliberate container experiments
 
-## 1. Timing requirement incomplete
+## 1. Unpinned package comparison: timing requirement incomplete
 
-The assignment requires its two package-comparison builds a day apart. The actual observed interval was 3.44 hours. This shorter diagnostic run does not satisfy that timing requirement.
+The test recipe in [context/Dockerfile](evidence/assignment3/docker-drift/context/Dockerfile) contains:
 
-Observed completion timestamps: 1790954539.259072, 1790966919.496215.
-
-Commands: docker build for the first image, then docker build --pull --no-cache for the second; docker run --rm IMAGE dpkg -l for both inventories.
-
-Complete inventories and build logs are in evidence/assignment3/docker-drift/. Every differing line:
-
-~~~diff
-No package-list lines differed.
+~~~dockerfile
+FROM ubuntu
+RUN apt-get update && apt-get install -y curl
 ~~~
 
-Completion requires a second build at least a day after the first, with both inventories and their diff retained.
+Commands run by the Mac helper:
+
+~~~bash
+docker build -t binf6610-drift:day1 evidence/assignment3/docker-drift/context
+docker run --rm binf6610-drift:day1 dpkg -l > evidence/assignment3/docker-drift/day1-packages.txt
+docker build --pull --no-cache -t binf6610-drift:day2 evidence/assignment3/docker-drift/context
+docker run --rm binf6610-drift:day2 dpkg -l > evidence/assignment3/docker-drift/day2-packages.txt
+diff -u evidence/assignment3/docker-drift/day1-packages.txt evidence/assignment3/docker-drift/day2-packages.txt
+~~~
+
+Observed completion timestamps (Unix seconds): 1790954539.259072 and 1790966919.496215.
+The interval was 12,380.237 seconds, or 3.44 hours. This does not satisfy the
+assignment's requirement to rebuild a day later. The shorter interval was used
+to collect a diagnostic comparison before the submission deadline.
+
+The [first inventory](evidence/assignment3/docker-drift/day1-packages.txt) and
+[second inventory](evidence/assignment3/docker-drift/day2-packages.txt) were
+identical: diff exited 0, and [packages.diff](evidence/assignment3/docker-drift/packages.diff)
+is empty. No differing lines were observed during this interval. Both build logs
+and image inspections are retained in evidence/assignment3/docker-drift/.
+
+Fix for reproducibility: pin the base image and package versions, and retain the
+pushed image digest. An unchanged inventory over this short interval does not
+establish that a later rebuild will be identical. To complete the assignment's
+timing requirement, repeat the second build at least a day after the first and
+retain both inventories and their diff.
 
 ## 2. Remove --bind
 
@@ -307,7 +327,7 @@ task=1 sample=NA12878 host=c0617 cpus=16 run=/scratch/roy.suc/w3-probe-no-bind
 error: samplesheet missing or empty: /courses/BINF6610.202710/data/samplesheet-variant8.csv
 MEMORY_PEAK_BYTES=35504128
 ~~~
-The requested samplesheet is /courses/BINF6610.202710/data/samplesheet-variant8.csv and the output root is /scratch/roy.suc/w3-probe-no-bind. The excerpt records the actual missing path and stopping point, or a successful run if the site supplied those mounts. Fix: restore explicit bindings for the repository, /courses/BINF6610.202710, and /scratch/$USER.
+The requested samplesheet is /courses/BINF6610.202710/data/samplesheet-variant8.csv and the output root is /scratch/roy.suc/w3-probe-no-bind. The job stopped while locating the course samplesheet because the course directory was not visible inside the container. Its exit code was 65. Fix: restore explicit bindings for the repository, /courses/BINF6610.202710, and /scratch/$USER.
 
 ## 3. Remove --env THREADS
 
@@ -319,7 +339,7 @@ Command: submit slurm/a3-no-threads.sbatch for one sample, omitting only --env T
 18:01:03.014 INFO  IntelPairHmm - Requested threads: 4
 ~~~
 
-The observed -t value above is the alignment thread count. lib/common.sh has a default THREADS=4. This pipeline reserves one CPU for samtools conversion, so bwa uses one fewer alignment thread. The GATK lines, when present, record its actual requested threads. With --cleanenv, the omitted --env THREADS prevents the host's allocation from reaching this setting. Fix: restore --env THREADS and pass every job variable the pipeline reads.
+The observed -t value above is the alignment thread count. lib/common.sh has a default THREADS=4. This pipeline reserves one CPU for samtools conversion, so bwa uses one fewer alignment thread. GATK reported 16 available threads but requested 4, matching the pipeline default. With --cleanenv, the omitted --env THREADS prevents the host's allocation from reaching this setting. Fix: restore --env THREADS and pass every job variable the pipeline reads.
 
 ~~~text
 10763557_1|COMPLETED|0:0|16|00:10:21|None
@@ -366,4 +386,4 @@ FATAL:   While checking container encryption: could not open image /scratch/roy.
 ARM64_EXEC_EXIT=255
 ~~~
 
-ARM64_PULL_EXIT and ARM64_EXEC_EXIT above record the actual outcomes. If the pull failed, the run was skipped and the pull error is the observed result. If it ran successfully, the host supported execution of this arm64 image; no execution error is invented. Fix for an incompatible image: build/pull linux/amd64.
+The arm64 pull succeeded with exit code 0. Execution failed with exit code 255 because the image architecture was arm64 and the host architecture was amd64. Fix: build or pull linux/amd64 for Explorer.

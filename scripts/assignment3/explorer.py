@@ -233,22 +233,21 @@ class Workflow:
         else:
             write_image_doc(ROOT, build_job=self.state["jobs"]["image"]["id"])
         drift = EVIDENCE / "docker-drift"
-        if not (drift / "day1.json").exists() or not (drift / "day2.json").exists():
-            log("Cluster work is complete. Docker breakage 1 is still pending; copy both days' evidence here and rerun to finalize.")
-            return False
-        day1, day2 = [json.loads((drift / name).read_text()) for name in ["day1.json", "day2.json"]]
-        if day2["completed_epoch"] - day1["completed_epoch"] < 86400:
-            raise RuntimeError("Docker builds were not a full day apart.")
-        for name in ["day1-packages.txt", "day2-packages.txt", "packages.diff"]:
-            if not (drift / name).is_file():
-                raise RuntimeError("Missing Docker evidence: " + name)
-        packages = (drift / "packages.diff").read_text()
-        checked_diff = command(["diff", "-u", drift / "day1-packages.txt", drift / "day2-packages.txt"], check=False)
-        # Inventory content must agree. diff's path/time headers change on transfer.
-        def body(text):
-            return "\n".join(line for line in text.splitlines() if not line.startswith(("--- ", "+++ ")))
-        if checked_diff.returncode not in {0, 1} or body(checked_diff.stdout) != body(packages):
-            raise RuntimeError("Saved package diff does not match the actual lists.")
+        day1 = json.loads((drift / "day1.json").read_text()) if (drift / "day1.json").exists() else None
+        day2 = json.loads((drift / "day2.json").read_text()) if (drift / "day2.json").exists() else None
+        interval = day2["completed_epoch"] - day1["completed_epoch"] if day1 and day2 else None
+        drift_complete = interval is not None and interval >= 86400
+        packages = ""
+        if day1 and day2:
+            for name in ["day1-packages.txt", "day2-packages.txt", "packages.diff"]:
+                if not (drift / name).is_file():
+                    raise RuntimeError("Missing Docker evidence: " + name)
+            packages = (drift / "packages.diff").read_text()
+            checked_diff = command(["diff", "-u", drift / "day1-packages.txt", drift / "day2-packages.txt"], check=False)
+            def body(text):
+                return "\n".join(line for line in text.splitlines() if not line.startswith(("--- ", "+++ ")))
+            if checked_diff.returncode not in {0, 1} or body(checked_diff.stdout) != body(packages):
+                raise RuntimeError("Saved package diff does not match the actual lists.")
         no_bind = self.state["jobs"]["no-bind"]
         no_threads = self.state["jobs"]["no-threads"]
         architecture = (EVIDENCE / "architecture.stdout.txt").read_text()
@@ -276,15 +275,29 @@ class Workflow:
             output = (EVIDENCE / (label + ".stdout.txt")).read_text()
             return "~~~text\n" + account + tail(output) + "\n~~~\n"
         report = "\n\n# Assignment 3: deliberate container experiments\n\n"
-        report += "## 1. Unpinned image and packages, two builds a day apart\n\n"
-        report += ("Commands: docker build -t binf6610-drift:day1 with FROM ubuntu and apt-get install -y curl; "
-                   "then docker build --pull --no-cache -t binf6610-drift:day2. "
-                   "Both images were inspected with docker run --rm IMAGE dpkg -l.\n\n")
-        report += "Observed build completion times (Unix seconds): " + str(day1["completed_epoch"]) + ", " + str(day2["completed_epoch"]) + ".\n\n"
-        report += ("Complete inventories: [day 1](evidence/assignment3/docker-drift/day1-packages.txt) and "
-                   "[day 2](evidence/assignment3/docker-drift/day2-packages.txt). Every differing line:\n\n")
-        report += "~~~diff\n" + (packages if packages else "No package-list lines differed in the two observed builds.\n") + "~~~\n\n"
-        report += "Fix: pin the base image and package versions, and preserve the pushed image digest. Unchanged packages during one day do not guarantee later reproducibility.\n\n"
+        if drift_complete:
+            report += "## 1. Unpinned image and packages, two builds a day apart\n\n"
+            report += ("Commands: docker build -t binf6610-drift:day1 with FROM ubuntu and apt-get install -y curl; "
+                       "then docker build --pull --no-cache -t binf6610-drift:day2. "
+                       "Both images were inspected with docker run --rm IMAGE dpkg -l.\n\n")
+            report += "Observed build completion times (Unix seconds): " + str(day1["completed_epoch"]) + ", " + str(day2["completed_epoch"]) + ".\n\n"
+            report += ("Complete inventories: [day 1](evidence/assignment3/docker-drift/day1-packages.txt) and "
+                       "[day 2](evidence/assignment3/docker-drift/day2-packages.txt). Every differing line:\n\n")
+            report += "~~~diff\n" + (packages if packages else "No package-list lines differed in the two observed builds.\n") + "~~~\n\n"
+            report += "Fix: pin the base image and package versions, and preserve the pushed image digest. Unchanged packages during one day do not guarantee later reproducibility.\n\n"
+        else:
+            report += "## 1. Timing requirement incomplete\n\n"
+            report += "The assignment requires its two package-comparison builds a day apart. "
+            if interval is not None:
+                report += f"The actual observed interval was {interval/3600:.2f} hours. This shorter diagnostic run does not satisfy that timing requirement.\n\n"
+                report += f"Observed completion timestamps: {day1['completed_epoch']}, {day2['completed_epoch']}.\n\n"
+                report += "Commands: docker build for the first image, then docker build --pull --no-cache for the second; docker run --rm IMAGE dpkg -l for both inventories.\n\n"
+                report += "Complete inventories and build logs are in evidence/assignment3/docker-drift/. Every differing line:\n\n~~~diff\n"
+                report += packages if packages else "No package-list lines differed.\n"
+                report += "~~~\n\n"
+            else:
+                report += "The second build and comparison are still pending. No day-apart comparison is claimed.\n\n"
+            report += "Completion requires a second build at least a day after the first, with both inventories and their diff retained.\n\n"
         report += "## 2. Remove --bind\n\n"
         report += f"Command: submit slurm/a3-no-bind.sbatch for one sample into {no_bind['run']}. All explicit --bind options were removed from the pipeline call.\n\n"
         report += evidence("no-bind")
@@ -315,6 +328,16 @@ class Workflow:
         result = command(["bash", ROOT / "tests/run_acceptance.sh", ROOT], check=False)
         (EVIDENCE / "acceptance.txt").write_text(result.stdout + result.stderr)
         print(result.stdout, flush=True)
+        if not drift_complete:
+            self.state["complete"] = False
+            self.state["day_apart_requirement_met"] = False
+            self.save()
+            (EVIDENCE / "requirement-status.txt").write_text(
+                "INCOMPLETE: the required day-apart experiment is not satisfied.\n"
+                "Automated acceptance checks do not validate elapsed build time.\n"
+                "The three cluster experiments and their actual evidence are reported.\n")
+            log("Reports saved. Day-apart requirement remains incomplete; inspect acceptance.txt for other issues.")
+            return False
         if result.returncode or "100/100 points" not in result.stdout:
             raise RuntimeError("Assignment 3 checks are not complete; inspect evidence/assignment3/acceptance.txt.")
         self.state["complete"] = True

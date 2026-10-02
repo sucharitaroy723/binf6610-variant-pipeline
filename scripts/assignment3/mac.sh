@@ -35,12 +35,23 @@ PY
         need_docker
         [[ -s "$DRIFT/day1.json" ]] || die "Run drift-start first."
         [[ ! -f "$DRIFT/day2.json" ]] || die "Day 2 is already saved; evidence will not be overwritten."
-        python3 - "$DRIFT/day1.json" <<'PY'
-import json,sys,time
+        MIN_HOURS=24
+        if (( $# > 1 )); then
+            [[ $# == 3 && "$2" == --after-hours ]] || die "usage: drift-finish [--after-hours 3]"
+            MIN_HOURS=$3
+        fi
+        python3 - "$DRIFT/day1.json" "$MIN_HOURS" <<'PY'
+import json,sys,time,math
 from pathlib import Path
 data=json.loads(Path(sys.argv[1]).read_text())
-if time.time()-data["completed_epoch"]<86400:
-    sys.exit("A full day is required between builds. Earliest second build: "+data["earliest_second_build_utc"])
+hours=float(sys.argv[2])
+if not math.isfinite(hours) or not 2 <= hours <= 24:
+    sys.exit("Requested interval must be between 2 and 24 hours.")
+elapsed=time.time()-data["completed_epoch"]
+if elapsed < hours*3600:
+    sys.exit(f"Second build is too early: {elapsed/3600:.2f} hours elapsed; {hours:g} requested.")
+if hours < 24:
+    print("Short-interval diagnostic build: the assignment's day-apart requirement remains incomplete.")
 PY
         docker build --pull --no-cache -t binf6610-drift:day2 "$DRIFT/context" 2>&1 | tee "$DRIFT/day2-build.log"
         docker run --rm binf6610-drift:day2 dpkg -l > "$DRIFT/day2-packages.txt"
@@ -50,12 +61,17 @@ PY
         STATUS=$?
         set -e
         (( STATUS <= 1 )) || die "Package-list comparison failed."
-        python3 - "$DRIFT/day2.json" "$STATUS" <<'PY'
+        python3 - "$DRIFT/day2.json" "$STATUS" "$DRIFT/day1.json" <<'PY'
 import json,sys,time
 from pathlib import Path
-Path(sys.argv[1]).write_text(json.dumps({"completed_epoch":time.time(),"diff_exit_code":int(sys.argv[2])},indent=2)+"\n")
+now=time.time()
+first=json.loads(Path(sys.argv[3]).read_text())["completed_epoch"]
+interval=now-first
+Path(sys.argv[1]).write_text(json.dumps({"completed_epoch":now,"diff_exit_code":int(sys.argv[2]),
+    "interval_seconds":interval,"day_apart_requirement_met":interval>=86400},indent=2)+"\n")
+print(f"Observed interval: {interval/3600:.2f} hours. Day-apart requirement met: {interval>=86400}.")
 PY
-        echo "Second build and package lists saved. An empty diff is a valid observed result."
+        echo "Second build and package lists saved. Review the actual interval before claiming the timing requirement."
         ;;
     build)
         need_docker

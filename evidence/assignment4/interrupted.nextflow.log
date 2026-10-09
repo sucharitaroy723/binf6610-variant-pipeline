@@ -1,92 +1,92 @@
-Oct-09 00:36:49.500 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile docker -ansi-log false --samplesheet /Users/sucharita/Desktop/smoke/samplesheet.csv --ref /Users/sucharita/Desktop/smoke/smoke.fa --region smoke_1mb --outdir results-smoke
-Oct-09 00:36:49.531 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.6
-Oct-09 00:36:49.538 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/sucharita/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.1,nf-tower@1.28.2,nf-wave@1.21.0
-Oct-09 00:36:49.552 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Oct-09 00:36:49.552 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Oct-09 00:36:49.553 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
-Oct-09 00:36:49.561 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
-Oct-09 00:36:49.654 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
-Oct-09 00:36:49.657 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Oct-09 00:36:49.668 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/sucharita/Desktop/binf6610-variant-pipeline/nextflow.config
-Oct-09 00:36:49.669 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/sucharita/Desktop/binf6610-variant-pipeline/nextflow.config
-Oct-09 00:36:49.670 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
-Oct-09 00:36:49.676 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
-Oct-09 00:36:49.843 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [docker, explorer]
-Oct-09 00:36:49.860 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Oct-09 00:36:49.860 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Oct-09 00:36:49.866 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/sucharita/.nextflow/secrets/store.json
-Oct-09 00:36:49.867 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4437ac07] - activable => nextflow.secret.LocalSecretsProvider@4437ac07
-Oct-09 00:36:49.873 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [insane_snyder] - revision: 857aec6508
-Oct-09 00:36:49.903 [main] DEBUG nextflow.Session - Session UUID: 1db6efc3-c659-4b68-b364-8f3a944c730d
-Oct-09 00:36:49.903 [main] DEBUG nextflow.Session - Run name: insane_snyder
-Oct-09 00:36:49.903 [main] DEBUG nextflow.Session - Executor pool size: 10
-Oct-09 00:36:49.907 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Oct-09 00:36:49.910 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Oct-09 00:36:49.932 [main] DEBUG nextflow.cli.CmdRun - 
+Oct-09 14:20:10.156 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile docker -ansi-log false --samplesheet /Users/sucharita/Desktop/smoke/samplesheet.csv --ref /Users/sucharita/Desktop/smoke/smoke.fa --region smoke_1mb --outdir results-interrupt-auto
+Oct-09 14:20:10.191 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.6
+Oct-09 14:20:10.201 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/sucharita/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.1,nf-tower@1.28.2,nf-wave@1.21.0
+Oct-09 14:20:10.216 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-09 14:20:10.216 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-09 14:20:10.217 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Oct-09 14:20:10.225 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Oct-09 14:20:10.327 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Oct-09 14:20:10.330 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-09 14:20:10.344 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/sucharita/Desktop/binf6610-variant-pipeline/nextflow.config
+Oct-09 14:20:10.346 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/sucharita/Desktop/binf6610-variant-pipeline/nextflow.config
+Oct-09 14:20:10.347 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Oct-09 14:20:10.354 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Oct-09 14:20:10.541 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [docker, explorer]
+Oct-09 14:20:10.559 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Oct-09 14:20:10.559 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Oct-09 14:20:10.577 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/sucharita/.nextflow/secrets/store.json
+Oct-09 14:20:10.578 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1de9b505] - activable => nextflow.secret.LocalSecretsProvider@1de9b505
+Oct-09 14:20:10.587 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [gloomy_cuvier] - revision: 857aec6508
+Oct-09 14:20:10.631 [main] DEBUG nextflow.Session - Session UUID: b3310767-c9ef-407e-bc21-0577db10221f
+Oct-09 14:20:10.632 [main] DEBUG nextflow.Session - Run name: gloomy_cuvier
+Oct-09 14:20:10.632 [main] DEBUG nextflow.Session - Executor pool size: 10
+Oct-09 14:20:10.637 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Oct-09 14:20:10.638 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 14:20:10.653 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 26.04.6 build 12646
   Created: 09-07-2026 18:49 UTC (14:49 GMT-04:00)
   System: Mac OS X 15.6
   Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 17.0.20.1+0
   Encoding: UTF-8 (UTF-8)
-  Process: 46540@Sucharitas-MacBook-Air.local [127.0.0.1]
-  CPUs: 10 - Mem: 16 GB (249.2 MB) - Swap: 4 GB (787.5 MB)
-Oct-09 00:36:49.939 [main] DEBUG nextflow.Session - Work-dir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work [Mac OS X]
-Oct-09 00:36:49.961 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Oct-09 00:36:49.964 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
-Oct-09 00:36:49.965 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
-Oct-09 00:36:49.975 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Oct-09 00:36:49.979 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 11; maxThreads: 1000
-Oct-09 00:36:50.000 [main] DEBUG nextflow.Session - Session start
-Oct-09 00:36:50.003 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: results-smoke/pipeline_info/trace.txt
-Oct-09 00:36:50.003 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
-Oct-09 00:36:50.005 [main] DEBUG nextflow.Session - Using default localLib path: /Users/sucharita/Desktop/binf6610-variant-pipeline/lib
-Oct-09 00:36:50.291 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Oct-09 00:36:50.410 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.410 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.413 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Oct-09 00:36:50.415 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=10; memory=16 GB; capacity=10; pollInterval=100ms; dumpInterval=5m
-Oct-09 00:36:50.416 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
-Oct-09 00:36:50.428 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VALIDATE': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.445 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.445 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.446 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.448 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.449 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.449 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.451 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.451 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.451 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.454 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.454 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.454 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MARKDUPLICATES': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.456 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.456 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.456 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HAPLOTYPECALLER': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.461 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.461 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.461 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'JOINT_GENOTYPE': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.464 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.464 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.465 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FILTER': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.469 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.470 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.470 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.473 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Oct-09 00:36:50.473 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Oct-09 00:36:50.473 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PUBLISH': maxForks=0; fair=false; array=0
-Oct-09 00:36:50.478 [main] DEBUG nextflow.Session - Process names: FASTQC, MARKDUPLICATES, JOINT_GENOTYPE, BWA_MEM, FILTER, VALIDATE, MULTIQC, HAPLOTYPECALLER, PUBLISH, FASTP
-Oct-09 00:36:50.479 [main] DEBUG nextflow.Session - Igniting dataflow network (11)
-Oct-09 00:36:50.481 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VALIDATE
-Oct-09 00:36:50.481 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
-Oct-09 00:36:50.481 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTP
-Oct-09 00:36:50.481 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWA_MEM
-Oct-09 00:36:50.481 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MARKDUPLICATES
-Oct-09 00:36:50.481 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HAPLOTYPECALLER
-Oct-09 00:36:50.482 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > JOINT_GENOTYPE
-Oct-09 00:36:50.482 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FILTER
-Oct-09 00:36:50.482 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
-Oct-09 00:36:50.482 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PUBLISH
-Oct-09 00:36:50.482 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Process: 51251@Sucharitas-MacBook-Air.local [127.0.0.1]
+  CPUs: 10 - Mem: 16 GB (116.8 MB) - Swap: 3 GB (1.4 GB)
+Oct-09 14:20:10.659 [main] DEBUG nextflow.Session - Work-dir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work [Mac OS X]
+Oct-09 14:20:10.680 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Oct-09 14:20:10.684 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Oct-09 14:20:10.685 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Oct-09 14:20:10.696 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Oct-09 14:20:10.702 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 11; maxThreads: 1000
+Oct-09 14:20:10.745 [main] DEBUG nextflow.Session - Session start
+Oct-09 14:20:10.748 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: results-interrupt-auto/pipeline_info/trace.txt
+Oct-09 14:20:10.748 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Oct-09 14:20:10.751 [main] DEBUG nextflow.Session - Using default localLib path: /Users/sucharita/Desktop/binf6610-variant-pipeline/lib
+Oct-09 14:20:11.038 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-09 14:20:11.134 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.134 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.138 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct-09 14:20:11.140 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=10; memory=16 GB; capacity=10; pollInterval=100ms; dumpInterval=5m
+Oct-09 14:20:11.141 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Oct-09 14:20:11.156 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VALIDATE': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.173 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.173 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.173 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.176 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.176 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.176 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.178 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.178 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.178 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.180 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.180 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.180 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MARKDUPLICATES': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.182 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.182 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.182 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HAPLOTYPECALLER': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.187 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.187 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.187 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'JOINT_GENOTYPE': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.190 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.190 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.190 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FILTER': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.194 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.194 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.195 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.197 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-09 14:20:11.198 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-09 14:20:11.198 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PUBLISH': maxForks=0; fair=false; array=0
+Oct-09 14:20:11.203 [main] DEBUG nextflow.Session - Process names: FASTQC, MARKDUPLICATES, JOINT_GENOTYPE, BWA_MEM, FILTER, MULTIQC, VALIDATE, PUBLISH, HAPLOTYPECALLER, FASTP
+Oct-09 14:20:11.203 [main] DEBUG nextflow.Session - Igniting dataflow network (11)
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VALIDATE
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTP
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWA_MEM
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MARKDUPLICATES
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HAPLOTYPECALLER
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > JOINT_GENOTYPE
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FILTER
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+Oct-09 14:20:11.205 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PUBLISH
+Oct-09 14:20:11.206 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
   _nf_script_9cbf9effdab56831: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/fastp.nf
   _nf_script_70b30209dcf14f7a: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/publish.nf
   _nf_script_552d558b2f1e29dc: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/joint_genotype.nf
@@ -94,82 +94,101 @@ Oct-09 00:36:50.482 [main] DEBUG nextflow.script.ScriptRunner - Parsed script fi
   _nf_script_afc45557ddd477df: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/haplotypecaller.nf
   _nf_script_40c872aebb98fe98: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/fastqc.nf
   _nf_script_40020c6f637f9112: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/filter.nf
-  Main: /Users/sucharita/Desktop/binf6610-variant-pipeline/main.nf
   _nf_script_3c1433e3301d23b5: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/multiqc.nf
+  Main: /Users/sucharita/Desktop/binf6610-variant-pipeline/main.nf
   _nf_script_b10b8d1ee4baa2d5: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/bwa_mem.nf
   _nf_script_d07092d8b9da5b08: /Users/sucharita/Desktop/binf6610-variant-pipeline/modules/validate.nf
-Oct-09 00:36:50.482 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Oct-09 00:36:50.482 [main] DEBUG nextflow.Session - Session await
-Oct-09 00:36:50.540 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:50.541 [Task submitter] INFO  nextflow.Session - [53/23a556] Submitted process > VALIDATE
-Oct-09 00:36:53.964 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: VALIDATE; status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/53/23a556cd2ca830714241a6131a4e64]
-Oct-09 00:36:53.964 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Oct-09 00:36:53.996 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:53.997 [Task submitter] INFO  nextflow.Session - [7f/2745e7] Submitted process > FASTQC (smoke_02)
-Oct-09 00:36:54.002 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:54.002 [Task submitter] INFO  nextflow.Session - [01/2926a2] Submitted process > FASTQC (smoke_01)
-Oct-09 00:36:54.006 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:54.006 [Task submitter] INFO  nextflow.Session - [05/e0a347] Submitted process > FASTQC (smoke_03)
-Oct-09 00:36:54.012 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:54.013 [Task submitter] INFO  nextflow.Session - [05/28435f] Submitted process > FASTP (smoke_02)
-Oct-09 00:36:54.020 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:54.021 [Task submitter] INFO  nextflow.Session - [b1/4d1a7b] Submitted process > FASTP (smoke_01)
-Oct-09 00:36:54.025 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:54.026 [Task submitter] INFO  nextflow.Session - [d7/da418e] Submitted process > FASTP (smoke_03)
-Oct-09 00:36:57.674 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: FASTP (smoke_01); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/b1/4d1a7b524049e2630d38eefed94fb1]
-Oct-09 00:36:57.685 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: FASTP (smoke_02); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/05/28435f8feb5e8e1da02f6af7bacac5]
-Oct-09 00:36:57.698 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:57.698 [Task submitter] INFO  nextflow.Session - [77/54030e] Submitted process > BWA_MEM (smoke_01)
-Oct-09 00:36:57.704 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:36:57.705 [Task submitter] INFO  nextflow.Session - [af/751d10] Submitted process > BWA_MEM (smoke_02)
-Oct-09 00:37:02.570 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: FASTP (smoke_03); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/d7/da418edd9986f62f2255b53f226a78]
-Oct-09 00:37:02.583 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:02.584 [Task submitter] INFO  nextflow.Session - [e3/6dd9ca] Submitted process > BWA_MEM (smoke_03)
-Oct-09 00:37:03.520 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: FASTQC (smoke_03); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/05/e0a3478dba18c5e59610deec67cb84]
-Oct-09 00:37:07.993 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: BWA_MEM (smoke_03); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/e3/6dd9ca505d08eac50c6757964c9a77]
-Oct-09 00:37:08.007 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:08.007 [Task submitter] INFO  nextflow.Session - [cf/c473dd] Submitted process > MARKDUPLICATES (smoke_03)
-Oct-09 00:37:10.513 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: FASTQC (smoke_02); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/7f/2745e7acfd1994b16b96a91d9fb7dd]
-Oct-09 00:37:10.533 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FASTQC (smoke_01); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/01/2926a2a619c2718e8940aa9eb62e44]
-Oct-09 00:37:11.446 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: BWA_MEM (smoke_01); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/77/54030e1da58a6b060370c397679d04]
-Oct-09 00:37:11.455 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:11.455 [Task submitter] INFO  nextflow.Session - [69/23d886] Submitted process > MARKDUPLICATES (smoke_01)
-Oct-09 00:37:11.670 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: BWA_MEM (smoke_02); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/af/751d109166de4ae338c34004d220b1]
-Oct-09 00:37:11.683 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:11.683 [Task submitter] INFO  nextflow.Session - [0d/56c52f] Submitted process > MARKDUPLICATES (smoke_02)
-Oct-09 00:37:14.283 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: MARKDUPLICATES (smoke_03); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/cf/c473dde5f973489f17884e89fa6e31]
-Oct-09 00:37:14.293 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:14.293 [Task submitter] INFO  nextflow.Session - [1f/b29536] Submitted process > HAPLOTYPECALLER (smoke_03)
-Oct-09 00:37:19.560 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: MARKDUPLICATES (smoke_01); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/69/23d88607225e55ab19c1eeb0c4f259]
-Oct-09 00:37:19.567 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:19.567 [Task submitter] INFO  nextflow.Session - [06/f8af64] Submitted process > HAPLOTYPECALLER (smoke_01)
-Oct-09 00:37:19.842 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: MARKDUPLICATES (smoke_02); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/0d/56c52fd064b570f7a6034b8526f6b5]
-Oct-09 00:37:19.853 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:19.854 [Task submitter] INFO  nextflow.Session - [91/54d911] Submitted process > MULTIQC
-Oct-09 00:37:19.861 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:19.861 [Task submitter] INFO  nextflow.Session - [a4/8d6d45] Submitted process > HAPLOTYPECALLER (smoke_02)
-Oct-09 00:37:28.604 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: MULTIQC; status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/91/54d9114e0694b3917b406a92c280d4]
-Oct-09 00:37:28.616 [Actor Thread 2] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Oct-09 00:37:43.127 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: HAPLOTYPECALLER (smoke_03); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/1f/b29536bd449d1fd97b1aa4998b9519]
-Oct-09 00:37:55.125 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: HAPLOTYPECALLER (smoke_02); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/a4/8d6d456112cae7c7f92411e6faeea2]
-Oct-09 00:37:55.799 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: HAPLOTYPECALLER (smoke_01); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/06/f8af6468d2ca5557e38923c15b4d2e]
-Oct-09 00:37:55.809 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:37:55.809 [Task submitter] INFO  nextflow.Session - [9e/4f49c9] Submitted process > JOINT_GENOTYPE
-Oct-09 00:38:13.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: JOINT_GENOTYPE; status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/9e/4f49c9f58d82a84f5530043f2067fc]
-Oct-09 00:38:13.308 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:38:13.308 [Task submitter] INFO  nextflow.Session - [93/20deed] Submitted process > FILTER
-Oct-09 00:38:17.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: FILTER; status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/93/20deed9dd9b9cf177ca9cddadb97cd]
-Oct-09 00:38:17.105 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Oct-09 00:38:17.105 [Task submitter] INFO  nextflow.Session - [f5/3db61e] Submitted process > PUBLISH
-Oct-09 00:38:18.097 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: PUBLISH; status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/f5/3db61e15ea1d39258229840bc7b595]
-Oct-09 00:38:18.098 [main] DEBUG nextflow.Session - Session await > all processes finished
-Oct-09 00:38:18.203 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
-Oct-09 00:38:18.203 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Oct-09 00:38:18.208 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
-Oct-09 00:38:18.208 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
-Oct-09 00:38:18.249 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=20; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=3m 51s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=6; peakCpus=6; peakMemory=12 GB; ]
-Oct-09 00:38:18.249 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
-Oct-09 00:38:18.607 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
-Oct-09 00:38:18.612 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Oct-09 00:38:18.620 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
-Oct-09 00:38:18.620 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Oct-09 14:20:11.206 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Oct-09 14:20:11.206 [main] DEBUG nextflow.Session - Session await
+Oct-09 14:20:11.270 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:11.271 [Task submitter] INFO  nextflow.Session - [16/d8b048] Submitted process > VALIDATE
+Oct-09 14:20:14.955 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: VALIDATE; status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/16/d8b04819640a3f6a3aad63a1b6518e]
+Oct-09 14:20:14.955 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 14:20:14.979 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:14.979 [Task submitter] INFO  nextflow.Session - [c8/ecd0d8] Submitted process > FASTQC (smoke_01)
+Oct-09 14:20:14.985 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:14.985 [Task submitter] INFO  nextflow.Session - [03/aebccb] Submitted process > FASTQC (smoke_02)
+Oct-09 14:20:14.989 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:14.989 [Task submitter] INFO  nextflow.Session - [7d/e285a1] Submitted process > FASTQC (smoke_03)
+Oct-09 14:20:14.993 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:14.993 [Task submitter] INFO  nextflow.Session - [df/c7bbed] Submitted process > FASTP (smoke_01)
+Oct-09 14:20:14.997 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:14.998 [Task submitter] INFO  nextflow.Session - [ee/a57377] Submitted process > FASTP (smoke_02)
+Oct-09 14:20:15.004 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:15.005 [Task submitter] INFO  nextflow.Session - [9c/fea50c] Submitted process > FASTP (smoke_03)
+Oct-09 14:20:18.666 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FASTP (smoke_01); status: COMPLETED; exit: 0; error: -; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/df/c7bbed3c12b77421af62e2c5689d65]
+Oct-09 14:20:18.693 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-09 14:20:18.693 [Task submitter] INFO  nextflow.Session - [50/a527d2] Submitted process > BWA_MEM (smoke_01)
+Oct-09 14:20:18.696 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: BWA_MEM (smoke_01); status: COMPLETED; exit: -; error: java.io.IOException: Cannot run program "/bin/bash" (in directory "/Users/sucharita/Desktop/binf6610-variant-pipeline/work/50/a527d23e411c5aebb0edabdb1bea3b"): error=0, Failed to exec spawn helper: pid: 51453, signal: 2; workDir: /Users/sucharita/Desktop/binf6610-variant-pipeline/work/50/a527d23e411c5aebb0edabdb1bea3b]
+Oct-09 14:20:18.698 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Oct-09 14:20:18.702 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=BWA_MEM (smoke_01); work-dir=/Users/sucharita/Desktop/binf6610-variant-pipeline/work/50/a527d23e411c5aebb0edabdb1bea3b
+  error [nextflow.exception.ProcessFailedException]: Process `BWA_MEM (smoke_01)` failed
+Oct-09 14:20:18.715 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) bound ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 14:20:18.723 [SIGINT handler] WARN  n.processor.TaskPollingMonitor - Killing running tasks (5)
+Oct-09 14:20:18.796 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Oct-09 14:20:18.825 [SIGINT handler] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=2; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=5; succeedDuration=4.3s; failedDuration=1ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=6; peakCpus=6; peakMemory=12 GB; ]
+Oct-09 14:20:18.825 [SIGINT handler] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 14:20:19.448 [SIGINT handler] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 14:20:19.452 [main] DEBUG nextflow.Session - Session await > all processes finished
+Oct-09 14:20:19.453 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-09 14:20:19.455 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=2; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=5; succeedDuration=4.3s; failedDuration=1ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=6; peakCpus=6; peakMemory=12 GB; ]
+Oct-09 14:20:19.455 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 14:20:19.516 [Actor Thread 7] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=MULTIQC; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Oct-09 14:20:19.805 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 14:20:19.819 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Oct-09 14:20:19.836 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

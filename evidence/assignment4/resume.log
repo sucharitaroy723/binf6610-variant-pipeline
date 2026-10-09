@@ -1,0 +1,39 @@
+[33mNextflow 26.04.7 is available - Please consider updating your version to it(B[m
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [focused_easley] - revision: 857aec6508
+[16/d8b048] Cached process > VALIDATE
+[0d/d3493d] Cached process > FASTQC (smoke_03)
+[1b/640503] Cached process > FASTQC (smoke_02)
+[e0/0b5ca4] Cached process > FASTQC (smoke_01)
+[e4/3b3c73] Cached process > FASTP (smoke_03)
+[df/c7bbed] Cached process > FASTP (smoke_01)
+[16/39af54] Cached process > FASTP (smoke_02)
+[00/e81090] Cached process > BWA_MEM (smoke_02)
+[03/845062] Cached process > BWA_MEM (smoke_01)
+[3c/97240e] Cached process > BWA_MEM (smoke_03)
+[72/f52c27] Cached process > MARKDUPLICATES (smoke_01)
+[c5/a43533] Cached process > MARKDUPLICATES (smoke_03)
+[66/e961a3] Cached process > MARKDUPLICATES (smoke_02)
+[36/eb051a] Cached process > MULTIQC
+[43/f34739] Cached process > HAPLOTYPECALLER (smoke_02)
+[a6/3a561c] Cached process > HAPLOTYPECALLER (smoke_01)
+[25/c8f44b] Cached process > HAPLOTYPECALLER (smoke_03)
+[d4/a62cb9] Cached process > JOINT_GENOTYPE
+[40/381248] Cached process > FILTER
+[cb/f438f1] Submitted process > PUBLISH
+
+Outputs:
+
+  /Users/sucharita/Desktop/binf6610-variant-pipeline/results-interrupt-auto
+
+  vcf: cohort.filtered.vcf.gz
+
+  index: cohort.filtered.vcf.gz.tbi
+
+  variants: variants.tsv
+
+  multiqc: multiqc_report.html
+
+  manifest: manifest.json
+
+  samples: samples.tsv

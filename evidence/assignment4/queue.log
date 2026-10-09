@@ -1,0 +1,99 @@
+[33mNextflow 26.04.7 is available - Please consider updating your version to it(B[m
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [happy_faggin] - revision: 31db9dd955
+[b0/f70bf6] Submitted process > VALIDATE
+[c6/524a41] Submitted process > FASTQC (smoke_01)
+[ad/3b3a02] Submitted process > FASTQC (smoke_02)
+[d7/12e9d1] Submitted process > FASTP (smoke_03)
+[24/9dc127] Submitted process > FASTQC (smoke_03)
+[85/50f111] Submitted process > FASTP (smoke_02)
+[86/3e160d] Submitted process > FASTP (smoke_01)
+[1c/a9f0f7] Submitted process > BWA_MEM (smoke_01)
+[d5/18ed2b] Submitted process > MARKDUPLICATES (smoke_01)
+[16/d7468f] Submitted process > HAPLOTYPECALLER (smoke_01)
+[a6/fdeb78] Submitted process > MULTIQC
+[14/22621c] Submitted process > JOINT_GENOTYPE
+ERROR ~ Error executing process > 'JOINT_GENOTYPE'
+
+Caused by:
+  Process `JOINT_GENOTYPE` terminated with an error exit status (65)
+
+
+Command executed:
+
+  mkdir -p tmp
+  gatk --java-options '-Xmx1433m -Djava.io.tmpdir=tmp' CombineGVCFs \
+      -R smoke.fa -V smoke_01.g.vcf.gz -O cohort.g.vcf.gz -L 'smoke_1mb'
+  gatk --java-options '-Xmx1433m -Djava.io.tmpdir=tmp' GenotypeGVCFs \
+      -R smoke.fa -V cohort.g.vcf.gz -O cohort.raw.vcf.gz -L 'smoke_1mb'
+  gzip -t cohort.raw.vcf.gz
+  test -s cohort.raw.vcf.gz.tbi
+  check_cohort_samples.sh samplesheet.csv cohort.raw.vcf.gz
+
+Command exit status:
+  65
+
+Command output:
+  (empty)
+
+Command error:
+  18:33:25.422 INFO  CombineGVCFs - GCS max retries/reopens: 20
+  18:33:25.422 INFO  CombineGVCFs - Requester pays: disabled
+  18:33:25.423 INFO  CombineGVCFs - Initializing engine
+  18:33:25.514 INFO  FeatureManager - Using codec VCFCodec to read file file://smoke_01.g.vcf.gz
+  18:33:25.556 INFO  IntervalArgumentCollection - Processing 1000001 bp from intervals
+  18:33:25.560 INFO  CombineGVCFs - Done initializing engine
+  18:33:25.607 INFO  ProgressMeter - Starting traversal
+  18:33:25.609 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+  18:33:25.673 WARN  ReferenceConfidenceVariantContextMerger - Detected invalid annotations: When trying to merge variant contexts at location smoke_1mb:170 the annotation MLEAC=[1, 0] was not a numerical value and was ignored
+  18:33:28.425 INFO  ProgressMeter -     smoke_1mb:997663              0.0                200445        4292184.2
+  18:33:28.426 INFO  ProgressMeter - Traversal complete. Processed 200445 total variants in 0.0 minutes.
+  18:33:28.448 INFO  CombineGVCFs - Shutting down engine
+  [October 9, 2026 at 6:33:28 PM GMT] org.broadinstitute.hellbender.tools.walkers.CombineGVCFs done. Elapsed time: 0.05 minutes.
+  Runtime.totalMemory()=294649856
+  Using GATK jar /opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar
+  Running:
+      java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx1433m -Djava.io.tmpdir=tmp -jar /opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar GenotypeGVCFs -R smoke.fa -V cohort.g.vcf.gz -O cohort.raw.vcf.gz -L smoke_1mb
+  18:33:30.437 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+  18:33:30.595 INFO  GenotypeGVCFs - ------------------------------------------------------------
+  18:33:30.597 INFO  GenotypeGVCFs - The Genome Analysis Toolkit (GATK) v4.6.2.0
+  18:33:30.598 INFO  GenotypeGVCFs - For support and documentation go to https://software.broadinstitute.org/gatk/
+  18:33:30.598 INFO  GenotypeGVCFs - Executing as root@f555013c979f on Linux v7.0.14-linuxkit amd64
+  18:33:30.598 INFO  GenotypeGVCFs - Java runtime: OpenJDK 64-Bit Server VM v17.0.18-internal+0-adhoc.rattler.src
+  18:33:30.598 INFO  GenotypeGVCFs - Start Date/Time: October 9, 2026 at 6:33:30 PM GMT
+  18:33:30.598 INFO  GenotypeGVCFs - ------------------------------------------------------------
+  18:33:30.598 INFO  GenotypeGVCFs - ------------------------------------------------------------
+  18:33:30.601 INFO  GenotypeGVCFs - HTSJDK Version: 4.2.0
+  18:33:30.601 INFO  GenotypeGVCFs - Picard Version: 3.4.0
+  18:33:30.601 INFO  GenotypeGVCFs - Built for Spark Version: 3.5.0
+  18:33:30.605 INFO  GenotypeGVCFs - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+  18:33:30.606 INFO  GenotypeGVCFs - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+  18:33:30.606 INFO  GenotypeGVCFs - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+  18:33:30.606 INFO  GenotypeGVCFs - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+  18:33:30.606 INFO  GenotypeGVCFs - Deflater: IntelDeflater
+  18:33:30.606 INFO  GenotypeGVCFs - Inflater: IntelInflater
+  18:33:30.606 INFO  GenotypeGVCFs - GCS max retries/reopens: 20
+  18:33:30.606 INFO  GenotypeGVCFs - Requester pays: disabled
+  18:33:30.610 INFO  GenotypeGVCFs - Initializing engine
+  18:33:30.710 INFO  FeatureManager - Using codec VCFCodec to read file file://cohort.g.vcf.gz
+  18:33:30.752 INFO  IntervalArgumentCollection - Processing 1000001 bp from intervals
+  18:33:30.754 INFO  GenotypeGVCFs - Done initializing engine
+  18:33:30.803 INFO  ProgressMeter - Starting traversal
+  18:33:30.805 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+  18:33:30.907 WARN  InbreedingCoeff - InbreedingCoeff will not be calculated at position smoke_1mb:170 and possibly subsequent; at least 10 samples must have called genotypes
+  18:33:33.954 INFO  ProgressMeter -     smoke_1mb:997027              0.1                200575        3827767.2
+  18:33:33.957 INFO  ProgressMeter - Traversal complete. Processed 200575 total variants in 0.1 minutes.
+  18:33:33.967 INFO  GenotypeGVCFs - Shutting down engine
+  [October 9, 2026 at 6:33:33 PM GMT] org.broadinstitute.hellbender.tools.walkers.GenotypeGVCFs done. Elapsed time: 0.06 minutes.
+  Runtime.totalMemory()=288358400
+  cohort sample names do not match the validated samplesheet
+
+Work dir:
+  /Users/sucharita/Desktop/binf6610-variant-pipeline/work/14/22621cb412a10716bb0fa42994a4de
+
+Container:
+  community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+
+ -- Check '.nextflow.log' file for details

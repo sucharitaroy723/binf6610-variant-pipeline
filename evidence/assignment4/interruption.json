@@ -1,0 +1,25 @@
+{
+  "command": [
+    "nextflow",
+    "run",
+    "main.nf",
+    "-profile",
+    "docker",
+    "-ansi-log",
+    "false",
+    "--samplesheet",
+    "/Users/sucharita/Desktop/smoke/samplesheet.csv",
+    "--ref",
+    "/Users/sucharita/Desktop/smoke/smoke.fa",
+    "--region",
+    "smoke_1mb",
+    "--outdir",
+    "results-interrupt-auto"
+  ],
+  "run_name": "gloomy_cuvier",
+  "interrupted": true,
+  "signal": "SIGINT",
+  "trigger": "first Submitted process > BWA_MEM line",
+  "process_return_code": 1,
+  "shell_exit_status": 1
+}

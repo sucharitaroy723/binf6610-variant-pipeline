@@ -1,0 +1,48 @@
+[33mNextflow 26.04.7 is available - Please consider updating your version to it(B[m
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [special_perlman] - revision: 857aec6508
+[26/032436] Submitted process > VALIDATE
+[31/faaaec] Submitted process > FASTQC (smoke_03)
+[86/7e3c1b] Submitted process > FASTQC (smoke_01)
+[bd/b94234] Submitted process > FASTQC (smoke_02)
+[8e/0ecdb6] Submitted process > FASTP (smoke_02)
+[69/c5de7c] Submitted process > FASTP (smoke_01)
+[8b/f590ac] Submitted process > FASTP (smoke_03)
+[f5/9c8287] Submitted process > BWA_MEM (smoke_01)
+[51/cbe973] Submitted process > BWA_MEM (smoke_02)
+[a3/7c732d] Submitted process > BWA_MEM (smoke_03)
+ERROR ~ Error executing process > 'BWA_MEM (smoke_03)'
+
+Caused by:
+  Process `BWA_MEM (smoke_03)` terminated with an error exit status (2)
+
+
+Command executed:
+
+  bwa mem -t 1 -R '@RG\tID:smoke_03\tSM:smoke_03\tPL:ILLUMINA' \
+      smoke.fa smoke_03_R1.trim.fastq.gz 2> smoke_03.bwa.log \
+      | samtools view -b -o smoke_03.unsorted.bam -
+  samtools quickcheck smoke_03.unsorted.bam
+  n_records=smoke_03samtools view -c smoke_03.unsorted.bam)
+  test $n_records -gt 0
+  echo ": $n_records alignment records"
+
+Command exit status:
+  2
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 6: syntax error near unexpected token `)'
+
+Work dir:
+  /Users/sucharita/Desktop/binf6610-variant-pipeline/work/a3/7c732dfc02ad1e367c5787fb36e1fa
+
+Container:
+  community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+WARN: Killing running tasks (4)

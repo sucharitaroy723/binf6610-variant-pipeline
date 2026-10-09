@@ -27,3 +27,10 @@ assignment3-workflow.log
 evidence/assignment3/workflow.json
 
 assignment3-monitor-*.log
+work/
+.nextflow/
+.nextflow.log*
+nf-head-*.out
+results-*/
+main-a4-*.nf
+.a4-exercise-backup/

@@ -19,6 +19,9 @@ export SLURM_EXPORT_ENV=ALL
 # /tmp exists on both the head node and every submitted task node.
 export TMPDIR=/tmp
 export APPTAINER_TMPDIR=/tmp
+# Bypass the mutable OCI cache after a missing-descriptor failure.
+# Nextflow still reuses completed SIF files in NXF_APPTAINER_CACHEDIR.
+export APPTAINER_DISABLE_CACHE=true
 export NXF_WORK="/scratch/${USER}/binf6610-assignment4-work"
 mkdir -p "$NXF_APPTAINER_CACHEDIR" "$APPTAINER_CACHEDIR" "$NXF_WORK"
 echo "Container build temporary directory: $APPTAINER_TMPDIR"

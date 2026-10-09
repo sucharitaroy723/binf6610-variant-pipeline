@@ -15,7 +15,15 @@ export NXF_APPTAINER_CACHEDIR=/scratch/${USER}/nxf-apptainer
 export APPTAINER_CACHEDIR=/scratch/${USER}/apptainer-cache
 # The head job submits additional jobs; export its activated environment to them.
 export SLURM_EXPORT_ENV=ALL
-mkdir -p "$NXF_APPTAINER_CACHEDIR" "$APPTAINER_CACHEDIR"
+# Build OCI images on node-local storage rather than an inherited home TMPDIR.
+# /tmp exists on both the head node and every submitted task node.
+export TMPDIR=/tmp
+export APPTAINER_TMPDIR=/tmp
+export NXF_WORK="/scratch/${USER}/binf6610-assignment4-work"
+mkdir -p "$NXF_APPTAINER_CACHEDIR" "$APPTAINER_CACHEDIR" "$NXF_WORK"
+echo "Container build temporary directory: $APPTAINER_TMPDIR"
+echo "Nextflow work directory: $NXF_WORK"
+df -h "$APPTAINER_TMPDIR" "$NXF_WORK"
 cd "${SLURM_SUBMIT_DIR}"
 # Optional first-run configuration: sbatch slurm/nextflow.sbatch docs/assignment4/failure4.config
 config_args=()

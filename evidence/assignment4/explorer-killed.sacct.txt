@@ -1,0 +1,4 @@
+JobID|JobName|State|ExitCode|Elapsed|ReqMem|MaxRSS|AllocCPUS
+10945567|nf-head|FAILED|0:9|00:06:34|16G||2
+10945567.batch|batch|CANCELLED|0:9|00:06:34||5433268K|2
+10945567.extern|extern|COMPLETED|0:0|00:06:34||156K|2

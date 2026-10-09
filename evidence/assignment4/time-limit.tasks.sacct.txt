@@ -1,0 +1,26 @@
+JobID           JobName      State ExitCode    Elapsed  Timelimit 
+------------ ---------- ---------- -------- ---------- ---------- 
+10946362     nf-HAPLOT+     FAILED     12:0   00:01:16   00:02:00 
+10946362.ba+      batch     FAILED     12:0   00:01:16            
+10946362.ex+     extern  COMPLETED      0:0   00:01:16            
+10946363     nf-HAPLOT+     FAILED     12:0   00:01:10   00:02:00 
+10946363.ba+      batch     FAILED     12:0   00:01:10            
+10946363.ex+     extern  COMPLETED      0:0   00:01:10            
+10946364     nf-HAPLOT+     FAILED     12:0   00:01:02   00:02:00 
+10946364.ba+      batch     FAILED     12:0   00:01:02            
+10946364.ex+     extern  COMPLETED      0:0   00:01:02            
+10946377     nf-HAPLOT+     FAILED     12:0   00:01:29   00:02:00 
+10946377.ba+      batch     FAILED     12:0   00:01:29            
+10946377.ex+     extern  COMPLETED      0:0   00:01:29            
+10946378     nf-HAPLOT+     FAILED     12:0   00:01:26   00:02:00 
+10946378.ba+      batch     FAILED     12:0   00:01:26            
+10946378.ex+     extern  COMPLETED      0:0   00:01:26            
+10946381     nf-HAPLOT+     FAILED     12:0   00:01:10   00:02:00 
+10946381.ba+      batch     FAILED     12:0   00:01:10            
+10946381.ex+     extern  COMPLETED      0:0   00:01:10            
+10946384     nf-HAPLOT+     FAILED     12:0   00:01:10   00:02:00 
+10946384.ba+      batch     FAILED     12:0   00:01:10            
+10946384.ex+     extern  COMPLETED      0:0   00:01:10            
+10946455     nf-HAPLOT+ CANCELLED+      0:0   00:01:03   00:02:00 
+10946455.ba+      batch     FAILED     15:0   00:01:04            
+10946455.ex+     extern  COMPLETED      0:0   00:01:03            

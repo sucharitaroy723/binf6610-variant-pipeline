@@ -1,0 +1,9 @@
+JobID           JobName      State ExitCode    Elapsed  Timelimit 
+------------ ---------- ---------- -------- ---------- ---------- 
+10944962        nf-head     FAILED      1:0   00:30:14   04:00:00 
+10944962.ba+      batch     FAILED      1:0   00:30:14            
+10944962.ex+     extern  COMPLETED      0:0   00:30:14            
+10944962.0           ps  CANCELLED      0:9   00:00:01            
+10944962.1           ps  COMPLETED      0:0   00:00:01            
+10944962.2         curl  COMPLETED      0:0   00:00:06            
+10944962.3         curl  COMPLETED      0:0   00:00:01            

@@ -1,0 +1,128 @@
+Container build temporary directory: /tmp
+Nextflow work directory: /scratch/roy.suc/binf6610-assignment4-work
+Filesystem                                   Size  Used Avail Use% Mounted on
+/dev/sda12                                   821G  5.8G  815G   1% /tmp
+vast1-mghpcc-eth.neu.edu:/discovery/scratch  1.5P  1.2P  404T  74% /scratch
+Nextflow 26.04.7 is available - Please consider updating your version to it
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [nauseous_easley] - revision: 857aec6508
+[85/261fd0] Cached process > VALIDATE
+[cf/447763] Cached process > FASTQC (NA12878)
+[87/27a0ba] Cached process > FASTQC (NA12891)
+[09/5a9e09] Cached process > FASTP (NA12891)
+[c9/ec6445] Cached process > FASTP (NA12878)
+[61/ea0611] Cached process > FASTQC (NA07357)
+[8f/dcacc1] Cached process > BWA_MEM (NA12878)
+[5b/5a0448] Cached process > FASTP (NA12892)
+[df/0b4579] Cached process > FASTP (NA07357)
+[f4/4738d3] Cached process > BWA_MEM (NA12891)
+[44/7f028b] Cached process > FASTQC (NA12892)
+[25/3e9563] Cached process > FASTQC (NA12003)
+[be/b66944] Cached process > FASTP (NA10851)
+[66/ddf70b] Cached process > FASTQC (NA10851)
+[f7/f99a40] Cached process > FASTQC (NA12813)
+[1c/2080fc] Cached process > FASTQC (NA12873)
+[9d/4e4ac1] Cached process > FASTP (NA12813)
+[76/05e0ca] Cached process > FASTP (NA12003)
+[0c/91d8e4] Cached process > BWA_MEM (NA12892)
+[be/a92fcf] Cached process > BWA_MEM (NA07357)
+[dd/f798bb] Cached process > FASTP (NA12873)
+[83/51b077] Cached process > BWA_MEM (NA10851)
+[ea/101555] Cached process > BWA_MEM (NA12813)
+[ec/96bde4] Cached process > BWA_MEM (NA12003)
+[1a/4abb69] Cached process > BWA_MEM (NA12873)
+[58/2b7964] Submitted process > MARKDUPLICATES (NA12878)
+[13/e40d84] Submitted process > MARKDUPLICATES (NA12891)
+[83/567260] Submitted process > MARKDUPLICATES (NA07357)
+[c7/09c7c1] Submitted process > MARKDUPLICATES (NA12892)
+[97/be3dbd] Submitted process > MARKDUPLICATES (NA12813)
+[8d/41702e] Submitted process > MARKDUPLICATES (NA10851)
+[1d/bfdb60] Submitted process > MARKDUPLICATES (NA12003)
+[c2/eaf53f] Submitted process > MARKDUPLICATES (NA12873)
+[ab/6dcd68] Submitted process > HAPLOTYPECALLER (NA12892)
+[0a/a9ca24] Submitted process > HAPLOTYPECALLER (NA12003)
+[91/832da8] Submitted process > HAPLOTYPECALLER (NA07357)
+[0e/e736ac] Submitted process > HAPLOTYPECALLER (NA12878)
+[06/c6c519] Submitted process > HAPLOTYPECALLER (NA12891)
+[72/344a96] Submitted process > HAPLOTYPECALLER (NA10851)
+[48/b01afb] Submitted process > HAPLOTYPECALLER (NA12873)
+Pulling Apptainer image docker://quay.io/biocontainers/multiqc:1.35--pyhdfd78af_2 [cache /scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-multiqc-1.35--pyhdfd78af_2.img]
+[95/015819] Submitted process > HAPLOTYPECALLER (NA12813)
+ERROR ~ Error executing process > 'HAPLOTYPECALLER (NA07357)'
+
+Caused by:
+  Process `HAPLOTYPECALLER (NA07357)` terminated with an error exit status (140)
+
+
+Command executed:
+
+  mkdir -p tmp
+  gatk --java-options '-Xmx11468m -Djava.io.tmpdir=tmp' HaplotypeCaller \
+      -R GRCh38_full_analysis_set_plus_decoy_hla.fa -I NA07357.dedup.bam -O NA07357.g.vcf.gz -ERC GVCF -L 'chr20:1-10000000' \
+      --native-pair-hmm-threads 8
+  gzip -t NA07357.g.vcf.gz
+  bcftools view -h NA07357.g.vcf.gz > /dev/null
+  test -s NA07357.g.vcf.gz.tbi
+
+Command exit status:
+  140
+
+Command output:
+  (empty)
+
+Command error:
+  Using GATK jar /opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar
+  Running:
+      java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx11468m -Djava.io.tmpdir=tmp -jar /opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar HaplotypeCaller -R GRCh38_full_analysis_set_plus_decoy_hla.fa -I NA07357.dedup.bam -O NA07357.g.vcf.gz -ERC GVCF -L chr20:1-10000000 --native-pair-hmm-threads 8
+  20:30:37.923 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+  20:30:38.208 INFO  HaplotypeCaller - ------------------------------------------------------------
+  20:30:38.212 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.6.2.0
+  20:30:38.212 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+  20:30:38.212 INFO  HaplotypeCaller - Executing as roy.suc@c0642 on Linux v5.14.0-362.13.1.el9_3.x86_64 amd64
+  20:30:38.213 INFO  HaplotypeCaller - Java runtime: OpenJDK 64-Bit Server VM v17.0.18-internal+0-adhoc.rattler.src
+  20:30:38.213 INFO  HaplotypeCaller - Start Date/Time: October 9, 2026 at 8:30:37 PM GMT
+  20:30:38.213 INFO  HaplotypeCaller - ------------------------------------------------------------
+  20:30:38.213 INFO  HaplotypeCaller - ------------------------------------------------------------
+  20:30:38.214 INFO  HaplotypeCaller - HTSJDK Version: 4.2.0
+  20:30:38.214 INFO  HaplotypeCaller - Picard Version: 3.4.0
+  20:30:38.214 INFO  HaplotypeCaller - Built for Spark Version: 3.5.0
+  20:30:38.216 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+  20:30:38.216 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+  20:30:38.216 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+  20:30:38.217 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+  20:30:38.217 INFO  HaplotypeCaller - Deflater: IntelDeflater
+  20:30:38.217 INFO  HaplotypeCaller - Inflater: IntelInflater
+  20:30:38.217 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+  20:30:38.217 INFO  HaplotypeCaller - Requester pays: disabled
+  20:30:38.218 INFO  HaplotypeCaller - Initializing engine
+  20:30:38.525 INFO  IntervalArgumentCollection - Processing 10000000 bp from intervals
+  20:30:38.534 INFO  HaplotypeCaller - Done initializing engine
+  20:30:38.537 INFO  HaplotypeCallerEngine - Tool is in reference confidence mode and the annotation, the following changes will be made to any specified annotations: 'StrandBiasBySample' will be enabled. 'ChromosomeCounts', 'FisherStrand', 'StrandOddsRatio' and 'QualByDepth' annotations have been disabled
+  20:30:38.623 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_utils.so
+  20:30:38.664 INFO  NativeLibraryLoader - Loading libgkl_smithwaterman.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_smithwaterman.so
+  20:30:38.701 INFO  SmithWatermanAligner - Using AVX accelerated SmithWaterman implementation
+  20:30:38.705 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to -0.0 for reference-model confidence output
+  20:30:38.705 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+  20:30:38.714 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+  20:30:38.746 INFO  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+  20:30:38.746 INFO  IntelPairHmm - Available threads: 8
+  20:30:38.746 INFO  IntelPairHmm - Requested threads: 8
+  20:30:38.746 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+  20:30:38.811 INFO  ProgressMeter - Starting traversal
+  20:30:38.812 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+  20:30:39.506 WARN  InbreedingCoeff - InbreedingCoeff will not be calculated at position chr20:60379 and possibly subsequent; at least 10 samples must have called genotypes
+  20:30:48.857 INFO  ProgressMeter -         chr20:260407              0.2                  1230           7347.7
+  20:30:58.887 INFO  ProgressMeter -         chr20:581310              0.3                  2930           8757.6
+  20:31:08.931 INFO  ProgressMeter -         chr20:915407              0.5                  4700           9362.9
+  20:31:18.935 INFO  ProgressMeter -        chr20:1276878              0.7                  6570           9824.8
+
+Work dir:
+  /scratch/roy.suc/binf6610-assignment4-work/91/832da850165f220d10e6616444a0ed
+
+Container:
+  /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+WARN: Killing running tasks (3)

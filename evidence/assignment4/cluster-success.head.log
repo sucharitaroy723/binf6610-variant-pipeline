@@ -1,0 +1,70 @@
+Container build temporary directory: /tmp
+Nextflow work directory: /scratch/roy.suc/binf6610-assignment4-work
+Filesystem                                   Size  Used Avail Use% Mounted on
+/dev/sda12                                   821G  5.8G  815G   1% /tmp
+vast1-mghpcc-eth.neu.edu:/discovery/scratch  1.5P  1.2P  403T  74% /scratch
+Nextflow 26.04.7 is available - Please consider updating your version to it
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [silly_brown] - revision: 857aec6508
+[85/261fd0] Cached process > VALIDATE
+[87/27a0ba] Cached process > FASTQC (NA12891)
+[c9/ec6445] Cached process > FASTP (NA12878)
+[09/5a9e09] Cached process > FASTP (NA12891)
+[cf/447763] Cached process > FASTQC (NA12878)
+[44/7f028b] Cached process > FASTQC (NA12892)
+[8f/dcacc1] Cached process > BWA_MEM (NA12878)
+[61/ea0611] Cached process > FASTQC (NA07357)
+[df/0b4579] Cached process > FASTP (NA07357)
+[5b/5a0448] Cached process > FASTP (NA12892)
+[25/3e9563] Cached process > FASTQC (NA12003)
+[76/05e0ca] Cached process > FASTP (NA12003)
+[66/ddf70b] Cached process > FASTQC (NA10851)
+[f4/4738d3] Cached process > BWA_MEM (NA12891)
+[be/b66944] Cached process > FASTP (NA10851)
+[be/a92fcf] Cached process > BWA_MEM (NA07357)
+[f7/f99a40] Cached process > FASTQC (NA12813)
+[9d/4e4ac1] Cached process > FASTP (NA12813)
+[0c/91d8e4] Cached process > BWA_MEM (NA12892)
+[ec/96bde4] Cached process > BWA_MEM (NA12003)
+[1c/2080fc] Cached process > FASTQC (NA12873)
+[83/51b077] Cached process > BWA_MEM (NA10851)
+[dd/f798bb] Cached process > FASTP (NA12873)
+[58/2b7964] Cached process > MARKDUPLICATES (NA12878)
+[13/e40d84] Cached process > MARKDUPLICATES (NA12891)
+[ea/101555] Cached process > BWA_MEM (NA12813)
+[83/567260] Cached process > MARKDUPLICATES (NA07357)
+[c7/09c7c1] Cached process > MARKDUPLICATES (NA12892)
+[1a/4abb69] Cached process > BWA_MEM (NA12873)
+[1d/bfdb60] Cached process > MARKDUPLICATES (NA12003)
+[8d/41702e] Cached process > MARKDUPLICATES (NA10851)
+[97/be3dbd] Cached process > MARKDUPLICATES (NA12813)
+[c2/eaf53f] Cached process > MARKDUPLICATES (NA12873)
+Pulling Apptainer image docker://quay.io/biocontainers/multiqc:1.35--pyhdfd78af_2 [cache /scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-multiqc-1.35--pyhdfd78af_2.img]
+[13/077bcc] Submitted process > HAPLOTYPECALLER (NA12891)
+[87/25d1ab] Submitted process > HAPLOTYPECALLER (NA12878)
+[84/f78f6c] Submitted process > HAPLOTYPECALLER (NA12892)
+[32/30a4ef] Submitted process > HAPLOTYPECALLER (NA07357)
+[f6/b8acb2] Submitted process > HAPLOTYPECALLER (NA10851)
+[41/1ba521] Submitted process > HAPLOTYPECALLER (NA12003)
+[4f/3d10d4] Submitted process > HAPLOTYPECALLER (NA12813)
+[34/6d57c2] Submitted process > HAPLOTYPECALLER (NA12873)
+[da/6c89b8] Submitted process > MULTIQC
+[22/55d743] Submitted process > JOINT_GENOTYPE
+[16/2f6a55] Submitted process > FILTER
+[72/13b3c4] Submitted process > PUBLISH
+
+Outputs:
+
+  /home/roy.suc/binf6610-variant-pipeline/results
+
+  vcf: cohort.filtered.vcf.gz
+
+  index: cohort.filtered.vcf.gz.tbi
+
+  variants: variants.tsv
+
+  multiqc: multiqc_report.html
+
+  manifest: manifest.json
+
+  samples: samples.tsv

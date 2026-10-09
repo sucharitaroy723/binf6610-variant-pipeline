@@ -1,0 +1,35 @@
+Container build temporary directory: /tmp
+Nextflow work directory: /scratch/roy.suc/binf6610-assignment4-work
+Filesystem                                   Size  Used Avail Use% Mounted on
+/dev/sda12                                   821G  5.8G  815G   1% /tmp
+vast1-mghpcc-eth.neu.edu:/discovery/scratch  1.5P  1.2P  404T  74% /scratch
+Nextflow 26.04.7 is available - Please consider updating your version to it
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [voluminous_watson] - revision: 857aec6508
+Pulling Apptainer image docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img]
+[85/261fd0] Submitted process > VALIDATE
+Pulling Apptainer image docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 [cache /scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img]
+Pulling Apptainer image docker://community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494 [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img]
+ERROR ~ Error executing process > 'FASTQC (2)'
+
+Caused by:
+  Failed to pull singularity image
+    command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+    status : 255
+    hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+    message:
+      INFO:    Converting OCI blobs to SIF format
+      WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+      INFO:    Starting build...
+      Getting image source signatures
+      Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+      Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+      Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+      Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+      Writing manifest to image destination
+      Storing signatures
+      FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+
+
+ -- Check '.nextflow.log' file for details

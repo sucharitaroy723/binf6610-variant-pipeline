@@ -1,0 +1,48 @@
+Nextflow 26.04.7 is available - Please consider updating your version to it
+N E X T F L O W  ~  version 26.04.6
+WARN: It appears you have never run this project before -- Option `-resume` is ignored
+Launching `main.nf` [condescending_goldwasser] - revision: 857aec6508
+Pulling Apptainer image docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img]
+Exception in thread "Thread-2" groovy.lang.GroovyRuntimeException: exception while reading process stream
+	at org.codehaus.groovy.runtime.ProcessGroovyMethods$TextDumper.run(ProcessGroovyMethods.java:502)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:190)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at org.codehaus.groovy.runtime.ProcessGroovyMethods$TextDumper.run(ProcessGroovyMethods.java:495)
+	... 1 more
+ERROR ~ Error executing process > 'VALIDATE'
+
+Caused by:
+  Failed to pull singularity image
+    command: apptainer pull  --name community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img.pulling.1791573203238 docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc > /dev/null
+    status : 143
+    hint   : Try and increase apptainer.pullTimeout in the config (current is "20m")
+    message:
+      INFO:    Converting OCI blobs to SIF format
+      INFO:    Starting build...
+      Getting image source signatures
+      Copying blob sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+      Copying blob sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+      Copying config sha256:1b226d0886ff14c86a09d5e3903c55b0dc0d6199cfe0b9ee52d272505505e604
+      Writing manifest to image destination
+      Storing signatures
+      2026/10/09 15:13:37  info unpack layer: sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+      2026/10/09 15:13:46  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+      2026/10/09 15:13:46  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-3580002887/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+      2026/10/09 15:21:56  info unpack layer: sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+
+
+
+ -- Check '.nextflow.log' file for details

@@ -1,0 +1,38 @@
+Container build temporary directory: /tmp
+Nextflow work directory: /scratch/roy.suc/binf6610-assignment4-work
+Filesystem                                   Size  Used Avail Use% Mounted on
+/dev/sda12                                   821G  5.8G  815G   1% /tmp
+vast1-mghpcc-eth.neu.edu:/discovery/scratch  1.5P  1.2P  404T  74% /scratch
+Nextflow 26.04.7 is available - Please consider updating your version to it
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [sad_tuckerman] - revision: 857aec6508
+[85/261fd0] Cached process > VALIDATE
+Pulling Apptainer image docker://community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494 [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img]
+Pulling Apptainer image docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 [cache /scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img]
+[c9/ec6445] Submitted process > FASTP (NA12878)
+[09/5a9e09] Submitted process > FASTP (NA12891)
+[5b/5a0448] Submitted process > FASTP (NA12892)
+[76/05e0ca] Submitted process > FASTP (NA12003)
+[df/0b4579] Submitted process > FASTP (NA07357)
+[be/b66944] Submitted process > FASTP (NA10851)
+[9d/4e4ac1] Submitted process > FASTP (NA12813)
+[dd/f798bb] Submitted process > FASTP (NA12873)
+Pulling Apptainer image docker://community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3 [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img]
+[87/27a0ba] Submitted process > FASTQC (NA12891)
+[cf/447763] Submitted process > FASTQC (NA12878)
+[61/ea0611] Submitted process > FASTQC (NA07357)
+[44/7f028b] Submitted process > FASTQC (NA12892)
+[25/3e9563] Submitted process > FASTQC (NA12003)
+[66/ddf70b] Submitted process > FASTQC (NA10851)
+[f7/f99a40] Submitted process > FASTQC (NA12813)
+[1c/2080fc] Submitted process > FASTQC (NA12873)
+[8f/dcacc1] Submitted process > BWA_MEM (NA12878)
+[ec/96bde4] Submitted process > BWA_MEM (NA12003)
+[83/51b077] Submitted process > BWA_MEM (NA10851)
+[f4/4738d3] Submitted process > BWA_MEM (NA12891)
+[0c/91d8e4] Submitted process > BWA_MEM (NA12892)
+[ea/101555] Submitted process > BWA_MEM (NA12813)
+[1a/4abb69] Submitted process > BWA_MEM (NA12873)
+[be/a92fcf] Submitted process > BWA_MEM (NA07357)
+Pulling Apptainer image docker://community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img]
+[5e/e43eea] Submitted process > MARKDUPLICATES (NA12892)

@@ -1,0 +1,387 @@
+Oct-09 15:49:02.341 [main] DEBUG nextflow.cli.Launcher - Setting http proxy: ProxyConfig[protocol=http; host=10.99.0.130; port=3128]
+Oct-09 15:49:02.412 [main] DEBUG nextflow.cli.Launcher - Setting https proxy: ProxyConfig[protocol=https; host=10.99.0.130; port=3128]
+Oct-09 15:49:02.412 [main] DEBUG nextflow.cli.Launcher - Setting ftp proxy: ProxyConfig[protocol=ftp; host=10.99.0.130; port=3128]
+Oct-09 15:49:02.413 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile explorer -c docs/assignment4/failure4.config -resume -ansi-log false --samplesheet /courses/BINF6610.202710/data/samplesheet-variant8.csv --ref /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa --region 'chr20:1-10000000' --outdir results
+Oct-09 15:49:02.656 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.6
+Oct-09 15:49:02.717 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/roy.suc/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.1,nf-tower@1.28.2,nf-wave@1.21.0
+Oct-09 15:49:02.775 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-09 15:49:02.779 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-09 15:49:02.784 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Oct-09 15:49:02.809 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Oct-09 15:49:03.051 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Oct-09 15:49:03.067 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-09 15:49:03.142 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/roy.suc/binf6610-variant-pipeline/nextflow.config
+Oct-09 15:49:03.146 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/roy.suc/binf6610-variant-pipeline/docs/assignment4/failure4.config
+Oct-09 15:49:03.148 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/roy.suc/binf6610-variant-pipeline/nextflow.config
+Oct-09 15:49:03.149 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/roy.suc/binf6610-variant-pipeline/docs/assignment4/failure4.config
+Oct-09 15:49:03.153 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Oct-09 15:49:03.179 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `explorer`
+Oct-09 15:49:03.908 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `explorer`
+Oct-09 15:49:03.936 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [docker, explorer]
+Oct-09 15:49:04.025 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Oct-09 15:49:04.026 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Oct-09 15:49:04.062 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/roy.suc/.nextflow/secrets/store.json
+Oct-09 15:49:04.066 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5853ca50] - activable => nextflow.secret.LocalSecretsProvider@5853ca50
+Oct-09 15:49:04.088 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [voluminous_watson] - revision: 857aec6508
+Oct-09 15:49:04.196 [main] DEBUG nextflow.Session - Session UUID: 143685fe-fdb3-45ee-ad5b-d301b8a0c4cb
+Oct-09 15:49:04.197 [main] DEBUG nextflow.Session - Run name: voluminous_watson
+Oct-09 15:49:04.199 [main] DEBUG nextflow.Session - Executor pool size: 2
+Oct-09 15:49:04.209 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Oct-09 15:49:04.224 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 15:49:04.278 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.6 build 12646
+  Created: 09-07-2026 18:49 UTC (14:49 EDT)
+  System: Linux 5.14.0-362.13.1.el9_3.x86_64
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 23.0.1-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 1145304@c0584 [10.99.252.104]
+  CPUs: 2 - Mem: 251.2 GB (2.3 GB) - Swap: 19.5 GB (19.4 GB)
+Oct-09 15:49:05.572 [main] DEBUG nextflow.Session - Work-dir: /scratch/roy.suc/binf6610-assignment4-work [nfs]
+Oct-09 15:49:05.665 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Oct-09 15:49:05.676 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Oct-09 15:49:05.678 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Oct-09 15:49:05.716 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Oct-09 15:49:05.726 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Oct-09 15:49:06.786 [main] DEBUG nextflow.Session - Session start
+Oct-09 15:49:06.815 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: results/pipeline_info/trace.txt
+Oct-09 15:49:06.838 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Oct-09 15:49:06.844 [main] DEBUG nextflow.Session - Using default localLib path: /home/roy.suc/binf6610-variant-pipeline/lib
+Oct-09 15:49:08.543 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-09 15:49:08.964 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:08.965 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:08.984 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Oct-09 15:49:09.037 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Oct-09 15:49:09.040 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Oct-09 15:49:09.060 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Oct-09 15:49:09.181 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VALIDATE': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.240 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.240 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.241 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.250 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.250 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.251 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.257 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM|HAPLOTYPECALLER` matches process BWA_MEM
+Oct-09 15:49:09.260 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.260 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.261 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.266 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process MARKDUPLICATES
+Oct-09 15:49:09.268 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.268 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.268 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MARKDUPLICATES': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.274 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM|HAPLOTYPECALLER` matches process HAPLOTYPECALLER
+Oct-09 15:49:09.275 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:HAPLOTYPECALLER` matches process HAPLOTYPECALLER
+Oct-09 15:49:09.276 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.276 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.276 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HAPLOTYPECALLER': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.293 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process JOINT_GENOTYPE
+Oct-09 15:49:09.294 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.294 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.295 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'JOINT_GENOTYPE': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.303 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process FILTER
+Oct-09 15:49:09.305 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.305 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.306 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FILTER': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.321 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.321 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.321 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.332 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:49:09.332 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:49:09.333 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PUBLISH': maxForks=0; fair=false; array=0
+Oct-09 15:49:09.350 [main] DEBUG nextflow.Session - Process names: FASTQC, MARKDUPLICATES, JOINT_GENOTYPE, BWA_MEM, FILTER, VALIDATE, MULTIQC, PUBLISH, HAPLOTYPECALLER, FASTP
+Oct-09 15:49:09.354 [main] DEBUG nextflow.Session - Igniting dataflow network (11)
+Oct-09 15:49:09.361 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VALIDATE
+Oct-09 15:49:09.361 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Oct-09 15:49:09.361 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTP
+Oct-09 15:49:09.361 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWA_MEM
+Oct-09 15:49:09.367 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MARKDUPLICATES
+Oct-09 15:49:09.367 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HAPLOTYPECALLER
+Oct-09 15:49:09.367 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > JOINT_GENOTYPE
+Oct-09 15:49:09.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FILTER
+Oct-09 15:49:09.381 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+Oct-09 15:49:09.381 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PUBLISH
+Oct-09 15:49:09.382 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_f239ff777725c430: /home/roy.suc/binf6610-variant-pipeline/modules/haplotypecaller.nf
+  _nf_script_0a6b6c48557fe822: /home/roy.suc/binf6610-variant-pipeline/modules/fastqc.nf
+  _nf_script_8c02a4293b76c626: /home/roy.suc/binf6610-variant-pipeline/modules/multiqc.nf
+  _nf_script_c2b07333e403a795: /home/roy.suc/binf6610-variant-pipeline/modules/filter.nf
+  _nf_script_af4c7fb914c47f0f: /home/roy.suc/binf6610-variant-pipeline/modules/joint_genotype.nf
+  _nf_script_7dbb0a93bdb51156: /home/roy.suc/binf6610-variant-pipeline/modules/bwa_mem.nf
+  _nf_script_15e9292623a00541: /home/roy.suc/binf6610-variant-pipeline/modules/validate.nf
+  Main: /home/roy.suc/binf6610-variant-pipeline/main.nf
+  _nf_script_295aa54e28615d4d: /home/roy.suc/binf6610-variant-pipeline/modules/fastp.nf
+  _nf_script_e3bedd251081b732: /home/roy.suc/binf6610-variant-pipeline/modules/markduplicates.nf
+  _nf_script_c07b12cd1cac7d26: /home/roy.suc/binf6610-variant-pipeline/modules/publish.nf
+Oct-09 15:49:09.382 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Oct-09 15:49:09.382 [main] DEBUG nextflow.Session - Session await
+Oct-09 15:49:09.490 [Actor Thread 4] INFO  nextflow.container.SingularityCache - Pulling Apptainer image docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img]
+Oct-09 15:49:41.671 [Actor Thread 4] DEBUG nextflow.container.SingularityCache - Apptainer pull complete image=docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc path=/scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img
+Oct-09 15:49:42.469 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process VALIDATE > jobId: 10945494; workDir: /scratch/roy.suc/binf6610-assignment4-work/85/261fd0002e8701b6a8da15099daf6b
+Oct-09 15:49:42.470 [Task submitter] INFO  nextflow.Session - [85/261fd0] Submitted process > VALIDATE
+Oct-09 15:51:19.077 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10945494; id: 1; name: VALIDATE; status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/85/261fd0002e8701b6a8da15099daf6b started: 1791575386871; exited: 2026-10-09T19:51:14.763793461Z; ]
+Oct-09 15:51:19.080 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 15:51:19.132 [Actor Thread 6] INFO  nextflow.container.SingularityCache - Pulling Apptainer image docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 [cache /scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img]
+Oct-09 15:51:19.161 [Actor Thread 11] INFO  nextflow.container.SingularityCache - Pulling Apptainer image docker://community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494 [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img]
+Oct-09 15:51:41.059 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=FASTQC (2); work-dir=null
+  error [java.lang.IllegalStateException]: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+  status : 255
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+    Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+    Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+    Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+    Writing manifest to image destination
+    Storing signatures
+    FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+Oct-09 15:51:41.072 [Actor Thread 9] ERROR nextflow.processor.TaskProcessor - Error executing process > 'FASTQC (2)'
+
+Caused by:
+  Failed to pull singularity image
+    command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+    status : 255
+    hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+    message:
+      INFO:    Converting OCI blobs to SIF format
+      WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+      INFO:    Starting build...
+      Getting image source signatures
+      Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+      Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+      Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+      Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+      Writing manifest to image destination
+      Storing signatures
+      FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+
+java.lang.IllegalStateException: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+  status : 255
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+    Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+    Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+    Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+    Writing manifest to image destination
+    Storing signatures
+    FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+	at nextflow.container.SingularityCache.getCachePathFor(SingularityCache.groovy:354)
+	at nextflow.container.ContainerHandler.createApptainerCache(ContainerHandler.groovy:110)
+	at nextflow.container.ContainerHandler.normalizeImageName(ContainerHandler.groovy:84)
+	at nextflow.container.resolver.DefaultContainerResolver.resolveImage0(DefaultContainerResolver.groovy:67)
+	at nextflow.container.resolver.DefaultContainerResolver.resolveImage(DefaultContainerResolver.groovy:60)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.containerInfo0(TaskRun.groovy:721)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnCurrentN(ScriptBytecodeAdapter.java:97)
+	at nextflow.processor.TaskRun.this$dist$invoke$1(TaskRun.groovy)
+	at nextflow.processor.TaskRun$3.methodMissing(TaskRun.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaClassImpl.invokeMissingMethod(MetaClassImpl.java:926)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1424)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1343)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun$3.apply(TaskRun.groovy:702)
+	at nextflow.processor.TaskRun$3.apply(TaskRun.groovy)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1713)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.containerInfo(TaskRun.groovy:699)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.getContainer(TaskRun.groovy:733)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.isContainerEnabled(TaskRun.groovy:799)
+	at nextflow.processor.TaskHasher.compute(TaskHasher.groovy:69)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:675)
+	at nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+  status : 255
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+    Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+    Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+    Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+    Writing manifest to image destination
+    Storing signatures
+    FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+	at nextflow.container.SingularityCache.runCommand(SingularityCache.groovy:306)
+	at nextflow.container.SingularityCache.downloadContainerImage0(SingularityCache.groovy:273)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.container.SingularityCache$_downloadContainerImage_closure1.doCall(SingularityCache.groovy:241)
+	at nextflow.container.SingularityCache$_downloadContainerImage_closure1.call(SingularityCache.groovy)
+	at nextflow.file.FileMutex.lock(FileMutex.groovy:106)
+	at nextflow.container.SingularityCache.downloadContainerImage(SingularityCache.groovy:241)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.container.SingularityCache$_getLazyImagePath_closure2.doCall(SingularityCache.groovy:331)
+	at nextflow.container.SingularityCache$_getLazyImagePath_closure2.call(SingularityCache.groovy)
+	at groovyx.gpars.dataflow.LazyDataflowVariable$1.run(LazyDataflowVariable.java:70)
+	... 3 common frames omitted
+Oct-09 15:51:41.125 [Actor Thread 9] DEBUG nextflow.Session - Session aborted -- Cause: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+  status : 255
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+    Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+    Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+    Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+    Writing manifest to image destination
+    Storing signatures
+    FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+Oct-09 15:51:41.327 [Actor Thread 9] DEBUG nextflow.Session - The following nodes are still active:
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) bound ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:51:41.463 [Actor Thread 9] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1m 27s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=2 GB; ]
+Oct-09 15:51:41.463 [Actor Thread 9] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 15:51:44.075 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+Oct-09 15:51:52.169 [Actor Thread 9] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 15:51:52.202 [main] DEBUG nextflow.Session - Session await > all processes finished
+Oct-09 15:51:52.202 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-09 15:51:52.206 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1m 27s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=2 GB; ]
+Oct-09 15:51:52.206 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 15:51:52.222 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=FASTP; work-dir=null
+  error [java.lang.IllegalStateException]: Cannot obtain the semaphore to fork operator's body.
+Oct-09 15:51:52.233 [Actor Thread 7] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=FASTQC; work-dir=null
+  error [java.lang.IllegalStateException]: Cannot obtain the semaphore to fork operator's body.
+Oct-09 15:51:52.234 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=FASTQC (1); work-dir=null
+  error [java.lang.IllegalStateException]: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img.pulling.1791575479134 docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0 > /dev/null
+  status : 255
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "1h")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    WARNING: 'nodev' mount option set on /tmp, it could be a source of failure during build process
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:a8697f388c8214c12929a5d274b98f538d13af866a020955e2a3f87ffadfb223
+    Copying blob sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade
+    Copying blob sha256:4ca545ee6d5db5c1170386eeb39b2ffe3bd46e5d4a73a9acbebc805f19607eb3
+    Copying config sha256:eeca88b7de88a4ab8b6e5e0000a52071620b898effacb9099fb39f75aca7e32d
+    Writing manifest to image destination
+    Storing signatures
+    FATAL:   While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: while getting config: no descriptor found for reference "73c60af0c4748c756d33d4e3b6852f775c0d65abbab26571a51d636a17c73761"
+
+Oct-09 15:51:53.475 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 15:51:53.622 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Oct-09 15:51:53.896 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

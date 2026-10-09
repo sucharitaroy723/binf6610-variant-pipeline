@@ -1,0 +1,44 @@
+Using GATK jar /opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx11468m -Djava.io.tmpdir=tmp -jar /opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar HaplotypeCaller -R GRCh38_full_analysis_set_plus_decoy_hla.fa -I NA07357.dedup.bam -O NA07357.g.vcf.gz -ERC GVCF -L chr20:1-10000000 --native-pair-hmm-threads 8
+20:30:37.923 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+20:30:38.208 INFO  HaplotypeCaller - ------------------------------------------------------------
+20:30:38.212 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.6.2.0
+20:30:38.212 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+20:30:38.212 INFO  HaplotypeCaller - Executing as roy.suc@c0642 on Linux v5.14.0-362.13.1.el9_3.x86_64 amd64
+20:30:38.213 INFO  HaplotypeCaller - Java runtime: OpenJDK 64-Bit Server VM v17.0.18-internal+0-adhoc.rattler.src
+20:30:38.213 INFO  HaplotypeCaller - Start Date/Time: October 9, 2026 at 8:30:37 PM GMT
+20:30:38.213 INFO  HaplotypeCaller - ------------------------------------------------------------
+20:30:38.213 INFO  HaplotypeCaller - ------------------------------------------------------------
+20:30:38.214 INFO  HaplotypeCaller - HTSJDK Version: 4.2.0
+20:30:38.214 INFO  HaplotypeCaller - Picard Version: 3.4.0
+20:30:38.214 INFO  HaplotypeCaller - Built for Spark Version: 3.5.0
+20:30:38.216 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+20:30:38.216 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+20:30:38.216 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+20:30:38.217 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+20:30:38.217 INFO  HaplotypeCaller - Deflater: IntelDeflater
+20:30:38.217 INFO  HaplotypeCaller - Inflater: IntelInflater
+20:30:38.217 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+20:30:38.217 INFO  HaplotypeCaller - Requester pays: disabled
+20:30:38.218 INFO  HaplotypeCaller - Initializing engine
+20:30:38.525 INFO  IntervalArgumentCollection - Processing 10000000 bp from intervals
+20:30:38.534 INFO  HaplotypeCaller - Done initializing engine
+20:30:38.537 INFO  HaplotypeCallerEngine - Tool is in reference confidence mode and the annotation, the following changes will be made to any specified annotations: 'StrandBiasBySample' will be enabled. 'ChromosomeCounts', 'FisherStrand', 'StrandOddsRatio' and 'QualByDepth' annotations have been disabled
+20:30:38.623 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_utils.so
+20:30:38.664 INFO  NativeLibraryLoader - Loading libgkl_smithwaterman.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_smithwaterman.so
+20:30:38.701 INFO  SmithWatermanAligner - Using AVX accelerated SmithWaterman implementation
+20:30:38.705 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to -0.0 for reference-model confidence output
+20:30:38.705 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+20:30:38.714 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/opt/conda/share/gatk4-4.6.2.0-0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+20:30:38.746 INFO  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+20:30:38.746 INFO  IntelPairHmm - Available threads: 8
+20:30:38.746 INFO  IntelPairHmm - Requested threads: 8
+20:30:38.746 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+20:30:38.811 INFO  ProgressMeter - Starting traversal
+20:30:38.812 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+20:30:39.506 WARN  InbreedingCoeff - InbreedingCoeff will not be calculated at position chr20:60379 and possibly subsequent; at least 10 samples must have called genotypes
+20:30:48.857 INFO  ProgressMeter -         chr20:260407              0.2                  1230           7347.7
+20:30:58.887 INFO  ProgressMeter -         chr20:581310              0.3                  2930           8757.6
+20:31:08.931 INFO  ProgressMeter -         chr20:915407              0.5                  4700           9362.9
+20:31:18.935 INFO  ProgressMeter -        chr20:1276878              0.7                  6570           9824.8

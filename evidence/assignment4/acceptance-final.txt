@@ -1,0 +1,18 @@
+
+BINF6610 Assignment 4 — acceptance tests
+repo: /home/roy.suc/binf6610-variant-pipeline
+
+  PASS  10/10  the pipeline is main.nf, modules/ and bin/
+  PASS  10/10  the head job, slurm/nextflow.sbatch
+  PASS  15/15  the laptop run found the planted variants
+        planted SNVs found: smoke_01 850/850 (100 %) smoke_02 828/829 (99 %) smoke_03 798/866 (92 %)
+  PASS   5/5   every laptop task ran in an image
+  PASS  10/10  the Explorer run has all eight samples
+  PASS  10/10  every Explorer task was a Slurm job in an image
+  PASS  10/10  variants.tsv and samples.tsv
+  PASS  10/10  both runs' manifest.json
+  PASS  10/10  the records compared with week 3
+  PASS  10/10  TROUBLESHOOTING.md
+
+  10 passed, 0 failed — 100/100 points
+

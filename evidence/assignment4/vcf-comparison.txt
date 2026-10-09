@@ -1,0 +1,10 @@
+Container versus Nextflow cohort comparison:
+- Both outputs contain 36,853 variant records.
+- CHROM, POS, REF and ALT match exactly in record order.
+- GT calls match exactly after using the same sample order.
+- Exactly one FILTER label differs: chr20:65435 C>G.
+- Container: QUAL=31.89, QD=1.99, DP=340, FILTER=QD2.
+- Nextflow: QUAL=31.93, QD=2.00, DP=341, FILTER=PASS.
+- Both implementations use the filter expression QD < 2.0.
+- The QD values explain the FILTER difference.
+- Full VCF records are not identical; the cause of annotation differences has not been established.

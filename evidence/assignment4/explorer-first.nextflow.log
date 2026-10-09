@@ -1,0 +1,733 @@
+Oct-09 15:13:14.930 [main] DEBUG nextflow.cli.Launcher - Setting http proxy: ProxyConfig[protocol=http; host=10.99.0.130; port=3128]
+Oct-09 15:13:15.008 [main] DEBUG nextflow.cli.Launcher - Setting https proxy: ProxyConfig[protocol=https; host=10.99.0.130; port=3128]
+Oct-09 15:13:15.011 [main] DEBUG nextflow.cli.Launcher - Setting ftp proxy: ProxyConfig[protocol=ftp; host=10.99.0.130; port=3128]
+Oct-09 15:13:15.013 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile explorer -c docs/assignment4/failure4.config -resume -ansi-log false --samplesheet /courses/BINF6610.202710/data/samplesheet-variant8.csv --ref /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa --region 'chr20:1-10000000' --outdir results
+Oct-09 15:13:15.244 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.6
+Oct-09 15:13:15.325 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/roy.suc/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.1,nf-tower@1.28.2,nf-wave@1.21.0
+Oct-09 15:13:15.454 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-09 15:13:15.459 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-09 15:13:15.465 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Oct-09 15:13:15.513 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Oct-09 15:13:16.014 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Oct-09 15:13:16.037 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-09 15:13:16.101 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/roy.suc/binf6610-variant-pipeline/nextflow.config
+Oct-09 15:13:16.114 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/roy.suc/binf6610-variant-pipeline/docs/assignment4/failure4.config
+Oct-09 15:13:16.118 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/roy.suc/binf6610-variant-pipeline/nextflow.config
+Oct-09 15:13:16.118 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/roy.suc/binf6610-variant-pipeline/docs/assignment4/failure4.config
+Oct-09 15:13:16.125 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Oct-09 15:13:16.168 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `explorer`
+Oct-09 15:13:16.997 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `explorer`
+Oct-09 15:13:17.043 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [docker, explorer]
+Oct-09 15:13:17.065 [main] WARN  nextflow.config.ConfigBuilder - It appears you have never run this project before -- Option `-resume` is ignored
+Oct-09 15:13:17.134 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Oct-09 15:13:17.134 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Oct-09 15:13:17.247 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/roy.suc/.nextflow/secrets/store.json
+Oct-09 15:13:17.250 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@642413d4] - activable => nextflow.secret.LocalSecretsProvider@642413d4
+Oct-09 15:13:17.306 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [condescending_goldwasser] - revision: 857aec6508
+Oct-09 15:13:17.486 [main] DEBUG nextflow.Session - Session UUID: 143685fe-fdb3-45ee-ad5b-d301b8a0c4cb
+Oct-09 15:13:17.487 [main] DEBUG nextflow.Session - Run name: condescending_goldwasser
+Oct-09 15:13:17.488 [main] DEBUG nextflow.Session - Executor pool size: 2
+Oct-09 15:13:17.501 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Oct-09 15:13:17.511 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 15:13:17.625 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.6 build 12646
+  Created: 09-07-2026 18:49 UTC (14:49 EDT)
+  System: Linux 5.14.0-362.13.1.el9_3.x86_64
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 23.0.1-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 1072695@c0584 [10.99.252.104]
+  CPUs: 2 - Mem: 251.2 GB (2.2 GB) - Swap: 19.5 GB (19.4 GB)
+Oct-09 15:13:18.350 [main] DEBUG nextflow.Session - Work-dir: /home/roy.suc/binf6610-variant-pipeline/work [nfs]
+Oct-09 15:13:18.455 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Oct-09 15:13:18.469 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Oct-09 15:13:18.471 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Oct-09 15:13:18.532 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Oct-09 15:13:18.565 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Oct-09 15:13:19.794 [main] DEBUG nextflow.Session - Session start
+Oct-09 15:13:19.816 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: results/pipeline_info/trace.txt
+Oct-09 15:13:19.869 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Oct-09 15:13:19.877 [main] DEBUG nextflow.Session - Using default localLib path: /home/roy.suc/binf6610-variant-pipeline/lib
+Oct-09 15:13:22.062 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-09 15:13:22.614 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.615 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.670 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Oct-09 15:13:22.693 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Oct-09 15:13:22.699 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Oct-09 15:13:22.702 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Oct-09 15:13:22.769 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VALIDATE': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.849 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.850 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.851 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.869 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.869 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.870 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.879 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM|HAPLOTYPECALLER` matches process BWA_MEM
+Oct-09 15:13:22.883 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.883 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.885 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.899 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process MARKDUPLICATES
+Oct-09 15:13:22.901 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.901 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.902 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MARKDUPLICATES': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.914 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM|HAPLOTYPECALLER` matches process HAPLOTYPECALLER
+Oct-09 15:13:22.915 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:HAPLOTYPECALLER` matches process HAPLOTYPECALLER
+Oct-09 15:13:22.916 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.917 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.919 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HAPLOTYPECALLER': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.940 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process JOINT_GENOTYPE
+Oct-09 15:13:22.942 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.942 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.943 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'JOINT_GENOTYPE': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.954 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process FILTER
+Oct-09 15:13:22.956 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.956 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.957 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FILTER': maxForks=0; fair=false; array=0
+Oct-09 15:13:22.981 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:22.981 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:22.982 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Oct-09 15:13:23.000 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 15:13:23.000 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 15:13:23.002 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PUBLISH': maxForks=0; fair=false; array=0
+Oct-09 15:13:23.025 [main] DEBUG nextflow.Session - Process names: FASTQC, MARKDUPLICATES, JOINT_GENOTYPE, FILTER, BWA_MEM, VALIDATE, MULTIQC, HAPLOTYPECALLER, PUBLISH, FASTP
+Oct-09 15:13:23.029 [main] DEBUG nextflow.Session - Igniting dataflow network (11)
+Oct-09 15:13:23.041 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VALIDATE
+Oct-09 15:13:23.041 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Oct-09 15:13:23.041 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTP
+Oct-09 15:13:23.041 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWA_MEM
+Oct-09 15:13:23.057 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MARKDUPLICATES
+Oct-09 15:13:23.057 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HAPLOTYPECALLER
+Oct-09 15:13:23.057 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > JOINT_GENOTYPE
+Oct-09 15:13:23.058 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FILTER
+Oct-09 15:13:23.059 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+Oct-09 15:13:23.072 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PUBLISH
+Oct-09 15:13:23.073 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_f239ff777725c430: /home/roy.suc/binf6610-variant-pipeline/modules/haplotypecaller.nf
+  _nf_script_0a6b6c48557fe822: /home/roy.suc/binf6610-variant-pipeline/modules/fastqc.nf
+  _nf_script_8c02a4293b76c626: /home/roy.suc/binf6610-variant-pipeline/modules/multiqc.nf
+  _nf_script_c2b07333e403a795: /home/roy.suc/binf6610-variant-pipeline/modules/filter.nf
+  _nf_script_af4c7fb914c47f0f: /home/roy.suc/binf6610-variant-pipeline/modules/joint_genotype.nf
+  _nf_script_7dbb0a93bdb51156: /home/roy.suc/binf6610-variant-pipeline/modules/bwa_mem.nf
+  _nf_script_15e9292623a00541: /home/roy.suc/binf6610-variant-pipeline/modules/validate.nf
+  Main: /home/roy.suc/binf6610-variant-pipeline/main.nf
+  _nf_script_295aa54e28615d4d: /home/roy.suc/binf6610-variant-pipeline/modules/fastp.nf
+  _nf_script_e3bedd251081b732: /home/roy.suc/binf6610-variant-pipeline/modules/markduplicates.nf
+  _nf_script_c07b12cd1cac7d26: /home/roy.suc/binf6610-variant-pipeline/modules/publish.nf
+Oct-09 15:13:23.073 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Oct-09 15:13:23.073 [main] DEBUG nextflow.Session - Session await
+Oct-09 15:13:23.238 [Actor Thread 3] INFO  nextflow.container.SingularityCache - Pulling Apptainer image docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc [cache /scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img]
+Oct-09 15:18:27.755 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > No more task to compute -- The following nodes are still active:
+[process] VALIDATE
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) bound ; channel: reads
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) OPEN  ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:23:27.781 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > No more task to compute -- The following nodes are still active:
+[process] VALIDATE
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) bound ; channel: reads
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) OPEN  ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:28:27.809 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > No more task to compute -- The following nodes are still active:
+[process] VALIDATE
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) bound ; channel: reads
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) OPEN  ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:33:27.842 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > No more task to compute -- The following nodes are still active:
+[process] VALIDATE
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) bound ; channel: reads
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) OPEN  ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:38:27.864 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > No more task to compute -- The following nodes are still active:
+[process] VALIDATE
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) bound ; channel: reads
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) OPEN  ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:43:00.163 [Actor Thread 5] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VALIDATE; work-dir=null
+  error [java.lang.IllegalStateException]: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img.pulling.1791573203238 docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc > /dev/null
+  status : 143
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "20m")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    Copying blob sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+    Copying config sha256:1b226d0886ff14c86a09d5e3903c55b0dc0d6199cfe0b9ee52d272505505e604
+    Writing manifest to image destination
+    Storing signatures
+    2026/10/09 15:13:37  info unpack layer: sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    2026/10/09 15:13:46  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+    2026/10/09 15:13:46  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-3580002887/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+    2026/10/09 15:21:56  info unpack layer: sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+
+Oct-09 15:43:00.183 [Actor Thread 5] ERROR nextflow.processor.TaskProcessor - Error executing process > 'VALIDATE'
+
+Caused by:
+  Failed to pull singularity image
+    command: apptainer pull  --name community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img.pulling.1791573203238 docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc > /dev/null
+    status : 143
+    hint   : Try and increase apptainer.pullTimeout in the config (current is "20m")
+    message:
+      INFO:    Converting OCI blobs to SIF format
+      INFO:    Starting build...
+      Getting image source signatures
+      Copying blob sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+      Copying blob sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+      Copying config sha256:1b226d0886ff14c86a09d5e3903c55b0dc0d6199cfe0b9ee52d272505505e604
+      Writing manifest to image destination
+      Storing signatures
+      2026/10/09 15:13:37  info unpack layer: sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+      2026/10/09 15:13:46  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+      2026/10/09 15:13:46  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-3580002887/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+      2026/10/09 15:21:56  info unpack layer: sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+
+
+java.lang.IllegalStateException: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img.pulling.1791573203238 docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc > /dev/null
+  status : 143
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "20m")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    Copying blob sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+    Copying config sha256:1b226d0886ff14c86a09d5e3903c55b0dc0d6199cfe0b9ee52d272505505e604
+    Writing manifest to image destination
+    Storing signatures
+    2026/10/09 15:13:37  info unpack layer: sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    2026/10/09 15:13:46  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+    2026/10/09 15:13:46  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-3580002887/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+    2026/10/09 15:21:56  info unpack layer: sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+
+	at nextflow.container.SingularityCache.getCachePathFor(SingularityCache.groovy:354)
+	at nextflow.container.ContainerHandler.createApptainerCache(ContainerHandler.groovy:110)
+	at nextflow.container.ContainerHandler.normalizeImageName(ContainerHandler.groovy:84)
+	at nextflow.container.resolver.DefaultContainerResolver.resolveImage0(DefaultContainerResolver.groovy:67)
+	at nextflow.container.resolver.DefaultContainerResolver.resolveImage(DefaultContainerResolver.groovy:60)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.containerInfo0(TaskRun.groovy:721)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnCurrentN(ScriptBytecodeAdapter.java:97)
+	at nextflow.processor.TaskRun.this$dist$invoke$1(TaskRun.groovy)
+	at nextflow.processor.TaskRun$3.methodMissing(TaskRun.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaClassImpl.invokeMissingMethod(MetaClassImpl.java:926)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1424)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1343)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun$3.apply(TaskRun.groovy:702)
+	at nextflow.processor.TaskRun$3.apply(TaskRun.groovy)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1713)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.containerInfo(TaskRun.groovy:699)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.getContainer(TaskRun.groovy:733)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.isContainerEnabled(TaskRun.groovy:799)
+	at nextflow.processor.TaskHasher.compute(TaskHasher.groovy:69)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:675)
+	at nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img.pulling.1791573203238 docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc > /dev/null
+  status : 143
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "20m")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    Copying blob sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+    Copying config sha256:1b226d0886ff14c86a09d5e3903c55b0dc0d6199cfe0b9ee52d272505505e604
+    Writing manifest to image destination
+    Storing signatures
+    2026/10/09 15:13:37  info unpack layer: sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    2026/10/09 15:13:46  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+    2026/10/09 15:13:46  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-3580002887/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+    2026/10/09 15:21:56  info unpack layer: sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+
+	at nextflow.container.SingularityCache.runCommand(SingularityCache.groovy:306)
+	at nextflow.container.SingularityCache.downloadContainerImage0(SingularityCache.groovy:273)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.container.SingularityCache$_downloadContainerImage_closure1.doCall(SingularityCache.groovy:241)
+	at nextflow.container.SingularityCache$_downloadContainerImage_closure1.call(SingularityCache.groovy)
+	at nextflow.file.FileMutex.lock(FileMutex.groovy:106)
+	at nextflow.container.SingularityCache.downloadContainerImage(SingularityCache.groovy:241)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.container.SingularityCache$_getLazyImagePath_closure2.doCall(SingularityCache.groovy:331)
+	at nextflow.container.SingularityCache$_getLazyImagePath_closure2.call(SingularityCache.groovy)
+	at groovyx.gpars.dataflow.LazyDataflowVariable$1.run(LazyDataflowVariable.java:70)
+	... 3 common frames omitted
+Oct-09 15:43:00.192 [Actor Thread 5] DEBUG nextflow.Session - Session aborted -- Cause: java.lang.IllegalStateException: Failed to pull singularity image
+  command: apptainer pull  --name community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img.pulling.1791573203238 docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc > /dev/null
+  status : 143
+  hint   : Try and increase apptainer.pullTimeout in the config (current is "20m")
+  message:
+    INFO:    Converting OCI blobs to SIF format
+    INFO:    Starting build...
+    Getting image source signatures
+    Copying blob sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    Copying blob sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+    Copying config sha256:1b226d0886ff14c86a09d5e3903c55b0dc0d6199cfe0b9ee52d272505505e604
+    Writing manifest to image destination
+    Storing signatures
+    2026/10/09 15:13:37  info unpack layer: sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+    2026/10/09 15:13:46  warn xattr{etc/gshadow} ignoring ENOTSUP on setxattr "user.rootlesscontainers"
+    2026/10/09 15:13:46  warn xattr{/home/roy.suc/rstudio_tmp/build-temp-3580002887/rootfs/etc/gshadow} destination filesystem does not support xattrs, further warnings will be suppressed
+    2026/10/09 15:21:56  info unpack layer: sha256:1bb1d33343be21b751c230d2f642d5c490a720c68fedb8b5fbb0eb0022d0ec1e
+
+Oct-09 15:43:00.206 [Actor Thread 5] DEBUG nextflow.Session - The following nodes are still active:
+[process] VALIDATE
+  status=ACTIVE
+  port 0: (value) bound ; channel: samplesheet
+  port 1: (value) bound ; channel: reads
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (cntrl) -     ; channel: $
+
+[process] MARKDUPLICATES
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HAPLOTYPECALLER
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref
+  port 2: (value) bound ; channel: ref_index
+  port 3: (value) bound ; channel: ref_dict
+  port 4: (value) bound ; channel: region
+  port 5: (cntrl) -     ; channel: $
+
+[process] JOINT_GENOTYPE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (value) bound ; channel: region
+  port 6: (value) OPEN  ; channel: samplesheet
+  port 7: (cntrl) -     ; channel: $
+
+[process] FILTER
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: tbi
+  port 2: (value) bound ; channel: ref
+  port 3: (value) bound ; channel: ref_index
+  port 4: (value) bound ; channel: ref_dict
+  port 5: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: reports
+  port 1: (cntrl) -     ; channel: $
+
+[process] PUBLISH
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: samplesheet
+  port 1: (value) OPEN  ; channel: results
+  port 2: (cntrl) -     ; channel: $
+
+Oct-09 15:43:00.236 [Actor Thread 5] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Oct-09 15:43:00.237 [Actor Thread 5] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 15:43:01.472 [Actor Thread 5] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 15:43:01.480 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+Oct-09 15:43:01.481 [main] DEBUG nextflow.Session - Session await > all processes finished
+Oct-09 15:43:01.481 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-09 15:43:01.482 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Oct-09 15:43:01.482 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 15:43:01.526 [Actor Thread 6] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VALIDATE; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Oct-09 15:43:02.273 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 15:43:02.331 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Oct-09 15:43:03.017 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

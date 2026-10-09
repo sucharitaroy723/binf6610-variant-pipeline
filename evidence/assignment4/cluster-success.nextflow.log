@@ -1,0 +1,213 @@
+Oct-09 16:53:47.395 [main] DEBUG nextflow.cli.Launcher - Setting http proxy: ProxyConfig[protocol=http; host=10.99.0.130; port=3128]
+Oct-09 16:53:47.512 [main] DEBUG nextflow.cli.Launcher - Setting https proxy: ProxyConfig[protocol=https; host=10.99.0.130; port=3128]
+Oct-09 16:53:47.513 [main] DEBUG nextflow.cli.Launcher - Setting ftp proxy: ProxyConfig[protocol=ftp; host=10.99.0.130; port=3128]
+Oct-09 16:53:47.513 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile explorer -resume -ansi-log false --samplesheet /courses/BINF6610.202710/data/samplesheet-variant8.csv --ref /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa --region 'chr20:1-10000000' --outdir results
+Oct-09 16:53:47.672 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.6
+Oct-09 16:53:47.719 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/roy.suc/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.1,nf-tower@1.28.2,nf-wave@1.21.0
+Oct-09 16:53:47.785 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-09 16:53:47.789 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-09 16:53:47.793 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Oct-09 16:53:47.816 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Oct-09 16:53:48.001 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Oct-09 16:53:48.015 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-09 16:53:48.059 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/roy.suc/binf6610-variant-pipeline/nextflow.config
+Oct-09 16:53:48.070 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/roy.suc/binf6610-variant-pipeline/nextflow.config
+Oct-09 16:53:48.074 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Oct-09 16:53:48.107 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `explorer`
+Oct-09 16:53:48.927 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [docker, explorer]
+Oct-09 16:53:49.022 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Oct-09 16:53:49.023 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Oct-09 16:53:49.084 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/roy.suc/.nextflow/secrets/store.json
+Oct-09 16:53:49.090 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@dd71b20] - activable => nextflow.secret.LocalSecretsProvider@dd71b20
+Oct-09 16:53:49.117 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [silly_brown] - revision: 857aec6508
+Oct-09 16:53:49.256 [main] DEBUG nextflow.Session - Session UUID: 143685fe-fdb3-45ee-ad5b-d301b8a0c4cb
+Oct-09 16:53:49.257 [main] DEBUG nextflow.Session - Run name: silly_brown
+Oct-09 16:53:49.257 [main] DEBUG nextflow.Session - Executor pool size: 2
+Oct-09 16:53:49.267 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Oct-09 16:53:49.276 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 16:53:49.313 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.6 build 12646
+  Created: 09-07-2026 18:49 UTC (14:49 EDT)
+  System: Linux 5.14.0-362.13.1.el9_3.x86_64
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 23.0.1-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 1233476@c0584 [10.99.252.104]
+  CPUs: 2 - Mem: 251.2 GB (4 GB) - Swap: 19.5 GB (19.4 GB)
+Oct-09 16:53:49.434 [main] DEBUG nextflow.Session - Work-dir: /scratch/roy.suc/binf6610-assignment4-work [nfs]
+Oct-09 16:53:49.508 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Oct-09 16:53:49.522 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Oct-09 16:53:49.524 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Oct-09 16:53:49.571 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Oct-09 16:53:49.586 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Oct-09 16:53:50.062 [main] DEBUG nextflow.Session - Session start
+Oct-09 16:53:50.080 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: results/pipeline_info/trace.txt
+Oct-09 16:53:50.099 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Oct-09 16:53:50.105 [main] DEBUG nextflow.Session - Using default localLib path: /home/roy.suc/binf6610-variant-pipeline/lib
+Oct-09 16:53:51.743 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-09 16:53:52.306 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.306 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.339 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Oct-09 16:53:52.352 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Oct-09 16:53:52.354 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Oct-09 16:53:52.357 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Oct-09 16:53:52.414 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VALIDATE': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.487 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.487 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.488 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.503 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.503 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.503 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.515 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM|HAPLOTYPECALLER` matches process BWA_MEM
+Oct-09 16:53:52.519 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.519 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.520 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.530 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process MARKDUPLICATES
+Oct-09 16:53:52.531 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.531 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.532 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MARKDUPLICATES': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.540 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM|HAPLOTYPECALLER` matches process HAPLOTYPECALLER
+Oct-09 16:53:52.542 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.543 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.543 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HAPLOTYPECALLER': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.562 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process JOINT_GENOTYPE
+Oct-09 16:53:52.564 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.564 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.565 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'JOINT_GENOTYPE': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.576 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MARKDUPLICATES|JOINT_GENOTYPE|FILTER` matches process FILTER
+Oct-09 16:53:52.577 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.577 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.578 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FILTER': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.598 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.598 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.599 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.616 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Oct-09 16:53:52.617 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Oct-09 16:53:52.618 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PUBLISH': maxForks=0; fair=false; array=0
+Oct-09 16:53:52.638 [main] DEBUG nextflow.Session - Process names: FASTQC, MARKDUPLICATES, JOINT_GENOTYPE, FILTER, BWA_MEM, VALIDATE, MULTIQC, HAPLOTYPECALLER, PUBLISH, FASTP
+Oct-09 16:53:52.641 [main] DEBUG nextflow.Session - Igniting dataflow network (11)
+Oct-09 16:53:52.649 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VALIDATE
+Oct-09 16:53:52.649 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Oct-09 16:53:52.649 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTP
+Oct-09 16:53:52.650 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWA_MEM
+Oct-09 16:53:52.654 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MARKDUPLICATES
+Oct-09 16:53:52.654 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HAPLOTYPECALLER
+Oct-09 16:53:52.654 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > JOINT_GENOTYPE
+Oct-09 16:53:52.654 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FILTER
+Oct-09 16:53:52.655 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+Oct-09 16:53:52.656 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PUBLISH
+Oct-09 16:53:52.656 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_f239ff777725c430: /home/roy.suc/binf6610-variant-pipeline/modules/haplotypecaller.nf
+  _nf_script_0a6b6c48557fe822: /home/roy.suc/binf6610-variant-pipeline/modules/fastqc.nf
+  _nf_script_8c02a4293b76c626: /home/roy.suc/binf6610-variant-pipeline/modules/multiqc.nf
+  _nf_script_c2b07333e403a795: /home/roy.suc/binf6610-variant-pipeline/modules/filter.nf
+  _nf_script_af4c7fb914c47f0f: /home/roy.suc/binf6610-variant-pipeline/modules/joint_genotype.nf
+  _nf_script_7dbb0a93bdb51156: /home/roy.suc/binf6610-variant-pipeline/modules/bwa_mem.nf
+  _nf_script_15e9292623a00541: /home/roy.suc/binf6610-variant-pipeline/modules/validate.nf
+  Main: /home/roy.suc/binf6610-variant-pipeline/main.nf
+  _nf_script_e3bedd251081b732: /home/roy.suc/binf6610-variant-pipeline/modules/markduplicates.nf
+  _nf_script_295aa54e28615d4d: /home/roy.suc/binf6610-variant-pipeline/modules/fastp.nf
+  _nf_script_c07b12cd1cac7d26: /home/roy.suc/binf6610-variant-pipeline/modules/publish.nf
+Oct-09 16:53:52.656 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Oct-09 16:53:52.657 [main] DEBUG nextflow.Session - Session await
+Oct-09 16:53:52.783 [Actor Thread 6] DEBUG nextflow.container.SingularityCache - Apptainer found local store for image=docker://community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc; path=/scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img
+Oct-09 16:53:52.930 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [85/261fd0] Cached process > VALIDATE
+Oct-09 16:53:53.003 [Actor Thread 8] DEBUG nextflow.container.SingularityCache - Apptainer found local store for image=docker://community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494; path=/scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img
+Oct-09 16:53:53.016 [Actor Thread 9] DEBUG nextflow.container.SingularityCache - Apptainer found local store for image=docker://quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0; path=/scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img
+Oct-09 16:53:53.038 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [87/27a0ba] Cached process > FASTQC (NA12891)
+Oct-09 16:53:53.046 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [c9/ec6445] Cached process > FASTP (NA12878)
+Oct-09 16:53:53.064 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [09/5a9e09] Cached process > FASTP (NA12891)
+Oct-09 16:53:53.070 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [cf/447763] Cached process > FASTQC (NA12878)
+Oct-09 16:53:53.126 [Actor Thread 5] DEBUG nextflow.container.SingularityCache - Apptainer found local store for image=docker://community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3; path=/scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img
+Oct-09 16:53:53.142 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [44/7f028b] Cached process > FASTQC (NA12892)
+Oct-09 16:53:53.155 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [8f/dcacc1] Cached process > BWA_MEM (NA12878)
+Oct-09 16:53:53.160 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [61/ea0611] Cached process > FASTQC (NA07357)
+Oct-09 16:53:53.160 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [df/0b4579] Cached process > FASTP (NA07357)
+Oct-09 16:53:53.171 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [5b/5a0448] Cached process > FASTP (NA12892)
+Oct-09 16:53:53.174 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [25/3e9563] Cached process > FASTQC (NA12003)
+Oct-09 16:53:53.179 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [76/05e0ca] Cached process > FASTP (NA12003)
+Oct-09 16:53:53.182 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [66/ddf70b] Cached process > FASTQC (NA10851)
+Oct-09 16:53:53.184 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [f4/4738d3] Cached process > BWA_MEM (NA12891)
+Oct-09 16:53:53.194 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [be/b66944] Cached process > FASTP (NA10851)
+Oct-09 16:53:53.206 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [be/a92fcf] Cached process > BWA_MEM (NA07357)
+Oct-09 16:53:53.214 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [f7/f99a40] Cached process > FASTQC (NA12813)
+Oct-09 16:53:53.223 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [9d/4e4ac1] Cached process > FASTP (NA12813)
+Oct-09 16:53:53.234 [Actor Thread 17] DEBUG nextflow.container.SingularityCache - Apptainer found local store for image=docker://community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b; path=/scratch/roy.suc/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img
+Oct-09 16:53:53.240 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [0c/91d8e4] Cached process > BWA_MEM (NA12892)
+Oct-09 16:53:53.242 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [ec/96bde4] Cached process > BWA_MEM (NA12003)
+Oct-09 16:53:53.264 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [1c/2080fc] Cached process > FASTQC (NA12873)
+Oct-09 16:53:53.273 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [83/51b077] Cached process > BWA_MEM (NA10851)
+Oct-09 16:53:53.276 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [dd/f798bb] Cached process > FASTP (NA12873)
+Oct-09 16:53:53.279 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [58/2b7964] Cached process > MARKDUPLICATES (NA12878)
+Oct-09 16:53:53.290 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [13/e40d84] Cached process > MARKDUPLICATES (NA12891)
+Oct-09 16:53:53.296 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [ea/101555] Cached process > BWA_MEM (NA12813)
+Oct-09 16:53:53.323 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [83/567260] Cached process > MARKDUPLICATES (NA07357)
+Oct-09 16:53:53.327 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [c7/09c7c1] Cached process > MARKDUPLICATES (NA12892)
+Oct-09 16:53:53.337 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [1a/4abb69] Cached process > BWA_MEM (NA12873)
+Oct-09 16:53:53.344 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [1d/bfdb60] Cached process > MARKDUPLICATES (NA12003)
+Oct-09 16:53:53.346 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [8d/41702e] Cached process > MARKDUPLICATES (NA10851)
+Oct-09 16:53:53.373 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [97/be3dbd] Cached process > MARKDUPLICATES (NA12813)
+Oct-09 16:53:53.378 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [c2/eaf53f] Cached process > MARKDUPLICATES (NA12873)
+Oct-09 16:53:53.391 [Actor Thread 3] INFO  nextflow.container.SingularityCache - Pulling Apptainer image docker://quay.io/biocontainers/multiqc:1.35--pyhdfd78af_2 [cache /scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-multiqc-1.35--pyhdfd78af_2.img]
+Oct-09 16:53:58.136 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA12891) > jobId: 10948029; workDir: /scratch/roy.suc/binf6610-assignment4-work/13/077bcc8225cc53b47fd0ceeea5f9fa
+Oct-09 16:53:58.139 [Task submitter] INFO  nextflow.Session - [13/077bcc] Submitted process > HAPLOTYPECALLER (NA12891)
+Oct-09 16:54:14.826 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA12878) > jobId: 10948057; workDir: /scratch/roy.suc/binf6610-assignment4-work/87/25d1abb8dc1c8efec74ba976a20b56
+Oct-09 16:54:14.835 [Task submitter] INFO  nextflow.Session - [87/25d1ab] Submitted process > HAPLOTYPECALLER (NA12878)
+Oct-09 16:54:18.783 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA12892) > jobId: 10948059; workDir: /scratch/roy.suc/binf6610-assignment4-work/84/f78f6c6b41a24404a350e12285e6a6
+Oct-09 16:54:18.784 [Task submitter] INFO  nextflow.Session - [84/f78f6c] Submitted process > HAPLOTYPECALLER (NA12892)
+Oct-09 16:54:22.757 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA07357) > jobId: 10948061; workDir: /scratch/roy.suc/binf6610-assignment4-work/32/30a4efb5a5d2fce4a9c66cc00df291
+Oct-09 16:54:22.757 [Task submitter] INFO  nextflow.Session - [32/30a4ef] Submitted process > HAPLOTYPECALLER (NA07357)
+Oct-09 16:54:23.800 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA10851) > jobId: 10948063; workDir: /scratch/roy.suc/binf6610-assignment4-work/f6/b8acb20506fead5c2631cd3a34d114
+Oct-09 16:54:23.800 [Task submitter] INFO  nextflow.Session - [f6/b8acb2] Submitted process > HAPLOTYPECALLER (NA10851)
+Oct-09 16:54:23.969 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA12003) > jobId: 10948065; workDir: /scratch/roy.suc/binf6610-assignment4-work/41/1ba5217d091ce744805b62c02e250f
+Oct-09 16:54:23.969 [Task submitter] INFO  nextflow.Session - [41/1ba521] Submitted process > HAPLOTYPECALLER (NA12003)
+Oct-09 16:54:25.569 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA12813) > jobId: 10948067; workDir: /scratch/roy.suc/binf6610-assignment4-work/4f/3d10d401094fdc0958f11cf7a9b4dc
+Oct-09 16:54:25.569 [Task submitter] INFO  nextflow.Session - [4f/3d10d4] Submitted process > HAPLOTYPECALLER (NA12813)
+Oct-09 16:54:26.258 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process HAPLOTYPECALLER (NA12873) > jobId: 10948068; workDir: /scratch/roy.suc/binf6610-assignment4-work/34/6d57c272556506932bfcf6b2b0567e
+Oct-09 16:54:26.258 [Task submitter] INFO  nextflow.Session - [34/6d57c2] Submitted process > HAPLOTYPECALLER (NA12873)
+Oct-09 16:55:57.223 [Actor Thread 3] DEBUG nextflow.container.SingularityCache - Apptainer pull complete image=docker://quay.io/biocontainers/multiqc:1.35--pyhdfd78af_2 path=/scratch/roy.suc/nxf-apptainer/quay.io-biocontainers-multiqc-1.35--pyhdfd78af_2.img
+Oct-09 16:56:06.338 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process MULTIQC > jobId: 10948145; workDir: /scratch/roy.suc/binf6610-assignment4-work/da/6c89b88b2c8cdf5c32fcf9c9343b76
+Oct-09 16:56:06.338 [Task submitter] INFO  nextflow.Session - [da/6c89b8] Submitted process > MULTIQC
+Oct-09 16:56:42.371 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948145; id: 37; name: MULTIQC; status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/da/6c89b88b2c8cdf5c32fcf9c9343b76 started: 1791579368521; exited: 2026-10-09T20:56:21.447957692Z; ]
+Oct-09 16:56:42.375 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 16:56:42.452 [Actor Thread 9] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Oct-09 16:58:12.370 [Task monitor] DEBUG nextflow.file.FileHelper - FS path type (true): /scratch/roy.suc/binf6610-assignment4-work
+Oct-09 16:58:12.674 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948065; id: 39; name: HAPLOTYPECALLER (NA12003); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/41/1ba5217d091ce744805b62c02e250f started: 1791579267422; exited: 2026-10-09T20:57:58.908458123Z; ]
+Oct-09 16:58:57.370 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 7 -- submitted tasks are shown below
+~> TaskHandler[jobId: 10948029; id: 32; name: HAPLOTYPECALLER (NA12891); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/13/077bcc8225cc53b47fd0ceeea5f9fa started: 1791579242364; exited: -; ]
+~> TaskHandler[jobId: 10948057; id: 29; name: HAPLOTYPECALLER (NA12878); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/87/25d1abb8dc1c8efec74ba976a20b56 started: 1791579287366; exited: -; ]
+~> TaskHandler[jobId: 10948059; id: 38; name: HAPLOTYPECALLER (NA12892); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/84/f78f6c6b41a24404a350e12285e6a6 started: 1791579292365; exited: -; ]
+~> TaskHandler[jobId: 10948061; id: 33; name: HAPLOTYPECALLER (NA07357); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/32/30a4efb5a5d2fce4a9c66cc00df291 started: 1791579302364; exited: -; ]
+~> TaskHandler[jobId: 10948063; id: 40; name: HAPLOTYPECALLER (NA10851); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/f6/b8acb20506fead5c2631cd3a34d114 started: 1791579267398; exited: -; ]
+~> TaskHandler[jobId: 10948067; id: 41; name: HAPLOTYPECALLER (NA12813); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/4f/3d10d401094fdc0958f11cf7a9b4dc started: 1791579308593; exited: -; ]
+~> TaskHandler[jobId: 10948068; id: 42; name: HAPLOTYPECALLER (NA12873); status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/34/6d57c272556506932bfcf6b2b0567e started: 1791579308598; exited: -; ]
+Oct-09 16:59:12.375 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948029; id: 32; name: HAPLOTYPECALLER (NA12891); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/13/077bcc8225cc53b47fd0ceeea5f9fa started: 1791579242364; exited: 2026-10-09T20:59:07.249024071Z; ]
+Oct-09 16:59:13.209 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948057; id: 29; name: HAPLOTYPECALLER (NA12878); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/87/25d1abb8dc1c8efec74ba976a20b56 started: 1791579287366; exited: 2026-10-09T20:58:58.118905993Z; ]
+Oct-09 16:59:13.830 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948059; id: 38; name: HAPLOTYPECALLER (NA12892); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/84/f78f6c6b41a24404a350e12285e6a6 started: 1791579292365; exited: 2026-10-09T20:58:49.236484141Z; ]
+Oct-09 16:59:42.377 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948063; id: 40; name: HAPLOTYPECALLER (NA10851); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/f6/b8acb20506fead5c2631cd3a34d114 started: 1791579267398; exited: 2026-10-09T20:59:11.233758982Z; ]
+Oct-09 17:00:37.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948061; id: 33; name: HAPLOTYPECALLER (NA07357); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/32/30a4efb5a5d2fce4a9c66cc00df291 started: 1791579302364; exited: 2026-10-09T20:59:51.960205613Z; ]
+Oct-09 17:00:52.380 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948068; id: 42; name: HAPLOTYPECALLER (NA12873); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/34/6d57c272556506932bfcf6b2b0567e started: 1791579308598; exited: 2026-10-09T21:00:00.017886832Z; ]
+Oct-09 17:01:47.382 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948067; id: 41; name: HAPLOTYPECALLER (NA12813); status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/4f/3d10d401094fdc0958f11cf7a9b4dc started: 1791579308593; exited: 2026-10-09T21:01:23.115336204Z; ]
+Oct-09 17:02:07.068 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process JOINT_GENOTYPE > jobId: 10948376; workDir: /scratch/roy.suc/binf6610-assignment4-work/22/55d743f1f7f6d2a83569612ec37729
+Oct-09 17:02:07.069 [Task submitter] INFO  nextflow.Session - [22/55d743] Submitted process > JOINT_GENOTYPE
+Oct-09 17:03:57.385 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 10948376; id: 43; name: JOINT_GENOTYPE; status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/22/55d743f1f7f6d2a83569612ec37729 started: 1791579729345; exited: -; ]
+Oct-09 17:08:57.401 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 10948376; id: 43; name: JOINT_GENOTYPE; status: RUNNING; exit: -; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/22/55d743f1f7f6d2a83569612ec37729 started: 1791579729345; exited: -; ]
+Oct-09 17:09:12.406 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948376; id: 43; name: JOINT_GENOTYPE; status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/22/55d743f1f7f6d2a83569612ec37729 started: 1791579729345; exited: 2026-10-09T21:09:06.133287665Z; ]
+Oct-09 17:09:13.134 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process FILTER > jobId: 10948675; workDir: /scratch/roy.suc/binf6610-assignment4-work/16/2f6a5563362dc5cfa660dbeb0cabdd
+Oct-09 17:09:13.135 [Task submitter] INFO  nextflow.Session - [16/2f6a55] Submitted process > FILTER
+Oct-09 17:09:27.405 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948675; id: 44; name: FILTER; status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/16/2f6a5563362dc5cfa660dbeb0cabdd started: 1791580157823; exited: 2026-10-09T21:09:25.572522413Z; ]
+Oct-09 17:09:28.051 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process PUBLISH > jobId: 10948696; workDir: /scratch/roy.suc/binf6610-assignment4-work/72/13b3c450e11e3bda98c5997f9ea9be
+Oct-09 17:09:28.051 [Task submitter] INFO  nextflow.Session - [72/13b3c4] Submitted process > PUBLISH
+Oct-09 17:10:07.408 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 10948696; id: 45; name: PUBLISH; status: COMPLETED; exit: 0; error: -; workDir: /scratch/roy.suc/binf6610-assignment4-work/72/13b3c450e11e3bda98c5997f9ea9be started: 1791580172405; exited: 2026-10-09T21:09:32.4893018Z; ]
+Oct-09 17:10:07.413 [main] DEBUG nextflow.Session - Session await > all processes finished
+Oct-09 17:10:12.405 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm) - terminating tasks monitor poll loop
+Oct-09 17:10:12.406 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-09 17:10:12.411 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Oct-09 17:10:12.411 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Oct-09 17:10:12.502 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=12; failedCount=0; ignoredCount=0; cachedCount=33; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=5h 34m 29s; failedDuration=0ms; cachedDuration=1h 58m 45s;loadCpus=0; loadMemory=0; peakRunning=9; peakCpus=65; peakMemory=130 GB; ]
+Oct-09 17:10:12.502 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Oct-09 17:10:13.461 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Oct-09 17:10:13.560 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Oct-09 17:10:13.664 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Oct-09 17:10:13.664 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

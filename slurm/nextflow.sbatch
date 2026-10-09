@@ -22,6 +22,8 @@ export APPTAINER_TMPDIR=/tmp
 # Bypass the mutable OCI cache after a missing-descriptor failure.
 # Nextflow still reuses completed SIF files in NXF_APPTAINER_CACHEDIR.
 export APPTAINER_DISABLE_CACHE=true
+# Match compression threads to the head allocation and bound its cache memory.
+export APPTAINER_MKSQUASHFS_ARGS="-processors ${SLURM_CPUS_PER_TASK:-2} -mem 1G"
 export NXF_WORK="/scratch/${USER}/binf6610-assignment4-work"
 mkdir -p "$NXF_APPTAINER_CACHEDIR" "$APPTAINER_CACHEDIR" "$NXF_WORK"
 echo "Container build temporary directory: $APPTAINER_TMPDIR"

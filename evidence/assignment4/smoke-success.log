@@ -1,0 +1,39 @@
+[33mNextflow 26.04.7 is available - Please consider updating your version to it(B[m
+N E X T F L O W  ~  version 26.04.6
+Launching `main.nf` [insane_snyder] - revision: 857aec6508
+[53/23a556] Submitted process > VALIDATE
+[7f/2745e7] Submitted process > FASTQC (smoke_02)
+[01/2926a2] Submitted process > FASTQC (smoke_01)
+[05/e0a347] Submitted process > FASTQC (smoke_03)
+[05/28435f] Submitted process > FASTP (smoke_02)
+[b1/4d1a7b] Submitted process > FASTP (smoke_01)
+[d7/da418e] Submitted process > FASTP (smoke_03)
+[77/54030e] Submitted process > BWA_MEM (smoke_01)
+[af/751d10] Submitted process > BWA_MEM (smoke_02)
+[e3/6dd9ca] Submitted process > BWA_MEM (smoke_03)
+[cf/c473dd] Submitted process > MARKDUPLICATES (smoke_03)
+[69/23d886] Submitted process > MARKDUPLICATES (smoke_01)
+[0d/56c52f] Submitted process > MARKDUPLICATES (smoke_02)
+[1f/b29536] Submitted process > HAPLOTYPECALLER (smoke_03)
+[06/f8af64] Submitted process > HAPLOTYPECALLER (smoke_01)
+[91/54d911] Submitted process > MULTIQC
+[a4/8d6d45] Submitted process > HAPLOTYPECALLER (smoke_02)
+[9e/4f49c9] Submitted process > JOINT_GENOTYPE
+[93/20deed] Submitted process > FILTER
+[f5/3db61e] Submitted process > PUBLISH
+
+Outputs:
+
+  /Users/sucharita/Desktop/binf6610-variant-pipeline/results-smoke
+
+  vcf: cohort.filtered.vcf.gz
+
+  index: cohort.filtered.vcf.gz.tbi
+
+  variants: variants.tsv
+
+  multiqc: multiqc_report.html
+
+  manifest: manifest.json
+
+  samples: samples.tsv

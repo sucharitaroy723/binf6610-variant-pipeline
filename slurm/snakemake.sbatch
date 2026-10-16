@@ -17,6 +17,8 @@ module load miniconda3/25.9.1
 source activate /courses/BINF6610.202710/shared/env/binf6610-workflows   # snakemake 9.27.0 and the Slurm plugin
 
 export APPTAINER_CACHEDIR=/scratch/${USER}/apptainer-cache             # Apptainer's download cache
+export TMPDIR=/scratch/${USER}/snakemake-tmp
+mkdir -p "$TMPDIR"
 
 cd "${SLURM_SUBMIT_DIR}"
 snakemake --profile profiles/explorer \

@@ -1,0 +1,12 @@
+diff --git a/profiles/explorer/profile.yaml b/profiles/explorer/profile.yaml
+index c6f2ff8..edac47b 100644
+--- a/profiles/explorer/profile.yaml
++++ b/profiles/explorer/profile.yaml
+@@ -1,7 +1,6 @@
+ executor: slurm
+ jobs: 20
+ configfile: profiles/explorer/platform.yaml
+-software-deployment-method: apptainer
+ apptainer-prefix: /courses/BINF6610.202710/shared/snakemake-images
+ apptainer-args: "--bind /courses,/scratch"
+ latency-wait: 60

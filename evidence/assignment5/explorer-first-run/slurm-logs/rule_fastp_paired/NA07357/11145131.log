@@ -1,0 +1,111 @@
+Config file config.yaml is extended by additional config specified via the command line.
+
+SNAKEMAKE
+=========
+  Date: 2026-10-16 16:54:58
+  Workflow ID: 27ada464-72c6-4833-a238-5a5d348cfbdd
+  Platform: Linux-5.14.0-362.13.1.el9_3.x86_64-x86_64-with-glibc2.34
+  Host: c0617
+  User: roy.suc
+  Snakemake version: 9.27.0
+  Python version: 3.12.14 (main, Sep  2 2026, 23:27:36) [GCC 15.3.0]
+  Command: /courses/BINF6610.202710/shared/env/binf6610-workflows/lib/python3.12/site-packages/snakemake/__main__.py --snakefile /home/roy.suc/binf6610-variant-pipeline/Snakefile --target-jobs fastp_paired:sample=NA07357 --allowed-rules fastp_paired --cores all --attempt 1 --force-use-threads --wait-for-files /home/roy.suc/binf6610-variant-pipeline/.snakemake/tmp.816yyodk /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz work/validate/samplesheet.csv --force --target-files-omit-workdir-adjustment --max-inventory-time 0 --retries 0 --nocolor --no-hooks --nolock --ignore-incomplete --rerun-triggers input params code software-env mtime --conda-frontend conda --apptainer-prefix /courses/BINF6610.202710/shared/snakemake-images --apptainer-args base64//LS1iaW5kIC9jb3Vyc2VzLC9zY3JhdGNo --shared-fs-usage input-output software-deployment sources persistence source-cache storage-local-copies software-deployment-cache --config samplesheet=/courses/BINF6610.202710/data/samplesheet-variant8.csv ref=/courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa region=chr20:1-10000000 outdir=results --printshellcmds --latency-wait 60 --scheduler ilp --local-storage-prefix base64//LnNuYWtlbWFrZS9zdG9yYWdl --scheduler-solver-path /courses/BINF6610.202710/shared/env/binf6610-workflows/bin --runtime-source-cache-path /home/roy.suc/.cache/snakemake/snakemake/source-cache/snakemake-runtime-cache/tmpckbzcve6 --configfiles /home/roy.suc/binf6610-variant-pipeline/profiles/explorer/platform.yaml --set-resources base64//YndhX21lbTpydW50aW1lPTYw base64//YndhX21lbTptZW1fbWI9MTYwMDA= base64//aGFwbG90eXBlY2FsbGVyOnJ1bnRpbWU9NjA= base64//aGFwbG90eXBlY2FsbGVyOm1lbV9tYj0xNjAwMA== base64//bWFya2R1cGxpY2F0ZXM6cnVudGltZT02MA== base64//bWFya2R1cGxpY2F0ZXM6bWVtX21iPTgwMDA= base64//am9pbnRfZ2Vub3R5cGU6cnVudGltZT02MA== base64//am9pbnRfZ2Vub3R5cGU6bWVtX21iPTgwMDA= base64//ZmlsdGVyOnJ1bnRpbWU9NjA= base64//ZmlsdGVyOm1lbV9tYj04MDAw base64//ZmFzdHFjOm1lbV9tYj00MDAw base64//bXVsdGlxYzptZW1fbWI9NDAwMA== --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= base64//bWVtX21iPTIwMDA= base64//c2x1cm1fYWNjb3VudD1iaW5mNjYxMC4yMDI3MTA= base64//c2x1cm1fcGFydGl0aW9uPWNvdXJzZXM= base64//cnVudGltZT0zMA== --executor slurm-jobstep --jobs 1 --mode remote
+  Snakefile: /home/roy.suc/binf6610-variant-pipeline/Snakefile
+  Base directory: /home/roy.suc/binf6610-variant-pipeline
+  Run directory: /home/roy.suc/binf6610-variant-pipeline
+  Working directory: /home/roy.suc/binf6610-variant-pipeline
+  Config file(s): [PosixPath('/home/roy.suc/binf6610-variant-pipeline/profiles/explorer/platform.yaml'), 'config.yaml']
+  Config MD5: 7ca8633d42ad3571369e4c12e7b79180
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Singularity containers: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Oct 16 16:54:58 2026]
+rule fastp_paired:
+    input: /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz, /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz, work/validate/samplesheet.csv
+    output: work/trim/NA07357_R1.trim.fastq.gz, work/trim/NA07357_R2.trim.fastq.gz, work/trim/NA07357.fastp.json, work/trim/NA07357.fastp.html
+    log: logs/fastp/NA07357.log
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=NA07357
+    threads: 4
+    resources: tmpdir=<TBD>, disk_mb=1000, disk=1 GB, disk_mib=954, mem_mb=2000, mem=2 GB, mem_mib=1908, slurm_account=binf6610.202710, slurm_partition=courses, runtime=30
+Shell command: fastp -w 4 -i /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz -I /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz -o work/trim/NA07357_R1.trim.fastq.gz -O work/trim/NA07357_R2.trim.fastq.gz -j work/trim/NA07357.fastp.json -h work/trim/NA07357.fastp.html 2> logs/fastp/NA07357.log
+Config file config.yaml is extended by additional config specified via the command line.
+
+SNAKEMAKE
+=========
+  Date: 2026-10-16 16:55:07
+  Workflow ID: a7129f65-0113-4ea0-af52-0549f9622cca
+  Platform: Linux-5.14.0-362.13.1.el9_3.x86_64-x86_64-with-glibc2.34
+  Host: c0617
+  User: roy.suc
+  Snakemake version: 9.27.0
+  Python version: 3.12.14 (main, Sep  2 2026, 23:27:36) [GCC 15.3.0]
+  Command: /courses/BINF6610.202710/shared/env/binf6610-workflows/lib/python3.12/site-packages/snakemake/__main__.py --snakefile /home/roy.suc/binf6610-variant-pipeline/Snakefile --target-jobs fastp_paired:sample=NA07357 --allowed-rules fastp_paired --cores all --attempt 1 --force-use-threads --force --target-files-omit-workdir-adjustment --max-inventory-time 0 --retries 0 --nocolor --no-hooks --nolock --ignore-incomplete --rerun-triggers code input mtime params software-env --conda-frontend conda --apptainer-prefix /courses/BINF6610.202710/shared/snakemake-images --apptainer-args base64//LS1iaW5kIC9jb3Vyc2VzLC9zY3JhdGNo --shared-fs-usage persistence input-output source-cache software-deployment-cache sources software-deployment storage-local-copies --config samplesheet=/courses/BINF6610.202710/data/samplesheet-variant8.csv ref=/courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa region=chr20:1-10000000 outdir=results --printshellcmds --latency-wait 60 --scheduler ilp --local-storage-prefix base64//LnNuYWtlbWFrZS9zdG9yYWdl --scheduler-solver-path /courses/BINF6610.202710/shared/env/binf6610-workflows/bin --runtime-source-cache-path /home/roy.suc/.cache/snakemake/snakemake/source-cache/snakemake-runtime-cache/tmpckbzcve6 --configfiles /home/roy.suc/binf6610-variant-pipeline/profiles/explorer/platform.yaml --set-resources base64//YndhX21lbTpydW50aW1lPTYw base64//YndhX21lbTptZW1fbWI9MTYwMDA= base64//aGFwbG90eXBlY2FsbGVyOnJ1bnRpbWU9NjA= base64//aGFwbG90eXBlY2FsbGVyOm1lbV9tYj0xNjAwMA== base64//bWFya2R1cGxpY2F0ZXM6cnVudGltZT02MA== base64//bWFya2R1cGxpY2F0ZXM6bWVtX21iPTgwMDA= base64//am9pbnRfZ2Vub3R5cGU6cnVudGltZT02MA== base64//am9pbnRfZ2Vub3R5cGU6bWVtX21iPTgwMDA= base64//ZmlsdGVyOnJ1bnRpbWU9NjA= base64//ZmlsdGVyOm1lbV9tYj04MDAw base64//ZmFzdHFjOm1lbV9tYj00MDAw base64//bXVsdGlxYzptZW1fbWI9NDAwMA== --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= base64//bWVtX21iPTIwMDA= base64//c2x1cm1fYWNjb3VudD1iaW5mNjYxMC4yMDI3MTA= base64//c2x1cm1fcGFydGl0aW9uPWNvdXJzZXM= base64//cnVudGltZT0zMA== --mode remote
+  Snakefile: /home/roy.suc/binf6610-variant-pipeline/Snakefile
+  Base directory: /home/roy.suc/binf6610-variant-pipeline
+  Run directory: /home/roy.suc/binf6610-variant-pipeline
+  Working directory: /home/roy.suc/binf6610-variant-pipeline
+  Config file(s): [PosixPath('/home/roy.suc/binf6610-variant-pipeline/profiles/explorer/platform.yaml'), 'config.yaml']
+  Config MD5: 7ca8633d42ad3571369e4c12e7b79180
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Singularity containers: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Oct 16 16:55:08 2026]
+localrule fastp_paired:
+    input: /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz, /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz, work/validate/samplesheet.csv
+    output: work/trim/NA07357_R1.trim.fastq.gz, work/trim/NA07357_R2.trim.fastq.gz, work/trim/NA07357.fastp.json, work/trim/NA07357.fastp.html
+    log: logs/fastp/NA07357.log
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=NA07357
+    threads: 4
+    resources: tmpdir=/home/roy.suc/rstudio_tmp, disk_mb=1000, disk=1 GB, disk_mib=954, mem_mb=2000, mem=2 GB, mem_mib=1908, slurm_account=binf6610.202710, slurm_partition=courses, runtime=30
+Shell command: fastp -w 4 -i /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz -I /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz -o work/trim/NA07357_R1.trim.fastq.gz -O work/trim/NA07357_R2.trim.fastq.gz -j work/trim/NA07357.fastp.json -h work/trim/NA07357.fastp.html 2> logs/fastp/NA07357.log
+RuleException:
+CalledProcessError in file "/home/roy.suc/binf6610-variant-pipeline/Snakefile", line 151:
+Command 'set -euo pipefail;  fastp -w 4 -i /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz -I /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz -o work/trim/NA07357_R1.trim.fastq.gz -O work/trim/NA07357_R2.trim.fastq.gz -j work/trim/NA07357.fastp.json -h work/trim/NA07357.fastp.html 2> logs/fastp/NA07357.log' returned non-zero exit status 127.
+[Fri Oct 16 16:55:08 2026]
+Error in rule fastp_paired:
+    message: None
+    jobid: 0
+    input: /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz, /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz, work/validate/samplesheet.csv
+    output: work/trim/NA07357_R1.trim.fastq.gz, work/trim/NA07357_R2.trim.fastq.gz, work/trim/NA07357.fastp.json, work/trim/NA07357.fastp.html
+    log: logs/fastp/NA07357.log (check log file(s) for error details)
+    shell:
+        fastp -w 4 -i /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz -I /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz -o work/trim/NA07357_R1.trim.fastq.gz -O work/trim/NA07357_R2.trim.fastq.gz -j work/trim/NA07357.fastp.json -h work/trim/NA07357.fastp.html 2> logs/fastp/NA07357.log
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error messages
+Storing output in storage.
+Elapsed time: 0:00:00.333309
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: c0617: task 0: Exited with exit code 1
+[Fri Oct 16 16:55:09 2026]
+Error in rule fastp_paired:
+    message: None
+    jobid: 0
+    input: /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz, /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz, work/validate/samplesheet.csv
+    output: work/trim/NA07357_R1.trim.fastq.gz, work/trim/NA07357_R2.trim.fastq.gz, work/trim/NA07357.fastp.json, work/trim/NA07357.fastp.html
+    log: logs/fastp/NA07357.log (check log file(s) for error details)
+    shell:
+        fastp -w 4 -i /courses/BINF6610.202710/data/fastq-variant/NA07357_R1.fastq.gz -I /courses/BINF6610.202710/data/fastq-variant/NA07357_R2.fastq.gz -o work/trim/NA07357_R1.trim.fastq.gz -O work/trim/NA07357_R2.trim.fastq.gz -j work/trim/NA07357.fastp.json -h work/trim/NA07357.fastp.html 2> logs/fastp/NA07357.log
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error messages
+Storing output in storage.
+Elapsed time: 0:00:10.655415
+WorkflowError:
+At least one job did not complete successfully.

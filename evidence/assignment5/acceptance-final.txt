@@ -1,0 +1,20 @@
+
+BINF6610 Assignment 5 — acceptance tests
+repo: /Users/sucharita/Desktop/binf6610-variant-pipeline
+
+  PASS  10/10  the pipeline is a Snakefile
+        11 rules, every one but all with a log
+  PASS  10/10  the two profiles and the head job
+  PASS  10/10  the laptop run found the planted variants
+        planted SNVs found: smoke_01 850/850 (100 %) smoke_02 828/829 (99 %) smoke_03 798/866 (92 %)
+  PASS  10/10  the Explorer run has all eight samples
+  PASS   5/5   every rule on Explorer was its own Slurm job
+        62 jobs submitted to Slurm, in 3 head-job log(s)
+  PASS   5/5   variants.tsv and samples.tsv
+  PASS  10/10  both runs' manifest.json
+  PASS   5/5   the records compared with week 4
+        identical to last week's records
+  PASS   5/5   TROUBLESHOOTING.md
+
+  9 passed, 0 failed — 70/70 points
+

@@ -1,0 +1,30 @@
+Using profile profiles/laptop for setting default command line arguments.
+Config file config.yaml is extended by additional config specified via the command line.
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-10-16 14:30:38
+  Workflow ID: f18bb3a0-2f6c-4d9b-8535-0148ed265a4f
+  Platform: macOS-15.6-arm64-arm-64bit
+  Host: Sucharitas-MacBook-Air.local
+  User: sucharita
+  Snakemake version: 9.27.0
+  Python version: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+  Command: /Users/sucharita/.venvs/binf6610-smk/bin/snakemake --profile profiles/laptop --config samplesheet=/Users/sucharita/Desktop/smoke/samplesheet.csv ref=/Users/sucharita/Desktop/smoke/smoke.fa region=smoke_1mb
+  Snakefile: /Users/sucharita/Desktop/binf6610-variant-pipeline/Snakefile
+  Base directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Run directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Working directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Config file(s): [PosixPath('/Users/sucharita/Desktop/binf6610-variant-pipeline/profiles/laptop/platform.yaml'), 'config.yaml']
+  Config MD5: fbc664accb256a082d4ce280e1b8728a
+
+Building DAG of jobs...
+IncompleteFilesException:
+The files below seem to be incomplete. If you are sure that certain files are not incomplete, mark them as complete with
+
+    snakemake --cleanup-metadata <filenames>
+
+To re-generate the files rerun your command with the --rerun-incomplete flag.
+Incomplete files:
+work/gvcf/smoke_03.g.vcf.gz

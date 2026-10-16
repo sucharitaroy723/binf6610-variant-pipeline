@@ -1,0 +1,244 @@
+Automated SIGINT after 15 seconds; equivalent to Control-C.
+Using profile profiles/laptop for setting default command line arguments.
+Config file config.yaml is extended by additional config specified via the command line.
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-10-16 14:27:27
+  Workflow ID: ddb511a7-8ed3-4c66-a804-c17304819bba
+  Platform: macOS-15.6-arm64-arm-64bit
+  Host: Sucharitas-MacBook-Air.local
+  User: sucharita
+  Snakemake version: 9.27.0
+  Python version: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+  Command: /Users/sucharita/.venvs/binf6610-smk/bin/snakemake --profile profiles/laptop --config samplesheet=/Users/sucharita/Desktop/smoke/samplesheet.csv ref=/Users/sucharita/Desktop/smoke/smoke.fa region=smoke_1mb
+  Snakefile: /Users/sucharita/Desktop/binf6610-variant-pipeline/Snakefile
+  Base directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Run directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Working directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Config file(s): [PosixPath('/Users/sucharita/Desktop/binf6610-variant-pipeline/profiles/laptop/platform.yaml'), 'config.yaml']
+  Config MD5: fbc664accb256a082d4ce280e1b8728a
+
+Building DAG of jobs...
+Using shell: /opt/homebrew/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Singularity containers: ignored
+Job stats:
+job                count
+---------------  -------
+validate               1
+fastp_paired           2
+fastp_single           1
+fastqc                 3
+bwa_mem                3
+markduplicates         3
+haplotypecaller        3
+multiqc                1
+joint_genotype         1
+filter                 1
+publish                1
+all                    1
+total                 21
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:28 2026]
+localrule validate:
+    input: /Users/sucharita/Desktop/smoke/samplesheet.csv, /Users/sucharita/Desktop/smoke/smoke_01_R1.fastq.gz, /Users/sucharita/Desktop/smoke/smoke_01_R2.fastq.gz, /Users/sucharita/Desktop/smoke/smoke_02_R1.fastq.gz, /Users/sucharita/Desktop/smoke/smoke_02_R2.fastq.gz, /Users/sucharita/Desktop/smoke/smoke_03_R1.fastq.gz, /Users/sucharita/Desktop/smoke/smoke.fa, /Users/sucharita/Desktop/smoke/smoke.fa.fai, /Users/sucharita/Desktop/smoke/smoke.fa.amb, /Users/sucharita/Desktop/smoke/smoke.fa.ann, /Users/sucharita/Desktop/smoke/smoke.fa.bwt, /Users/sucharita/Desktop/smoke/smoke.fa.pac, /Users/sucharita/Desktop/smoke/smoke.fa.sa, /Users/sucharita/Desktop/smoke/smoke.dict
+    output: work/validate/samplesheet.csv
+    log: logs/validate.log
+    jobid: 7
+    reason: Missing output files: work/validate/samplesheet.csv
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T
+Shell command: (/Users/sucharita/Desktop/binf6610-variant-pipeline/bin/validate_samplesheet_smk.sh /Users/sucharita/Desktop/smoke/samplesheet.csv /Users/sucharita/Desktop/smoke/smoke.fa /Users/sucharita/Desktop/smoke/smoke.dict && cp /Users/sucharita/Desktop/smoke/samplesheet.csv work/validate/samplesheet.csv) 2> logs/validate.log
+[Fri Oct 16 14:27:28 2026]
+Finished jobid: 7 (Rule: validate)
+1 of 21 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:28 2026]
+localrule fastp_single:
+    input: /Users/sucharita/Desktop/smoke/smoke_03_R1.fastq.gz, work/validate/samplesheet.csv
+    output: work/trim/smoke_03_R1.trim.fastq.gz, work/trim/smoke_03.fastp.json, work/trim/smoke_03.fastp.html
+    log: logs/fastp/smoke_03.log
+    jobid: 15
+    reason: Missing output files: work/trim/smoke_03.fastp.json, work/trim/smoke_03_R1.trim.fastq.gz; Input files updated by another job: work/validate/samplesheet.csv
+    wildcards: sample=smoke_03
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T
+Shell command: fastp -w 4 -i /Users/sucharita/Desktop/smoke/smoke_03_R1.fastq.gz -o work/trim/smoke_03_R1.trim.fastq.gz -j work/trim/smoke_03.fastp.json -h work/trim/smoke_03.fastp.html 2> logs/fastp/smoke_03.log
+Select jobs to execute...
+[Fri Oct 16 14:27:32 2026]
+Finished jobid: 15 (Rule: fastp_single)
+2 of 21 steps (10%) done
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:32 2026]
+localrule fastqc:
+    input: /Users/sucharita/Desktop/smoke/smoke_02_R1.fastq.gz, /Users/sucharita/Desktop/smoke/smoke_02_R2.fastq.gz, work/validate/samplesheet.csv
+    output: work/fastqc/smoke_02
+    log: logs/fastqc/smoke_02.log
+    jobid: 18
+    reason: Missing output files: work/fastqc/smoke_02; Input files updated by another job: work/validate/samplesheet.csv
+    wildcards: sample=smoke_02
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T
+Shell command: (mkdir -p work/fastqc/smoke_02 && fastqc -q -t 4 -o work/fastqc/smoke_02 /Users/sucharita/Desktop/smoke/smoke_02_R1.fastq.gz /Users/sucharita/Desktop/smoke/smoke_02_R2.fastq.gz) 2> logs/fastqc/smoke_02.log
+application/gzip
+application/gzip
+Select jobs to execute...
+[Fri Oct 16 14:27:36 2026]
+Finished jobid: 18 (Rule: fastqc)
+3 of 21 steps (14%) done
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:36 2026]
+localrule fastp_paired:
+    input: /Users/sucharita/Desktop/smoke/smoke_02_R1.fastq.gz, /Users/sucharita/Desktop/smoke/smoke_02_R2.fastq.gz, work/validate/samplesheet.csv
+    output: work/trim/smoke_02_R1.trim.fastq.gz, work/trim/smoke_02_R2.trim.fastq.gz, work/trim/smoke_02.fastp.json, work/trim/smoke_02.fastp.html
+    log: logs/fastp/smoke_02.log
+    jobid: 11
+    reason: Missing output files: work/trim/smoke_02_R1.trim.fastq.gz, work/trim/smoke_02.fastp.json, work/trim/smoke_02_R2.trim.fastq.gz; Input files updated by another job: work/validate/samplesheet.csv
+    wildcards: sample=smoke_02
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T
+Shell command: fastp -w 4 -i /Users/sucharita/Desktop/smoke/smoke_02_R1.fastq.gz -I /Users/sucharita/Desktop/smoke/smoke_02_R2.fastq.gz -o work/trim/smoke_02_R1.trim.fastq.gz -O work/trim/smoke_02_R2.trim.fastq.gz -j work/trim/smoke_02.fastp.json -h work/trim/smoke_02.fastp.html 2> logs/fastp/smoke_02.log
+[Fri Oct 16 14:27:36 2026]
+Finished jobid: 11 (Rule: fastp_paired)
+4 of 21 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:36 2026]
+localrule bwa_mem:
+    input: work/trim/smoke_02_R1.trim.fastq.gz, work/trim/smoke_02_R2.trim.fastq.gz, /Users/sucharita/Desktop/smoke/smoke.fa, /Users/sucharita/Desktop/smoke/smoke.fa.amb, /Users/sucharita/Desktop/smoke/smoke.fa.ann, /Users/sucharita/Desktop/smoke/smoke.fa.bwt, /Users/sucharita/Desktop/smoke/smoke.fa.pac, /Users/sucharita/Desktop/smoke/smoke.fa.sa
+    output: work/align/smoke_02.unsorted.bam, work/align/smoke_02.bwa.log
+    log: logs/bwa_mem/smoke_02.log
+    jobid: 10
+    reason: Missing output files: work/align/smoke_02.unsorted.bam, work/align/smoke_02.bwa.log; Input files updated by another job: work/trim/smoke_02_R1.trim.fastq.gz, work/trim/smoke_02_R2.trim.fastq.gz
+    wildcards: sample=smoke_02
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T
+Shell command: 
+        (bwa mem -t 4 -R '@RG\tID:smoke_02\tSM:smoke_02\tPL:ILLUMINA' \
+            /Users/sucharita/Desktop/smoke/smoke.fa work/trim/smoke_02_R1.trim.fastq.gz work/trim/smoke_02_R2.trim.fastq.gz | samtools view -b -o work/align/smoke_02.unsorted.bam -
+         samtools quickcheck work/align/smoke_02.unsorted.bam
+         test "$(samtools view -c work/align/smoke_02.unsorted.bam)" -gt 0) 2> logs/bwa_mem/smoke_02.log
+        cp logs/bwa_mem/smoke_02.log work/align/smoke_02.bwa.log
+        
+Select jobs to execute...
+[Fri Oct 16 14:27:38 2026]
+Finished jobid: 10 (Rule: bwa_mem)
+5 of 21 steps (24%) done
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:38 2026]
+localrule bwa_mem:
+    input: work/trim/smoke_03_R1.trim.fastq.gz, /Users/sucharita/Desktop/smoke/smoke.fa, /Users/sucharita/Desktop/smoke/smoke.fa.amb, /Users/sucharita/Desktop/smoke/smoke.fa.ann, /Users/sucharita/Desktop/smoke/smoke.fa.bwt, /Users/sucharita/Desktop/smoke/smoke.fa.pac, /Users/sucharita/Desktop/smoke/smoke.fa.sa
+    output: work/align/smoke_03.unsorted.bam, work/align/smoke_03.bwa.log
+    log: logs/bwa_mem/smoke_03.log
+    jobid: 14
+    reason: Missing output files: work/align/smoke_03.bwa.log, work/align/smoke_03.unsorted.bam; Input files updated by another job: work/trim/smoke_03_R1.trim.fastq.gz
+    wildcards: sample=smoke_03
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T
+Shell command: 
+        (bwa mem -t 4 -R '@RG\tID:smoke_03\tSM:smoke_03\tPL:ILLUMINA' \
+            /Users/sucharita/Desktop/smoke/smoke.fa work/trim/smoke_03_R1.trim.fastq.gz | samtools view -b -o work/align/smoke_03.unsorted.bam -
+         samtools quickcheck work/align/smoke_03.unsorted.bam
+         test "$(samtools view -c work/align/smoke_03.unsorted.bam)" -gt 0) 2> logs/bwa_mem/smoke_03.log
+        cp logs/bwa_mem/smoke_03.log work/align/smoke_03.bwa.log
+        
+Select jobs to execute...
+[Fri Oct 16 14:27:39 2026]
+Finished jobid: 14 (Rule: bwa_mem)
+6 of 21 steps (29%) done
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:39 2026]
+localrule markduplicates:
+    input: work/align/smoke_03.unsorted.bam
+    output: work/postprocess/smoke_03.dedup.bam, work/postprocess/smoke_03.dedup.bam.bai, work/postprocess/smoke_03.duplicate_metrics.txt, work/postprocess/smoke_03.flagstat.txt
+    log: logs/markduplicates/smoke_03.log
+    jobid: 13
+    reason: Missing output files: work/postprocess/smoke_03.duplicate_metrics.txt, work/postprocess/smoke_03.dedup.bam.bai, work/postprocess/smoke_03.dedup.bam, work/postprocess/smoke_03.flagstat.txt; Input files updated by another job: work/align/smoke_03.unsorted.bam
+    wildcards: sample=smoke_03
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T, mem_mb=8000, mem=8 GB, mem_mib=7630
+Shell command: 
+        (mkdir -p work/postprocess/smoke_03.tmp
+         samtools sort -@ $(( 4 - 1 )) -T work/postprocess/smoke_03.tmp/sort \
+             -o work/postprocess/smoke_03.tmp/sorted.bam work/align/smoke_03.unsorted.bam
+         gatk --java-options '-Xmx4g' MarkDuplicates \
+             -I work/postprocess/smoke_03.tmp/sorted.bam -O work/postprocess/smoke_03.dedup.bam -M work/postprocess/smoke_03.duplicate_metrics.txt \
+             --TMP_DIR work/postprocess/smoke_03.tmp --CREATE_INDEX false
+         samtools quickcheck work/postprocess/smoke_03.dedup.bam
+         samtools index work/postprocess/smoke_03.dedup.bam
+         samtools flagstat work/postprocess/smoke_03.dedup.bam > work/postprocess/smoke_03.flagstat.txt
+         rm -rf work/postprocess/smoke_03.tmp) > logs/markduplicates/smoke_03.log 2>&1
+        
+Select jobs to execute...
+[Fri Oct 16 14:27:40 2026]
+Finished jobid: 13 (Rule: markduplicates)
+7 of 21 steps (33%) done
+Execute 1 jobs...
+
+[Fri Oct 16 14:27:40 2026]
+localrule haplotypecaller:
+    input: work/postprocess/smoke_03.dedup.bam, work/postprocess/smoke_03.dedup.bam.bai, /Users/sucharita/Desktop/smoke/smoke.fa, /Users/sucharita/Desktop/smoke/smoke.fa.fai, /Users/sucharita/Desktop/smoke/smoke.dict
+    output: work/gvcf/smoke_03.g.vcf.gz, work/gvcf/smoke_03.g.vcf.gz.tbi
+    log: logs/haplotypecaller/smoke_03.log
+    jobid: 12
+    reason: Missing output files: work/gvcf/smoke_03.g.vcf.gz.tbi, work/gvcf/smoke_03.g.vcf.gz; Input files updated by another job: work/postprocess/smoke_03.dedup.bam.bai, work/postprocess/smoke_03.dedup.bam
+    wildcards: sample=smoke_03
+    threads: 4
+    resources: tmpdir=/var/folders/4g/2k_8g639395cpzqn_9f3cdj00000gn/T, mem_mb=16000, mem=16 GB, mem_mib=15259
+Shell command: 
+        (mkdir -p work/gvcf/smoke_03.tmp
+         gatk --java-options '-Xmx4g' HaplotypeCaller \
+             -R /Users/sucharita/Desktop/smoke/smoke.fa -I work/postprocess/smoke_03.dedup.bam -O work/gvcf/smoke_03.g.vcf.gz \
+             -ERC GVCF -L smoke_1mb --tmp-dir work/gvcf/smoke_03.tmp \
+             --native-pair-hmm-threads 4
+         gzip -t work/gvcf/smoke_03.g.vcf.gz
+         test -s work/gvcf/smoke_03.g.vcf.gz.tbi) > logs/haplotypecaller/smoke_03.log 2>&1
+        
+Select jobs to execute...
+Terminating processes on user request, this might take some time.
+RuleException:
+CalledProcessError in file "/Users/sucharita/Desktop/binf6610-variant-pipeline/Snakefile", line 248:
+Command 'set -euo pipefail;  
+        (mkdir -p work/gvcf/smoke_03.tmp
+         gatk --java-options '-Xmx4g' HaplotypeCaller \
+             -R /Users/sucharita/Desktop/smoke/smoke.fa -I work/postprocess/smoke_03.dedup.bam -O work/gvcf/smoke_03.g.vcf.gz \
+             -ERC GVCF -L smoke_1mb --tmp-dir work/gvcf/smoke_03.tmp \
+             --native-pair-hmm-threads 4
+         gzip -t work/gvcf/smoke_03.g.vcf.gz
+         test -s work/gvcf/smoke_03.g.vcf.gz.tbi) > logs/haplotypecaller/smoke_03.log 2>&1' returned non-zero exit status 1.
+[Fri Oct 16 14:27:42 2026]
+Error in rule haplotypecaller:
+    message: None
+    jobid: 12
+    input: work/postprocess/smoke_03.dedup.bam, work/postprocess/smoke_03.dedup.bam.bai, /Users/sucharita/Desktop/smoke/smoke.fa, /Users/sucharita/Desktop/smoke/smoke.fa.fai, /Users/sucharita/Desktop/smoke/smoke.dict
+    output: work/gvcf/smoke_03.g.vcf.gz, work/gvcf/smoke_03.g.vcf.gz.tbi
+    log: logs/haplotypecaller/smoke_03.log (check log file(s) for error details)
+    shell:
+        
+        (mkdir -p work/gvcf/smoke_03.tmp
+         gatk --java-options '-Xmx4g' HaplotypeCaller \
+             -R /Users/sucharita/Desktop/smoke/smoke.fa -I work/postprocess/smoke_03.dedup.bam -O work/gvcf/smoke_03.g.vcf.gz \
+             -ERC GVCF -L smoke_1mb --tmp-dir work/gvcf/smoke_03.tmp \
+             --native-pair-hmm-threads 4
+         gzip -t work/gvcf/smoke_03.g.vcf.gz
+         test -s work/gvcf/smoke_03.g.vcf.gz.tbi) > logs/haplotypecaller/smoke_03.log 2>&1
+        
+        (command exited with non-zero exit code)
+Complete log(s): /Users/sucharita/Desktop/binf6610-variant-pipeline/.snakemake/log/2026-10-16T142727.834704.snakemake.log
+Elapsed time: 0:00:14.633723
+WorkflowError:
+At least one job did not complete successfully.
+
+exit_status=1

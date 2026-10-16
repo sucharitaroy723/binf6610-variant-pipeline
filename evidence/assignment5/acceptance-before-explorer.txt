@@ -1,0 +1,31 @@
+
+BINF6610 Assignment 5 — acceptance tests
+repo: /Users/sucharita/Desktop/binf6610-variant-pipeline
+
+  PASS  10/10  the pipeline is a Snakefile
+        11 rules, every one but all with a log
+  PASS  10/10  the two profiles and the head job
+  PASS  10/10  the laptop run found the planted variants
+        planted SNVs found: smoke_01 850/850 (100 %) smoke_02 828/829 (99 %) smoke_03 798/866 (92 %)
+  FAIL   0/10  the Explorer run has all eight samples
+        no cluster-run-smk/cohort.filtered.vcf.gz
+  FAIL   0/5   every rule on Explorer was its own Slurm job
+        no head-job log in cluster-run-smk/: copy the run's slurm/variant-call-smk-*.out there
+  FAIL   0/5   variants.tsv and samples.tsv
+        in cluster-run-smk/: variants.tsv with the header chrom pos ref alt qual filter, tab-separated;samples.tsv with the header sample_id condition, tab-separated
+  PART   5/10  both runs' manifest.json
+        cluster-run-smk: no manifest.json
+  FAIL   0/5   the records compared with week 4
+        no cluster-run-smk/records-sha256.txt
+  FAIL   0/5   TROUBLESHOOTING.md
+        3 of the four failures are described; not found: 4, no Apptainer
+
+  4 passed, 5 failed — 35/70 points
+
+  still to do:
+    - the Explorer run has all eight samples
+    - every rule on Explorer was its own Slurm job
+    - variants.tsv and samples.tsv
+    - the records compared with week 4
+    - TROUBLESHOOTING.md
+

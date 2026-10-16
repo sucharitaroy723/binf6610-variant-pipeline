@@ -1,0 +1,7 @@
+$ snakemake --profile profiles/laptop -n --config samplesheet=/Users/sucharita/Desktop/smoke/samplesheet.csv ref=/Users/sucharita/Desktop/smoke/smoke.fa region=smoke_1mb
+Using profile profiles/laptop for setting default command line arguments.
+Config file config.yaml is extended by additional config specified via the command line.
+RuleException in file "/Users/sucharita/Desktop/binf6610-variant-pipeline/Snakefile", line 173:
+Not all output, log and benchmark files of rule bwa_mem contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
+
+exit_status=1

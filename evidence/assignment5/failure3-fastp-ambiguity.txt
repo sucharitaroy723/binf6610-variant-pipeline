@@ -1,0 +1,37 @@
+$ snakemake --profile profiles/laptop -n --config samplesheet=/Users/sucharita/Desktop/smoke/samplesheet.csv ref=/Users/sucharita/Desktop/smoke/smoke.fa region=smoke_1mb
+Using profile profiles/laptop for setting default command line arguments.
+Config file config.yaml is extended by additional config specified via the command line.
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-10-16 14:03:39
+  Workflow ID: 2d155b58-f155-4418-a25f-981a517a8109
+  Platform: macOS-15.6-arm64-arm-64bit
+  Host: Sucharitas-MacBook-Air.local
+  User: sucharita
+  Snakemake version: 9.27.0
+  Python version: 3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]
+  Command: /Users/sucharita/.venvs/binf6610-smk/bin/snakemake --profile profiles/laptop -n --config samplesheet=/Users/sucharita/Desktop/smoke/samplesheet.csv ref=/Users/sucharita/Desktop/smoke/smoke.fa region=smoke_1mb
+  Snakefile: /Users/sucharita/Desktop/binf6610-variant-pipeline/Snakefile
+  Base directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Run directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Working directory: /Users/sucharita/Desktop/binf6610-variant-pipeline
+  Config file(s): [PosixPath('/Users/sucharita/Desktop/binf6610-variant-pipeline/profiles/laptop/platform.yaml'), 'config.yaml']
+  Config MD5: fbc664accb256a082d4ce280e1b8728a
+
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules fastp_paired and fastp_single are ambiguous for the file work/trim/smoke_01_R1.trim.fastq.gz.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	fastp_paired: sample=smoke_01
+	fastp_single: sample=smoke_01
+Expected input files:
+	fastp_paired: /Users/sucharita/Desktop/smoke/smoke_01_R1.fastq.gz /Users/sucharita/Desktop/smoke/smoke_01_R2.fastq.gz work/validate/samplesheet.csv
+	fastp_single: /Users/sucharita/Desktop/smoke/smoke_01_R1.fastq.gz work/validate/samplesheet.csv
+Expected output files:
+	fastp_paired: work/trim/smoke_01_R1.trim.fastq.gz work/trim/smoke_01_R2.trim.fastq.gz work/trim/smoke_01.fastp.json work/trim/smoke_01.fastp.html
+	fastp_single: work/trim/smoke_01_R1.trim.fastq.gz work/trim/smoke_01.fastp.json work/trim/smoke_01.fastp.html
+
+exit_status=1

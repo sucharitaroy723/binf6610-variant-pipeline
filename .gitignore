@@ -34,3 +34,6 @@ nf-head-*.out
 results-*/
 main-a4-*.nf
 .a4-exercise-backup/
+.snakemake/
+logs/
+slurm/*.out

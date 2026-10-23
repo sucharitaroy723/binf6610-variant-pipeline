@@ -17,7 +17,7 @@ workflow {
     sheet     = file(params.samplesheet, checkIfExists: true)
     ref       = file(params.ref, checkIfExists: true)
     ref_index = files("${params.ref}.*", checkIfExists: true)
-    ref_dict  = file("${ref.parent}/${ref.baseName}.dict", checkIfExists: true)
+    ref_dict  = ref.resolveSibling("${ref.baseName}.dict")
 
     ch_samples = channel.fromPath(sheet)
         .splitCsv(header: true)

@@ -79,4 +79,9 @@ stage_analyze() {
     mv "$filtered_vcf" "${RES}/cohort.filtered.vcf.gz"
     mv "${filtered_vcf}.tbi" "${RES}/cohort.filtered.vcf.gz.tbi"
     log "hard filtering completed: ${total_records} total, ${pass_records} PASS, ${filtered_records} flagged"
+    local filter_counts
+    filter_counts=$(bcftools query -f '%FILTER\n' "${RES}/cohort.filtered.vcf.gz" |
+        awk -F';' '{for (i = 1; i <= NF; i++) if ($i != "PASS" && $i != ".") print $i}' |
+        sort | uniq -c | awk '{printf "%s %s  ", $2, $1}')
+    log "caught by each filter: ${filter_counts}"
 }

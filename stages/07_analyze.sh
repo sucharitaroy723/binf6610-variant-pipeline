@@ -25,7 +25,7 @@ stage_analyze() {
         -V "$raw_vcf" \
         -O "$filtered_vcf" \
         --filter-name "QD2" \
-        --filter-expression "QD < 20.0" \
+        --filter-expression "QD < 2.0" \
         --filter-name "QUAL30" \
         --filter-expression "QUAL < 30.0" \
         --filter-name "FS60" \

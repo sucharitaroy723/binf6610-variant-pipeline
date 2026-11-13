@@ -1,0 +1,52 @@
+{
+  "pipeline": {
+    "name": "variant-call",
+    "version": "1.0.0",
+    "implementation": "snakemake",
+    "revision": "none",
+    "git_sha": "none",
+    "run_id": "snakemake-20261016T170741",
+    "started_at": "2026-10-16T17:07:41.038389-04:00",
+    "launch_dir": "/home/roy.suc/binf6610-variant-pipeline",
+    "finished_at": "2026-10-16T21:39:19Z",
+    "exit_status": "success"
+  },
+  "params": {
+    "platform": "singularity-hpc",
+    "executor": "slurm",
+    "samplesheet": "/courses/BINF6610.202710/data/samplesheet-variant8.csv",
+    "ref": "/courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa",
+    "region": "chr20:1-10000000",
+    "outdir": "results"
+  },
+  "platform": {
+    "kind": "singularity-hpc",
+    "executor": "slurm",
+    "engine": "snakemake 9.27.0",
+    "containers": {
+      "tools": "community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc",
+      "fastqc": "quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0",
+      "fastp": "community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494",
+      "bwa": "community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3",
+      "gatk": "community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b",
+      "multiqc": "quay.io/biocontainers/multiqc:1.35--pyhdfd78af_2"
+    }
+  },
+  "samples": [
+    {"sample_id": "NA12878", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "NA12891", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "NA12892", "library_type": "single", "condition": "unaffected"},
+    {"sample_id": "NA07357", "library_type": "paired", "condition": "unaffected"},
+    {"sample_id": "NA12003", "library_type": "single", "condition": "affected"},
+    {"sample_id": "NA10851", "library_type": "paired", "condition": "unaffected"},
+    {"sample_id": "NA12813", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "NA12873", "library_type": "paired", "condition": "unaffected"}
+  ],
+  "outputs": [
+    {"path": "cohort.filtered.vcf.gz", "checksum": "sha256:cae649bff42c0747c4f1a579bf718f6c1b237bac15232c053a54d04bd3857592"},
+    {"path": "cohort.filtered.vcf.gz.tbi", "checksum": "sha256:eee327649a9f3c5f83395c8a55334a65cdfa2b0fa54fccb871cabc930837daf0"},
+    {"path": "multiqc_report.html", "checksum": "sha256:91fb3e9d8a0ca3f162da15495ef16e0b66c2d995b88c1e636df2082b6d583755"},
+    {"path": "samples.tsv", "checksum": "sha256:0aca79e22a2e172db689f8b6220dd030173f1615dfbdb35496d1bc195a5975eb"},
+    {"path": "variants.tsv", "checksum": "sha256:d4d3a25b57823c451b815370646feedea3cb5667e5bd330063ae2a6236085615"}
+  ]
+}

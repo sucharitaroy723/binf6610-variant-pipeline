@@ -27,3 +27,6 @@ assignment3-workflow.log
 evidence/assignment3/workflow.json
 
 assignment3-monitor-*.log
+
+# Assignment 9 generated SQLite databases
+*.db

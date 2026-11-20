@@ -1,0 +1,22 @@
+
+BINF6610 Assignment 10 — acceptance tests
+repo: /workspace/scratch/9b894a4babfc/repo
+python 3.12.14, Dash 4.5.0, Dash AG Grid 35.3.0, Plotly 7.1.0, pandas 2.3.3, SQLite 3.53.1
+runs found (5): aws-run-nf/, cluster-run-nf/, cluster-run-smk/, smoke-run-nf/, smoke-run-smk/
+  PASS  10/10  1 · the app starts
+        / and the results pages of 5 of 5 runs drew; plots on them: plot-filter, plot-qual, plot-type
+  PASS  15/15  2 · the Runs page
+        5 runs, with q1.sql's five columns and values
+  PASS  10/10  3 · a run's link opens its results
+        each of the 5 runs has a link to /results?run=<run_id>, and that page shows the run
+  PASS  45/45  4 · three plots, 15 each
+        plot-filter — right for all 5 runs
+        plot-qual — right for all 5 runs
+        plot-type — right for all 5 runs
+  PASS  10/10  5 · the samples table
+        5 runs, 25 run samples, each with its condition, phenotype and flag
+  PASS  10/10  6 · a click narrows the sites table
+        for each of the 5 runs, a click on the smallest bar left exactly its sites in sites-table
+
+  6 passed, 0 partly passed, 0 failed — 100/100 points
+
